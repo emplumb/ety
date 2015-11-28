@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h1>
+    Terms
+    <a href="/terms/new" class="btn btn-lg btn-success">New Term</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Part of speech</th>
+        <th>Definition</th>
+        <th>Etymology1</th>
+        <th>Etymology2</th>
+        <th>Uses</th>
+        <th>Romance cognates</th>
+        <th>Notes1</th>
+        <th>Notes2</th>
+        <th>Quote1</th>
+        <th>Quote2</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @terms.each do |term| %>
+      <tr>
+        <td><%= term.name %></td>
+        <td><%= term.gender %></td>
+        <td><%= term.part_of_speech %></td>
+        <td><%= term.definition %></td>
+        <td><%= term.etymology1 %></td>
+        <td><%= term.etymology2 %></td>
+        <td><%= term.uses %></td>
+        <td><%= term.romance_cognates %></td>
+        <td><%= term.notes1 %></td>
+        <td><%= term.notes2 %></td>
+        <td><%= term.quote1 %></td>
+        <td><%= term.quote2 %></td>
+        <td>
+          <a href="/terms/<%= term.id %>" class="btn btn-primary">Show</a>
+          <a href="/terms/<%= term.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_term/<%= term.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
