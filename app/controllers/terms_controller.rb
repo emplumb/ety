@@ -7,6 +7,20 @@ class TermsController < ApplicationController
     @term = Term.find(params[:id])
   end
 
+  def directory
+    # @term.letter = (params[:letter])
+    # @alphabet = ('A'..'Z').to_a
+
+    # @terms = Term.where("name LIKE ?%", params[:letter])
+
+    @terms = Term.all
+    @terms.find_each do |directory|
+      if @term.to_s.include? 'z'
+        render 'directory/b'
+      end
+    end
+  end
+
   def new
     @term = Term.new
   end

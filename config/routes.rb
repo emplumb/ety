@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get "/terms", :controller => "terms", :action => "index"
   get "/terms/:id", :controller => "terms", :action => "show"
 
+  get "/directory", :controller => "terms", :action => "directory"
+
   # CREATE
   get "/terms/new", :controller => "terms", :action => "new"
   post "/create_term", :controller => "terms", :action => "create"
