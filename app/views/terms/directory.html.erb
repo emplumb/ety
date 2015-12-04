@@ -21,8 +21,11 @@
         <dl>
           <tr>
             <td>
-              <b><%= term.name.html_safe %></b>
-              (<%= term.gender.html_safe %><%= term.part_of_speech.html_safe %>)
+<!--               Below code is more correct but can't get proper route
+              <!%= link_to @term, term.name.html_safe %> -->
+              <b><a href="directory/term/<%=term.name %>"><%= term.name.html_safe %></a></b>
+              (<%= term.gender %>
+              <%= term.part_of_speech %>)
               <%= term.definition.html_safe %>
               <%= term.etymology1.html_safe %>
               <%= term.etymology2.html_safe %>

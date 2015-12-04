@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
   # Routes for the Term resource:
-
+  # resources :terms
   # READ
   root "terms#index"
 
   get "/terms", :controller => "terms", :action => "index"
-  get "/terms/:id", :controller => "terms", :action => "show"
 
   get "/directory", :controller => "terms", :action => "directory"
+  get "directory/term/:name", :controller => "terms", :action => "show"
+  # get "/term/:id", :controller => "terms", :action => "show"
+
 
   # CREATE
   get "/terms/new", :controller => "terms", :action => "new"

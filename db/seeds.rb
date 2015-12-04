@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
 Term.create!([
   {name: "abajo",
   gender: "",
@@ -45,18 +46,44 @@ Term.create!([
   quote1: "",
   quote2: ""},
 
-  # {name: "",
-  # gender: "",
-  # part_of_speech: "",
-  # definition: "",
-  # etymology1: "",
-  # etymology2: "",
-  # uses: "",
-  # romance_cognates: "",
-  # notes1: "",
-  # notes2: "",
-  # quote1: "",
-  # quote2: ""},
+  {name: "baño",
+  gender: "m.",
+  part_of_speech: "n.",
+  definition: "\"bath\"",
+  etymology1: "From Vulgar Latin <i>baneum</i> \'id.,\' from Latin <i>balneum</i> - a variant of the more conservative <i>balineum</i> - borrowed from Greek <i>βαλανεῖον (balaneîon)</i> \"bath,\" \"bathing room.\"",
+  etymology2: "",
+  uses: "Asturian <i>bañu</i>, Portuguese <i>banho</i>, Galician <i>baño</i>, Catalan <i>bany</i>, French <i>bain</i>, Italian <i>bagno</i>, Romanian <i>baie</i>.",
+  romance_cognates: "N/A",
+  notes1: "",
+  notes2: "",
+  quote1: "",
+  quote2: ""},
+
+  {name: "cabeza",
+  gender: "f.",
+  part_of_speech: "n.",
+  definition: "\"head\"",
+  etymology1: "From Vulgar Latin <i>*capitia</i> \'id.,\' a feminine singular taken from the neuter plural of <i>capitium</i> (whence <i>cabezo</i> \"mountain peak\"), diminutive of <i>caput</i>.",
+  etymology2: "",
+  uses: "",
+  romance_cognates: "Asturian <i>cabeza</i>, Portuguese <i>cabeça</i>, Galician <i>cabeza</i>, Italian <i>cavezza</i>.  Western Vulgar Latin reanalyzed the neuter plural as a feminine singular noun (see <b><a href='/directory/term/arma'>arma</a></b> and <b><a href='/directory/term/hoja'>hoja</a></b>).",
+  notes1: "Similar to other rogue colloquialisms in Vulgar Latin like <b><a href='/directory/term/buscar'>buscar</a></b>, cabeza is present only in Iberian Romance languages and Italian. Its absence in other branches is conspicuous.",
+  notes2: "",
+  quote1: "",
+  quote2: ""},
+
+  {name: "buscar",
+  gender: "",
+  part_of_speech: "",
+  definition: "",
+  etymology1: "",
+  etymology2: "",
+  uses: "",
+  romance_cognates: "",
+  notes1: "",
+  notes2: "",
+  quote1: "",
+  quote2: ""},
 
   # {name: "",
   # gender: "",
@@ -70,6 +97,5 @@ Term.create!([
   # notes2: "",
   # quote1: "",
   # quote2: ""},
-
 
 ])
