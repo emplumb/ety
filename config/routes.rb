@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/terms", :controller => "terms", :action => "index"
 
   get "/directory", :controller => "terms", :action => "directory"
-  get "directory/:name", :controller => "terms", :action => "show"
+  get "directory/term/:name", :controller => "terms", :action => "show"
   # get "/term/:id", :controller => "terms", :action => "show"
 
 

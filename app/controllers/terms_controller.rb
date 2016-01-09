@@ -10,9 +10,19 @@ class TermsController < ApplicationController
   end
 
   def directory
-    @terms = Term.search(params)
+    @terms = Term.all
+    # @term = Term.find_by_name(params[:name])
 
+    # @term.letter = (params[:letter])
+    # @alphabet = ('A'..'Z').to_a
 
+    # @terms = Term.where("name LIKE ?%", params[:letter])
+
+    # @terms.find_each do |directory|
+    #   if @term.to_s.include? 'z'
+    #     render 'directory/b'
+    #   end
+    # end
   end
 
   def new

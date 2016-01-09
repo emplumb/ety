@@ -1,9 +1,5 @@
 source 'https://rubygems.org'
 
-
-
-gem 'will_paginate'
-
 gem 'starter_generators', :git => "http://github.com/rbetina/starter_generators.git"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
