@@ -1,18 +1,16 @@
-
-
-Term.create!([
-  {name: "abajo",
-  gender: "",
-  part_of_speech: "adv.",
-  definition: "\"down,\" \"below\"",
-  etymology1: "From Latin <i>a-</i> \"at,\" \"toward\" and <i>bassus</i> \"down.\"",
-  etymology2: "",
-  uses: "",
-  romance_cognates: "Cognate with French <i>à bas</i>, Catalan <i>abaixo</i>, Portuguese <i>abaixo</i>, Galician <i>abaixo</i>.",
-  notes1: "Its wide distribution among Romance languages in the west identifies this as a Late Latin phrase, with strongest use in Iberia.",
-  notes2: "",
-  quote1: "",
-  quote2: ""},
+terms = [
+  {:name => "abajo",
+  :gender => "",
+  :part_of_speech => "adv.",
+  :definition => "\"down,\" \"below\"",
+  :etymology1 => "From Latin <i>a-</i> \"at,\" \"toward\" and <i>bassus</i> \"down.\"",
+  :etymology2 => "",
+  :uses => "",
+  :romance_cognates => "Cognate with French <i>à bas</i>, Catalan <i>abaixo</i>, Portuguese <i>abaixo</i>, Galician <i>abaixo</i>.",
+  :notes1 => "Its wide distribution among Romance languages in the west identifies this as a Late Latin phrase, with strongest use in Iberia.",
+  :notes2 => "",
+  :quote1 => "",
+  :quote2 => ""},
 
   {name: "abuelo, -a",
   gender: "",
@@ -77,7 +75,7 @@ Term.create!([
   notes1: "",
   notes2: "",
   quote1: "",
-  quote2: ""},
+  quote2: ""}
 
   # {name: "",
   # gender: "",
@@ -92,8 +90,13 @@ Term.create!([
   # quote1: "",
   # quote2: ""},
 
-])
+]
 
+terms.each do |t|
+  t[:first] = t[:name][0]
+end
+
+Term.create!(terms)
 
 
 

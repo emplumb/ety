@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Routes for the Term resource:
-  # resources :terms
+  resources :terms
   # READ
   root "terms#home"
 
