@@ -1,6 +1,6 @@
 
 
-Term.create!([
+terms = [
   {name: "abajo",
   gender: "",
   part_of_speech: "adv.",
@@ -92,7 +92,13 @@ Term.create!([
   # quote1: "",
   # quote2: ""},
 
-])
+]
+
+terms.each do |term|
+  term[:first] = term[:name][0]
+end
+
+Term.create!(terms)
 
 
 

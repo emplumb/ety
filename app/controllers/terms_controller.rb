@@ -8,10 +8,11 @@ class TermsController < ApplicationController
 
   def directory
     if params[:letter].present?
-      puts "gggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
+      #Is .order(:name) necessary?
+      @terms = Term.where(first: params[:letter]).order(:name)
+    else
+      @terms = Term.all.order(:name)
     end
-    @terms = Term.all.order(:name)
-
   end
 
 
