@@ -6,6 +6,16 @@
       background-color: #2F4F4F;
     }*/
 
+    body {
+      padding-top: 20px;
+    }
+
+    @media (max-width: 767px) {
+      body {
+        padding-top: 70px;
+      }
+    }
+
     .j-format {
       background-color: #224333!important;
       font-family: "adobe-caslon-pro", serif;
@@ -20,7 +30,18 @@
       font-size: 250%;
       text-transform: uppercase;
       /*font-variant: small-caps;*/
+    }
 
+    @media (max-width: 400px) {
+      .banner-title {
+        font-size: 175%;
+      }
+    }
+
+    @media (min-width: 401px) and (max-width: 600px) {
+      .banner-title {
+        font-size: 212%;
+      }
     }
 
     .slogan {
@@ -53,9 +74,9 @@
       color: #5DC98F;
       font-weight: 200%;
       /*display: block;*/
-      width: 35px;
+      width: 40px;
       display: inline-block;
-      float: none;
+      /*float: none;*/
     }
 
     ul.alphabet {
