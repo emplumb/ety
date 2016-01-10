@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # READ
   root "terms#home"
 
-  # get "/terms", :controller => "terms", :action => "index"
+
 
   get "/directory", :controller => "terms", :action => "directory"
   get "directory/term/:name", :controller => "terms", :action => "show"
