@@ -41,16 +41,22 @@
         </button>
         <a href="/" class="navbar-brand">Home</a>
       </div>
+
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="collapse navbar-collapse navbar-left" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="#">About</a></li>
           <li><a href="/directory">Directory</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+
 <!--           Below is supposed to be the proper way, but url isn't linking how I want
           <!%= link_to "Directory", directory_path(@terms) %> -->
         </ul>
         <!-- may need to revisit to make search bar centered -->
-        <div class="search-center col-md-5 col-md-offset-1">
+
+      </div><!-- /.navbar-collapse -->
+        <!-- add search form -->
+        <div class="navbar-right">
           <form class="navbar-form" role="search">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Search" name="search-term" id="search-term">
@@ -60,7 +66,6 @@
             </div>
           </form>
         </div>
-      </div><!-- /.navbar-collapse -->
     </div>
   </nav>
 
