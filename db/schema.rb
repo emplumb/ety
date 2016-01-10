@@ -14,10 +14,9 @@
 ActiveRecord::Schema.define(version: 20151128151128) do
 
   create_table "terms", force: :cascade do |t|
-    t.string   "first"
     t.string   "name"
     t.string   "gender"
-    t.string   "part_of_speech"
+    t.text     "part_of_speech"
     t.text     "definition"
     t.text     "etymology1"
     t.text     "etymology2"

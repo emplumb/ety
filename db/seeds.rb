@@ -1,6 +1,6 @@
 
 
-terms = [
+Term.create!([
   {name: "abajo",
   gender: "",
   part_of_speech: "adv.",
@@ -92,12 +92,8 @@ terms = [
   # quote1: "",
   # quote2: ""},
 
-]
+])
 
-terms.each do |term|
-  term[:first] = term[:name][0]
-end
 
-Term.create!(terms)
 
 
