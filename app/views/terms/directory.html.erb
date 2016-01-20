@@ -10,6 +10,20 @@
 
 <body>
 
+<h1>Terms</h1>
+
+<%= form_for directory_path, method: :get do %>
+  <p>
+
+    <%= text_field_tag :q, params[:q] %>
+    <%= submit_tag "Go", name: nil %>
+  </p>
+<% end %>
+
+
+
+
+
 <p></p>
 
 <div class="container-fluid">
