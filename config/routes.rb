@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   # READ
   root "terms#home"
 
+  get "/about", :controller => "terms", :action => "about"
+
+  get "/contact", :controller => "terms", :action => "contact"
+
   get "/directory", :controller => "terms", :action => "directory"
   get "directory/term/:name", :controller => "terms", :action => "show"
   # get "/term/:id", :controller => "terms", :action => "show"

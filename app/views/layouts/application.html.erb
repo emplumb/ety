@@ -13,7 +13,8 @@
 
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair+Display" type="text/css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -36,10 +37,10 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-left" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><%= link_to "About", about_path %></li>
+          <li><%= link_to "Contact", contact_path %></li>
           <!-- fix this so it disappears at specific screen size -->
-          <li><a class="" href="/directory">Directory</a></li>
+          <li><%= link_to "Directory", directory_path %></li>
         </ul>
       </div><!-- /.navbar-collapse -->
       <!-- Add search form -->
@@ -54,11 +55,11 @@
           </div>
         </form>
       </div>
-      <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+<!--       <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/directory">Directory</a></li>
         </ul>
-      </div> <!-- /.navbar-collapse -->
+      </div>  --><!-- /.navbar-collapse -->
     </div>
   </nav>
 
@@ -114,23 +115,22 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="row">
-      <ul>
-        <span class="fa-2x">
-          <i class="fa fa-twitter"></i>
-        </span>
+    <div class="col-md-offset-5">
+      <p id="follow">FOLLOW US</p>
+    </div>
+    <div class="social-icons">
+      <ul class="social">
+        <li class="social"><a href="https://www.facebook.com" class="social btn btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a></li>
+        <li class="social"><a href="https://plus.google.com" class="social btn btn-social-icon btn-google"><span class="fa fa-google-plus"></span></a></li>
+        <li class="social"><a href="https://www.twitter.com/" class="social btn btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a></li>
+        <li class="social"><a href="https://www.reddit.com/" class="social btn btn-social-icon btn-reddit"><span class="fa fa-reddit"></span></a></li>
       </ul>
     </div>
-  </div>
-
-        <li><a href="http://www.facebook.com/spanishetymology"><i class="fa-facebook"></span></a></li>
-        <li><a href="http://www.twitter.com/spanishetymology"><i class="fa-twitter"></span></a></li>
-      </ul>
+    <div class="col-md-12">
+      <p id="copyright">&#169; 2016 OEDoS. All Rights Reserved.</p>
     </div>
   </div>
 </footer>
-
-
 
 </body>
 </html>
