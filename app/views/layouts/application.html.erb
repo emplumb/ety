@@ -36,10 +36,10 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-left" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><%= link_to "About", "#" %></li>
+          <li><%= link_to "Contact", "#" %></li>
           <!-- fix this so it disappears at specific screen size -->
-          <li><a class="" href="/directory">Directory</a></li>
+          <li><%= link_to "Directory", "directory_path" %></li>
         </ul>
       </div><!-- /.navbar-collapse -->
       <!-- Add search form -->
