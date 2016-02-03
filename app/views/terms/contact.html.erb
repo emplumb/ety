@@ -4,6 +4,53 @@
       <div class="page-header">
         <h2>Contact Us</h2>
       </div>
+      <form action="/create_venue" method="post">
+        <!-- Hidden input for authenticity token to protect from forgery -->
+        <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+        <!-- Label and input for first name -->
+        <div class="form-group">
+          <label for="name" class="control-label">
+            Name&#42;
+          </label>
+          <input type="text" id="first-name" name="name" placeholder="First Name" class="form-control" value="">
+        </div>
+        <!-- Label and input for last name -->
+        <div class="form-group">
+          <input type="text" id="first-name" name="name" placeholder="Last Name" class="form-control" value="">
+        </div>
+      </form>
+    </div>
+      <div class="col-md-7 col-md-offset-2">
+        <!-- Label and input for email -->
+        <div class="form-group">
+          <label for="email" class="control-label">
+            Email&#42;
+          </label>
+          <input type="text" id="email" name="email" placeholder="name@example.com" class="form-control" value="">
+        </div>
+
+        <!-- Label and input for subject -->
+        <div class="form-group">
+          <label for="subject" class="control-label">
+            Subject&#42;
+          </label>
+          <input type="text" id="subject" name="subject" placeholder="" class="form-control" value="">
+        </div>
+
+        <!-- Label and input for message -->
+        <div class="form-group">
+          <label for="message" class="control-label">
+            Message&#42;
+          </label>
+          <textarea name="message" class="form-control" rows="5" placeholder="" id="message"></textarea>
+        </div>
+
+        <button class="btn btn-success">
+          Submit
+        </button>
+        <%= link_to "Cancel", root_path %>
+      </form>
     </div>
   </div>
 </div>
