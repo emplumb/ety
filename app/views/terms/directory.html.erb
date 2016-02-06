@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +7,8 @@
 </head>
 
 <body>
+=======
+>>>>>>> es-setup
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -14,9 +17,7 @@
         <dl>
           <tr>
             <td>
-<!--               Below code is more correct but can't get proper route
-              <!%= link_to @term, term.name.html_safe %> -->
-              <b><a href="/directory/term/<%=term.name %>"><%= term.name.html_safe %></a></b>
+              <b><%= link_to term.name.html_safe, term.name %></a></b>
               (<%= term.gender %>
               <%= term.part_of_speech %>)
               <%= term.definition.html_safe %>
@@ -38,5 +39,9 @@
     </div>
   </div>
 </div>
+<<<<<<< HEAD
 </body>
 </html>
+=======
+
+>>>>>>> es-setup
