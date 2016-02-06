@@ -5,9 +5,7 @@
 
 
 /*    body {
-      font-family: "Playfair Display", serif;
-    }*/
-/*      border: solid;
+      border: solid;
       border-color: #2F4F4F;
       background-color: #2F4F4F;
     }*/
@@ -17,12 +15,12 @@
       font-family: Georgia, Times, 'Times New Roman', serif!important;
     }
 
-    .left,.right {
+/*    .left,.right {
       position: absolute;
       width: 1.5%;
       top: 0;
       bottom: 0;
-      /*background-color: #f8f8f8;*/
+      background-color: #f8f8f8;
       background-color: #a29199;
       z-index: 1;
       height: 100%;
@@ -36,7 +34,7 @@
     .right {
       right: 0;
 
-    }
+    }*/
 
 
 
