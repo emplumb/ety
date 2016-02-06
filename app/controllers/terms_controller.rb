@@ -3,13 +3,7 @@ class TermsController < ApplicationController
   def home
   end
 
-  # def letter
-  #   @letter = ['A' .. 'Z']
-
-  # end
-
   def show
-    # @term = Term.find(params[:id])
     @term = Term.find_by_name(params[:name])
   end
 
@@ -22,12 +16,7 @@ class TermsController < ApplicationController
   end
 
   def search
-    #is nil necessary?
-    # if params[:query].blank?
-    #   @terms = Term.all.order(:name)
-    # else
       @terms = Term.search params[:query]
-    # end
   end
 
 
