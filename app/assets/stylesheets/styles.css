@@ -2,7 +2,7 @@
     position: relative;
     min-height: 100%;
     }
-<<<<<<< HEAD
+
 
 /*    body {
       font-family: "Playfair Display", serif;
@@ -32,13 +32,6 @@
     .left {
       left: 0;
 
-=======
-
-    body {
-      padding-top: 10px;
-      /*margin-bottom: 100%;*/
->>>>>>> es-setup
-    }
 
     .right {
       right: 0;
@@ -58,34 +51,6 @@
         display: none;
       }
     }*/
-<<<<<<< HEAD
-=======
-
-/*    .searchbar {
-      max-width: 80%;
-    }*/
-
-    /*  .search-center {
-    text-align: center;
-
-
-  }
-
-  #search-term {
-    width: 400px;
-
-  }*/
-
-    #search-format {
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
-
-    }
-
-    .longer-search {
-      width: 40%;
-    }
->>>>>>> es-setup
 
     .j-format {
       background-color: #224333!important;
@@ -141,8 +106,6 @@
 
     }
 
-<<<<<<< HEAD
-=======
     div ul li.alphabet a {
       color: #5DC98F;
       font-weight: 200%;
@@ -152,7 +115,6 @@
       /*float: none;*/
     }
 
->>>>>>> es-setup
     ul.alphabet {
       list-style-type: none;
       margin: 0;
@@ -187,7 +149,7 @@
       width: 35px;
     }*/
 
-<<<<<<< HEAD
+
     .font {
       font-size: 120%;
     }
@@ -206,21 +168,17 @@
 
     }
 
-=======
->>>>>>> es-setup
+
     footer {
       position: absolute;
       bottom: 0;
       width: 100%;
-<<<<<<< HEAD
       height: 200px;
       background-color: #a29199;
       margin: 0 auto -250px;
-=======
-      height: 150px;
-      background-color: #71877D;
-      margin: 0 auto -130px;
->>>>>>> es-setup
+      /*height: 150px;*/
+      /*background-color: #71877D;*/
+      /*margin: 0 auto -130px;*/
       color: white;
     }
 
@@ -230,8 +188,6 @@
       text-align: center
       list-style-type: none;
     }
-
-<<<<<<< HEAD
 
     #follow {
       font-weight: bold;
@@ -279,7 +235,3 @@
 
     }
 
-
-
-=======
->>>>>>> es-setup
