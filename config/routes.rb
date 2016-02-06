@@ -13,16 +13,16 @@ Rails.application.routes.draw do
 
   get "/directory/:letter", :controller => "terms", :action => "directory"
 
-
   get "/directory/:name", :controller => "terms", :action => "show"
-
-  # get "/directory/search", :controller => "terms", :action => "search"
-
 
   # get "/terms/search", :controller => "terms", :action => "search"
   # turns into:
-  get 'search' => 'terms#search'
+  get "search" => "terms#search"
+
+
   #revisit below
-  # get 'directory/search', to: 'directory#search', as: 'directory_search'
+  # get "/directory/search", :controller => "terms", :action => "search"
+
+  # get "/directory/search", to: "directory#search", as: "search"
 
 end

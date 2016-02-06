@@ -5,8 +5,8 @@
         <% @terms.each do |term| %>
         <dl>
           <tr>
-            <td>
-              <b><%= link_to term.name.html_safe, term.name %></a></b>
+            <td class="table-spacing">
+              <b><%= link_to term.name.html_safe, term.name, :class => "link-color" %></a></b>
               (<%= term.gender %>
               <%= term.part_of_speech %>)
               <%= term.definition.html_safe %>
