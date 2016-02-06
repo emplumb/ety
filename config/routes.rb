@@ -13,13 +13,8 @@ Rails.application.routes.draw do
 
   get "/directory/:letter", :controller => "terms", :action => "directory"
 
-<<<<<<< HEAD
-  get 'search' => 'terms#search'
-=======
-  get "/directory/:name", :controller => "terms", :action => "show"
-  # get "/directory/:id", :controller => "terms", :action => "show"
 
->>>>>>> es-setup
+  get "/directory/:name", :controller => "terms", :action => "show"
 
   # get "/directory/search", :controller => "terms", :action => "search"
 
@@ -29,9 +24,5 @@ Rails.application.routes.draw do
   get 'search' => 'terms#search'
   #revisit below
   # get 'directory/search', to: 'directory#search', as: 'directory_search'
-
-  get "/about", :controller => "terms", :action => "about"
-
-  get "/contact", :controller => "terms", :action => "contact"
 
 end
