@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Routes for the Term resource
-  resources :terms
+  # resources :terms
 
   # READ
   root "terms#home"
@@ -10,11 +10,19 @@ Rails.application.routes.draw do
   get "/contact", :controller => "terms", :action => "contact"
 
   get "/directory", :controller => "terms", :action => "directory"
-  get "directory/term/:name", :controller => "terms", :action => "show"
-  # get "/term/:id", :controller => "terms", :action => "show"
 
   get "/directory/:letter", :controller => "terms", :action => "directory"
 
-  get 'search' => 'terms#search'
+  get "/directory/:name", :controller => "terms", :action => "show"
+
+  # get "/terms/search", :controller => "terms", :action => "search"
+  # turns into:
+  get "search" => "terms#search"
+
+
+  #revisit below
+  # get "/directory/search", :controller => "terms", :action => "search"
+
+  # get "/directory/search", to: "directory#search", as: "search"
 
 end
