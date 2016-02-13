@@ -179,12 +179,6 @@
       color: white;
     }
 
-    .social-media {
-      display: inline-block;
-      margin: 0 8px;
-      text-align: center
-      list-style-type: none;
-    }
 
     #follow {
       font-weight: bold;
