@@ -3,10 +3,40 @@
     min-height: 100%;
     }
 
+
+/*    body {
+      border: solid;
+      border-color: #2F4F4F;
+      background-color: #2F4F4F;
+    }*/
+
     body {
       padding-top: 10px;
-      /*margin-bottom: 100%;*/
+      font-family: Georgia, Times, 'Times New Roman', serif!important;
     }
+
+/*    .left,.right {
+      position: absolute;
+      width: 1.5%;
+      top: 0;
+      bottom: 0;
+      background-color: #f8f8f8;
+      background-color: #a29199;
+      z-index: 1;
+      height: 100%;
+
+    }
+
+    .left {
+      left: 0;
+
+
+    .right {
+      right: 0;
+
+    }*/
+
+
 
     @media (max-width: 767px) {
       body {
@@ -20,50 +50,31 @@
       }
     }*/
 
-/*    .searchbar {
-      max-width: 80%;
-    }*/
-
-    /*  .search-center {
-    text-align: center;
-
-
-  }
-
-  #search-term {
-    width: 400px;
-
-  }*/
-
-    #search-format {
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
-
-    }
-
-    .longer-search {
-      width: 40%;
-    }
-
     .j-format {
       background-color: #224333!important;
-      font-family: "adobe-caslon-pro", serif;
       text-align: center;
       padding-bottom: 15px!important;
       letter-spacing: 1px;
-
     }
 
     .banner-title {
       color: white;
       font-size: 250%;
       text-transform: uppercase;
-      /*font-variant: small-caps;*/
+    }
+
+    .slogan {
+      font-style: italic;
+      color: white;
+      font-size: 120%;
     }
 
     @media (max-width: 400px) {
       .banner-title {
         font-size: 175%;
+      }
+      .slogan {
+        font-size: 80%;
       }
     }
 
@@ -73,12 +84,6 @@
       }
     }
 
-    .slogan {
-      font-style: italic;
-      color: white;
-      font-size: 120%;
-
-    }
 
 /*    header {
       font-family: "Playfair Display", serif;
@@ -96,18 +101,13 @@
       padding: 20px;
       min-width: 20%;
       min-height: 20%;
-
-
     }
 
-    div ul li.alphabet a {
-      color: #5DC98F;
-      font-weight: 200%;
-      width: 35px;
-      display: inline-block;
-      /*display: block;*/
-      /*float: none;*/
+
+    a.link-color {
+      color: #5DC98F!important;
     }
+
 
     ul.alphabet {
       list-style-type: none;
@@ -116,39 +116,105 @@
       font-weight: bold;
       text-align: center;
       margin-left: -40px;
-      /*padding: 15px;*/
-      /*padding-top: 40px;*/
-      /*margin-left: 190px;*/
-
     }
 
     li.alphabet {
       display: inline-block;
       float: none;
+    }
 
+    li.alphabet a {
+      color: #5DC98F;
+      width: 40px;
+      display: inline-block;
+      /*float: none;*/
+      /*display: block;*/
+    }
+
+    @media (max-width: 1153px) {
+      li.alphabet {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 5px;
+      }
+      ul.alphabet {
+        margin-left: -35px;
+      }
     }
 
 
-/* added this to div ul li.alphabet
-    a {
-      display: block;
-      width: 35px;
-    }*/
+    .font {
+      font-size: 120%;
+    }
 
+    p + p {
+      margin-top: 35px;
+    }
+
+    .indent {
+      margin-left: 40px;
+    }
+
+    div.footnote {
+      border-top: 1px solid #ccc;
+      padding-top: 35px;
+    }
+
+/*    .table-spacing {
+      border-bottom: 15px solid #fff;
+    }
+
+    .table-striped {
+      background-color: #D3D3D3!important;
+      border-top, border-bottom: 15px solid #fff;
+    }
+*/
     footer {
       position: absolute;
       bottom: 0;
       width: 100%;
-      height: 150px;
-      background-color: #71877D;
-      margin: 0 auto -130px;
+      height: 200px;
+      background-color: #455d58;
+      margin: 0 auto -250px;
       color: white;
     }
 
-    .social-media {
-      display: inline-block;
-      margin: 0 8px;
-      text-align: center
+
+    #follow {
+      font-weight: bold;
+      padding-top: 50px;
+    }
+
+    ul.social {
       list-style-type: none;
+      display: inline-block;
+      margin-left: -50px;
+      margin-bottom: none;
+      overflow: hidden;
+      padding-bottom: 10px;
+    }
+
+    li.social a {
+      width: 40px;
+      display: inline-block;
+      float: none;
+      margin-left: 7px;
+      display: block;
+    }
+
+    li.social {
+      display: inline-block;
+      float: none;
+    }
+
+    .social-icons {
+      color: inherit;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    #copyright {
+      padding-top: 10px;
+      text-align: center;
     }
 
