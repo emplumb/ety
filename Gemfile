@@ -4,6 +4,8 @@ ruby '2.2.4'
 
 gem 'rails', '4.2.5'
 
+
+
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 
@@ -48,6 +50,7 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'puma'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
