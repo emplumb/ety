@@ -183,6 +183,8 @@
     #follow {
       font-weight: bold;
       padding-top: 50px;
+      text-align: center;
+      margin-left: -100px;
     }
 
     ul.social {
@@ -198,7 +200,7 @@
       width: 40px;
       display: inline-block;
       float: none;
-      margin-left: 7px;
+      margin-left: 5px;
       display: block;
     }
 
