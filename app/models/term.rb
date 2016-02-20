@@ -3,6 +3,23 @@ require 'elasticsearch/model'
 class Term < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
+
+  # mapping do
+  #   indexes :id, index: :not_analyzed
+  #   indexes :name
+  #   indexes :gender
+  #   indexes :part_of_speech
+  #   indexes :definition
+  #   indexes :etymology1
+  #   indexes :etymology2
+  #   indexes :uses
+  #   indexes :romance_cognates
+  #   indexes :notes1
+  #   indexes :notes2
+  #   indexes :quote1
+  #   indexes :quote2
+  # end
+
 end
 Term.import(force: true)
 
@@ -94,45 +111,12 @@ Term.import(force: true)
 #   index: Term.index_name,
 #   body: { settings: Term.settings.to_hash, mappings: Term.mappings.to_hash }
 
-# # Index all article records from the DB to Elasticsearch
-# Term.import(force: true)
-# end
 
 
-# require 'elasticsearch/model'
 
-# class Term < ActiveRecord::Base
-#   include Elasticsearch::Model
-#   include Elasticsearch::Model::Callbacks
-# end
-
-# Term.import(force: true)
-
-# @terms = Term.search('foobar').records
 
 
 # require 'elasticsearch/rails/tasks/import'
 
-# class Term < ActiveRecord::Base
-  # include Elasticsearch::Model
-  # include Elasticsearch::Model::Callbacks
 
-
-  # mapping do
-  #   indexes :id, index: :not_analyzed
-  #   indexes :name
-  #   indexes :gender
-  #   indexes :part_of_speech
-  #   indexes :definition
-  #   indexes :etymology1
-  #   indexes :etymology2
-  #   indexes :uses
-  #   indexes :romance_cognates
-  #   indexes :notes1
-  #   indexes :notes2
-  #   indexes :quote1
-  #   indexes :quote2
-  # end
-
-# end
 
