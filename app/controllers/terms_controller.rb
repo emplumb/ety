@@ -26,11 +26,17 @@ class TermsController < ApplicationController
     # if params[:query].blank?
     #   @terms = Term.all.order(:name)
     # else
-    #   @terms = Term.search params[:query]
+    #   @terms = Term.search(params[:query]).results
     # end
 
-      @terms = Term.search params[:query]
+    @terms = Term.search(params[:query]).results
 
+    # @terms = Term.search query:     { match:  { notes1: "Latin" } },
+                              # highlight: { fields: { notes1: {} } }
+
+    # response.results.first.highlight.notes1
+
+# @terms = Term.custom_search((params[:query].present? ? params[:query] : '*')).results
   end
 
 
