@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get "/directory/:letter", :controller => "terms", :action => "directory"
 
-  get "/directory/:name", :controller => "terms", :action => "show"
+  get "/term/:name", :controller => "terms", :action => "show"
 
   # get "/terms/search", :controller => "terms", :action => "search"
   # turns into:
