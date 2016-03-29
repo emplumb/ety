@@ -22,15 +22,11 @@ class TermsController < ApplicationController
   end
 
   def search
-
     if params[:query].blank?
       @terms = Term.all.order(:name)
     else
       @terms = Term.search(params[:query]).results
     end
-
-    #@terms = Term.search(params[:query], ).results
-
   end
 
 
