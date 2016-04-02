@@ -21,11 +21,11 @@ terms = [
   gender: "",
   part_of_speech: "Noun",
   definition: "\"grandparent\"",
-  etymology1: "From Vulgar Latin *aviolus</i>, from Latin avus</i> and diminutive suffix -olus</i>.",
+  etymology1: "From Vulgar Latin <i>*aviolus</i>, from Latin avus</i> and diminutive suffix <i>-olus</i>.",
   etymology2: "",
   uses: "",
-  romance_cognates:"Cognates in Asturian güelu</i> and French aïeul</i> prove that the Vulgar Latin term was widespread in Western Romance. Cognates like Portuguese avô</i> derive directly from avus</i>.",
-  notes1: "Latin avus</i>, without the -olus</i> suffix, became Spanish ayo</i> \"tutor.\"",
+  romance_cognates:"Cognates in Asturian <i>güelu</i> and French aïeul</i> prove that the Vulgar Latin term was widespread in Western Romance. Cognates like Portuguese avô</i> derive directly from <i>avus</i>.",
+  notes1: "Latin <i>avus</i>, without the <i>-olus</i> suffix, became Spanish <i>ayo</i> \"tutor.\"",
   notes2: "",
   quote1: "\"Quien no sabe de abuelo, no sabe de bueno.\" He who does not know their grandfather, does not know what is good. Spanish proverb.",
   quote2: "\"Ay, abuelo, sembráste alazor, y naciónos anapelo.\" 18th century proverb. The origin, Stevens (1725) recounts, comes from \"a grandfather who marry'd a granddaughter to one he had great conceit of, and he proved a meer rake; whereupon another granddaughter cry'd, \"Grandfather, you sow'd saffron (which is rich and cordial, meaning he thought he had got an excellent son-in-law) and there came up poisonous wolfsbane;\" that is, he proved a vile husband.\" This popular etymology is echoed in Caro y Cejudo (1792)."
@@ -69,8 +69,8 @@ terms = [
   etymology1: "From Vulgar Latin <i>*capitia</i> \'id.,\' a feminine singular taken from the neuter plural of <i>capitium</i> (whence <i>cabezo</i> \"mountain peak\"), diminutive of <i>caput</i>.",
   etymology2: "",
   uses: "",
-  romance_cognates: "Asturian <i>cabeza</i>, Portuguese <i>cabeça</i>, Galician <i>cabeza</i>, Italian <i>cavezza</i>.  Western Vulgar Latin reanalyzed the neuter plural as a feminine singular noun (see <b><a href='/term/arma'>arma</a></b> and <b><a href='/term/hoja'>hoja</a></b>).",
-  notes1: "Similar to other rogue colloquialisms in Vulgar Latin like <b><a href='/term/buscar'>buscar</a></b>, cabeza is present only in Iberian Romance languages and Italian. Its absence in other branches is conspicuous.",
+  romance_cognates: "Asturian <i>cabeza</i>, Portuguese <i>cabeça</i>, Galician <i>cabeza</i>, Italian <i>cavezza</i>.  Western Vulgar Latin reanalyzed the neuter plural as a feminine singular noun (see <a href='/term/arma'>arma</a> and <a href='/term/hoja'>hoja</a>).",
+  notes1: "Similar to other rogue colloquialisms in Vulgar Latin like <a href='/term/buscar'>buscar</a>, cabeza is present only in Iberian Romance languages and Italian. Its absence in other branches is conspicuous.",
   notes2: "",
   quote1: "",
   quote2: ""
@@ -136,20 +136,20 @@ terms = [
   quote2: ""
   },
 
-  # {
-  # name: "",
-  # gender: "",
-  # part_of_speech: "",
-  # definition: "",
-  # etymology1: "",
-  # etymology2: "",
-  # uses: "",
-  # romance_cognates: "",
-  # notes1: "",
-  # notes2: "",
-  # quote1: "",
-  # quote2: ""
-  # },
+  {
+  name: "listo",
+  gender: "m.",
+  part_of_speech: "Adjective",
+  definition: "\"skillful,\" \"ready\"",
+  etymology1: "Probably from Vulgar Latin <i>*lex(i)tus</i>, past participle from Latin <i>legere</i> \"read,\" \"gather.\"",
+  etymology2: "",
+  uses: "",
+  romance_cognates: "N/A",
+  notes1: "",
+  notes2: "",
+  quote1: "",
+  quote2: ""
+  },
 
   # {
   # name: "",
