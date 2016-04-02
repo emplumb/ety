@@ -9,6 +9,10 @@ class TermsController < ApplicationController
   def contact
   end
 
+  def letter
+    # @letters = [('A'..'C'),('Ch'),('D'..'L'),('Ll'),('M','N'),('Ñ'),('O'..'Z')].to_a
+  end
+
   def show
     @term = Term.find_by_name(params[:name])
   end

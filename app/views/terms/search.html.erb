@@ -8,20 +8,20 @@
             <td>
 <!--               Below code is more correct but can't get proper route
               <!%= link_to @term, term.name.html_safe %> -->
-              <b><a href="/term/<%=term.name %>"><%= term.try(:highlight).try(:name) ? term.highlight.name[0].html_safe : term.name %></a></b>
+              <b><a href="/term/<%=term.name %>"><%= term.name %></a></b>
               (<%= term.gender %>
               <%= term.part_of_speech %>)
-              <%= term.try(:highlight).try(:definition) ? term.highlight.definition[0].html_safe : term.definition.html_safe %>
-              <%= term.try(:highlight).try(:etymology1) ? term.highlight.etymology1[0].html_safe : term.etymology1.html_safe %>
-              <%= term.try(:highlight).try(:etymology2) ? term.highlight.etymology2[0].html_safe : term.etymology2.html_safe %>
-              <%= term.try(:highlight).try(:uses) ? term.highlight.uses[0].html_safe : term.uses.html_safe %>
+              <%= term.definition.html_safe %>
+              <%= term.etymology1.html_safe %>
+              <%= term.etymology2.html_safe %>
+              <%= term.uses.html_safe %>
               <p></p>
-              <div class="indent"><u><b>Romance Cognates:</b></u> <%= term.try(:highlight).try(:romance_cognates) ? term.highlight.romance_cognates[0].html_safe : term.romance_cognates.html_safe %></div>
+              <div class="indent"><u><b>Romance Cognates:</b></u> <%= term.romance_cognates.html_safe %></div>
               <p></p>
-              <%= term.try(:highlight).try(:notes1) ? term.highlight.notes1[0].html_safe : term.notes1.html_safe %>
-              <%= term.try(:highlight).try(:notes2) ? term.highlight.notes2[0].html_safe : term.notes2.html_safe %>
-              <%= term.try(:highlight).try(:quote1) ? term.highlight.quote1[0].html_safe : term.quote1.html_safe %>
-              <%= term.try(:highlight).try(:quote2) ? term.highlight.quote2[0].html_safe : term.quote2.html_safe %>
+              <%= term.notes1.html_safe %>
+              <%= term.notes2.html_safe %>
+              <%= term.quote1.html_safe %>
+              <%= term.quote2.html_safe %>
             </td>
           </tr>
         </dl>

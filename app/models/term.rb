@@ -4,45 +4,44 @@ class Term < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
-  settings index: { number_of_shards: 1, number_of_replicas: 0 },
+  settings index: { number_of_shards: 1, number_of_replicas: 1 },
 
     analysis: {
       filter: {
         english_stop: {
-          type: "stop",
-          stopwords: ["_english_"]
-          #text file created in config folder in case I want to use my own custom instead
-          #       stopwords: ["and", "the", "in", "on", "or", "to", "a", "an" "of", "that", "have", "it", "is", "for", "not", "with", "as", "do", "not", "at", "this", "but", "by", "from", "will", "would", "there", "what", "so", "if", "when", "can", "no", "into", "some", "than", "then", "only", "its", "also", "back", "after", "use", "two", "how", "where", "first", "because", "any", "these", "most"]
+          type: 'stop',
+          stopwords: ['_english_']
         },
         spanish_stop: {
-          type: "stop",
-          stopwords: ["_spanish_"]
+          type: 'stop',
+          stopwords: ['_spanish_']
         },
         spanish_stemmer: {
-          type: "stemmer",
-          language: "light_spanish"
+          type: 'stemmer',
+          language: 'light_spanish'
         },
         synonym: {
-          type: "synonym",
-          synonyms_path: "synonyms.txt",
-          ignore_case: "true"
+          type: 'synonym',
+          synonyms_path: 'synonyms.txt',
+          ignore_case: 'true'
         }
       },
       analyzer: {
         stops_and_synonyms: {
-          type: "custom",
-          # tokenizer: "whitespace",
-          tokenizer: "standard",
+          type: 'custom',
+          tokenizer: 'standard',
           filter: [
-            "english_stop",
-            "spanish_stop",
-            "synonym",
-            "lowercase"
+            'english_stop',
+            'spanish_stop',
+            'spanish_stemmer',
+            'synonym',
+            'lowercase'
           ]
         },
         spanish: {
-          tokenizer: "standard",
-          filter: "synonym"
+          tokenizer: 'standard',
+          filter: 'synonym',
+          language: 'spanish'
         }
       }
     } do
@@ -64,63 +63,18 @@ class Term < ActiveRecord::Base
     end
   end
 
-  # def as_indexed_json(options = {})
-  #   as_json(
-  #     only: [:name, :gender, :part_of_speech, :definition, :etymology1, :etymology2, :uses, :romance_cognates, :notes1, :notes2, :quote1, :quote2]
-  #   )
-  # end
-
   def self.search(query)
     __elasticsearch__.search(
-       {
+      {
         query: {
           multi_match: {
             query: query,
-            fields: ['name^10', 'definition^9', 'etymology1', 'etymology2', 'uses', 'romance_cognates', 'notes1', 'notes2', 'quote1', 'quote2'],
-            operator: 'and',
-            cutoff_frequency: 0.001
-          }
-          # match: {
-          #   notes1: {
-          #     query: query,
-          #     cutoff_frequency: 0.001
-          #   }
-          # }
-          # common: {
-          #   body: {
-          #     query: query,
-          #     cutoff_frequency: 0.001
-          #   }
-          # }
-          # match: {
-          #   common: {
-          #     notes1: {
-          #       query: query,
-          #       cutoff_frequency: 0.001
-          #     }
-          #   }
-          # }
-        },
-        highlight: {
-          pre_tags: ['<em>'],
-          post_tags: ['</em>'],
-          fields: {
-            name: {},
-            definition: {},
-            etymology1: {},
-            etymology2: {},
-            uses: {},
-            romance_cognates: {},
-            notes1: {},
-            notes2: {},
-            quote1: {},
-            quote2: {}
+            fields: ['name^10', 'definition^9', 'etymology1', 'etymology2', 'uses', 'romance_cognates', 'notes1', 'notes2', 'quote1', 'quote2']
           }
         }
       }
     )
   end
-
 end
 
 # Delete the previous term index in Elasticsearch

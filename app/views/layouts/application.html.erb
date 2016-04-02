@@ -76,9 +76,19 @@
       </div>
       <div class="row">
         <ul class="alphabet">
-          <% ('A' .. 'Z').each do |letter| %>
-<!-- {A..C},Ch,{D..L},Ll,{M,N},Ñ,{O..Z}  -->
-            <li class="alphabet"><a href="/directory/<%= letter.downcase %>"><%= letter %></a></li>
+          <% ('A' .. 'C').each do |alphabet| %>
+            <li class="alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
+          <% end %>
+            <li class="alphabet"><a href="/directory/ch">CH</a></li>
+          <% ('D' .. 'L').each do |alphabet| %>
+            <li class="alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
+          <% end %>
+            <li class="alphabet"><a href="/directory/ll">LL</a></li>
+            <li class="alphabet"><a href="/directory/m">M</a></li>
+            <li class="alphabet"><a href="/directory/n">N</a></li>
+            <li class="alphabet"><a href="/directory/ñ">Ñ</a></li>
+          <% ('O' .. 'Z').each do |alphabet| %>
+            <li class="alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
           <% end %>
         </ul>
       </div>
