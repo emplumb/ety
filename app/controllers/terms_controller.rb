@@ -17,7 +17,7 @@ class TermsController < ApplicationController
     if params[:letter].present?
       @terms = Term.where(first: params[:letter]).order(:name)
     else
-      @terms = Term.all.order(:name)
+      @terms = Term.all.order(:name).page(params[:page]).per(5)
     end
   end
 
@@ -25,7 +25,7 @@ class TermsController < ApplicationController
     if params[:query].blank?
       @terms = Term.all.order(:name)
     else
-      @terms = Term.search(params[:query]).results
+      @terms = Term.search(params[:query]).page(params[:page]).per(5)
     end
   end
 

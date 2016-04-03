@@ -51,7 +51,7 @@
     }*/
 
     .j-format {
-      background-color: #224333!important;
+      background-color: #455d58!important;
       text-align: center;
       padding-bottom: 15px!important;
       letter-spacing: 1px;
@@ -104,12 +104,6 @@
       /*min-width: 20%;*/
       /*min-height: 20%;*/
     }
-
-
-    a.link-color {
-      color: #5DC98F!important;
-    }
-
 
     ul.alphabet {
       list-style-type: none;
