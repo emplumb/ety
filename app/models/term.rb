@@ -18,6 +18,7 @@ class Term < ActiveRecord::Base
         },
         synonym: {
           type: 'synonym',
+          format: 'wordnet',
           synonyms: File.readlines(Rails.root.join("config", "analysis", (Rails.env == "test" ? "test" : "data"), "synonym.txt")),
           ignore_case: 'true'
         }
