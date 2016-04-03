@@ -15,11 +15,6 @@ class Term < ActiveRecord::Base
         spanish_stemmer: {
           type: 'stemmer',
           language: 'light_spanish'
-        },
-        synonym: {
-          type: 'synonym',
-          synonyms_path: 'synonyms.txt',
-          ignore_case: 'true'
         }
       },
       analyzer: {
@@ -30,13 +25,13 @@ class Term < ActiveRecord::Base
           filter: [
             'spanish_stop',
             'spanish_stemmer',
-            'synonym',
+
             'lowercase'
           ]
         },
         spanish: {
           tokenizer: 'standard',
-          filter: 'synonym',
+
           language: 'spanish'
         }
       }
