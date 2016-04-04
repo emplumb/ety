@@ -126,7 +126,7 @@ terms = [
   gender: "",
   part_of_speech: "Verb",
   definition: "\"to arrive\"",
-  etymology1: "From Latin plicare \"to fold.\" According to Roberts (2014), an extension of the sense of being \'folded\' into something as an arrival at a destination.",
+  etymology1: "From Latin <i>plicare</i> \"to fold.\" According to Roberts (2014), an extension of the sense of being \'folded\' into something as an arrival at a destination.",
   etymology2: "",
   uses: "",
   romance_cognates: "N/A",

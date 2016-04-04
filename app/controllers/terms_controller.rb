@@ -15,18 +15,14 @@ class TermsController < ApplicationController
 
   def directory
     if params[:letter].present?
-      @terms = Term.where(first: params[:letter]).order(:name)
+      @terms = Term.where(first: params[:letter]).order(:name).page(params[:page]).per(1)
     else
-      @terms = Term.all.order(:name).page(params[:page]).per(5)
+      @terms = Term.all.order(:name).page(params[:page]).per(1)
     end
   end
 
   def search
-    if params[:query].blank?
-      @terms = Term.all.order(:name)
-    else
-      @terms = Term.search(params[:query]).page(params[:page]).per(5)
-    end
+      @terms = Term.search(params[:query]).page(params[:page]).per(1)
   end
 
 
