@@ -75,20 +75,20 @@
         <img class="img-responsive center-block logo" src="/assets/images/etylogo.png">
       </div>
       <div class="row">
-        <ul class="alphabet">
+        <ul id="alphabet">
           <% ('A' .. 'C').each do |alphabet| %>
-            <li class="alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
+            <li id="alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
           <% end %>
-            <li class="alphabet"><a href="/directory/ch">CH</a></li>
+            <li id="alphabet"><a href="/directory/ch">CH</a></li>
           <% ('D' .. 'L').each do |alphabet| %>
-            <li class="alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
+            <li id="alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
           <% end %>
-            <li class="alphabet"><a href="/directory/ll">LL</a></li>
-            <li class="alphabet"><a href="/directory/m">M</a></li>
-            <li class="alphabet"><a href="/directory/n">N</a></li>
-            <li class="alphabet"><a href="/directory/ñ">Ñ</a></li>
+            <li id="alphabet"><a href="/directory/ll">LL</a></li>
+            <li id="alphabet"><a href="/directory/m">M</a></li>
+            <li id="alphabet"><a href="/directory/n">N</a></li>
+            <li id="alphabet"><a href="/directory/ñ">Ñ</a></li>
           <% ('O' .. 'Z').each do |alphabet| %>
-            <li class="alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
+            <li id="alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
           <% end %>
         </ul>
       </div>
@@ -104,12 +104,12 @@
     <div>
       <p id="follow">FOLLOW US</p>
     </div>
-    <div class="social-icons">
-      <ul class="social">
-        <li class="social"><a href="https://www.facebook.com" class="social btn btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a></li>
-        <li class="social"><a href="https://plus.google.com" class="social btn btn-social-icon btn-google"><span class="fa fa-google-plus"></span></a></li>
-        <li class="social"><a href="https://www.twitter.com/" class="social btn btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a></li>
-        <li class="social"><a href="https://www.reddit.com/" class="social btn btn-social-icon btn-reddit"><span class="fa fa-reddit"></span></a></li>
+    <div id="social-icons">
+      <ul id="social">
+        <li id="social"><a href="https://www.facebook.com" class="social btn btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a></li>
+        <li id="social"><a href="https://plus.google.com" class="social btn btn-social-icon btn-google"><span class="fa fa-google-plus"></span></a></li>
+        <li id="social"><a href="https://www.twitter.com/" class="social btn btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a></li>
+        <li id="social"><a href="https://www.reddit.com/" class="social btn btn-social-icon btn-reddit"><span class="fa fa-reddit"></span></a></li>
       </ul>
     </div>
     <div class="col-md-12">
