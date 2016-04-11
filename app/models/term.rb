@@ -12,14 +12,14 @@ class Term < ActiveRecord::Base
           type: 'stop',
           stopwords: ['_spanish_']
         },
+        # synonym: {
+        #   type: 'synonym',
+        #   synonyms_path: 'synonyms.txt',
+        #   ignore_case: 'true'
+        # },
         spanish_stemmer: {
           type: 'stemmer',
           language: 'light_spanish'
-        },
-        synonym: {
-          type: 'synonym',
-          synonyms_path: 'synonyms.txt',
-          ignore_case: 'true'
         }
       },
       analyzer: {
@@ -30,13 +30,13 @@ class Term < ActiveRecord::Base
           filter: [
             'spanish_stop',
             'spanish_stemmer',
-            'synonym',
+            # 'synonym',
             'lowercase'
           ]
         },
         spanish: {
           tokenizer: 'standard',
-          filter: 'synonym',
+          # filter: 'synonym',
           language: 'spanish'
         }
       }
