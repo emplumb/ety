@@ -16,7 +16,7 @@
         <!-- Label and input for first name -->
         <div class="form-group">
           <label for="name" class="control-label">
-            Name&#42;
+            Name &#42;
           </label>
           <input required type="text" id="first-name" name="first-name" placeholder="First Name" class="form-control" maxlength="50" pattern="[a-zA-ZáéíñóúüÁÉÍÑÓÚÜ\- ]+" title="Name should only contain letters">
         </div>
@@ -28,7 +28,7 @@
         <!-- Label and input for email -->
         <div class="form-group">
           <label for="email" class="control-label">
-            Email&#42;
+            Email &#42;
           </label>
           <input required type="text" id="email" name="email" class="form-control" maxlength="75" pattern="[/\A([\w+\-](\.[\w+\-])?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i]">
         </div>
@@ -36,18 +36,18 @@
         <!-- Label and input for subject -->
         <div class="form-group">
           <label for="subject" class="control-label">
-            Subject&#42;
+            Subject &#42;
           </label>
           <input required type="text" id="subject" name="subject" class="form-control">
         </div>
 
         <!-- Label and input for message -->
         <div class="form-group">
-          <label for="comment" class="control-label">Message&#42
+          <label for="comment" class="control-label">Message &#42;
           </label>
           <textarea required name="comment" class="form-control" rows="5" id="comment/"></textarea>
         </div>
-        <button class="btn btn-success" id="submit-font">
+        <button class="btn btn-primary" id="submit-font">
           Submit
         </button>
         <%= link_to "Cancel", root_path, id: "cancel-font" %>
