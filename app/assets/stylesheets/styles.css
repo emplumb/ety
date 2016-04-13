@@ -110,7 +110,7 @@
       height: 15%;
     }
 
-    ul.alphabet {
+    #alphabet ul {
       list-style-type: none;
       margin: 0;
       overflow: hidden;
@@ -119,12 +119,12 @@
       margin-left: -40px;
     }
 
-    li.alphabet {
+    #alphabet li {
       display: inline-block;
       float: none;
     }
 
-    li.alphabet a {
+    #alphabet li a {
       color: #5DC98F;
       width: 38px;
       display: inline-block;
@@ -153,7 +153,7 @@
       margin-left: 40px;
     }
 
-    div#footnote {
+    div.footnote {
       border-top: 1px solid #ccc;
       padding-top: 35px;
     }
@@ -171,54 +171,44 @@
       position: absolute;
       bottom: 0;
       width: 100%;
-      height: 200px;
+      height: 255px;
       background-color: #455d58;
-      margin: 0 auto -250px;
+      margin: 0 auto -400px;
       color: white;
     }
 
-    #follow {
-      font-weight: bold;
-      padding-top: 50px;
-      text-align: center;
-      margin-left: -100px;
-    }
-
-    ul.social {
-      list-style-type: none;
-      display: inline-block;
-      margin-left: -50px;
-      margin-bottom: none;
-      overflow: hidden;
+    #navigation ul {
+      margin: 0;
+      padding-top: 75px;
       padding-bottom: 10px;
-    }
-
-    li.social a {
-      width: 40px;
-      display: inline-block;
-      float: none;
-      margin-left: 5px;
-      display: block;
-    }
-
-    li.social {
-      display: inline-block;
-      float: none;
-    }
-
-    .social-icons {
-      color: inherit;
-      text-decoration: none;
+      font-size: 120%;
+      font-weight: bold;
       text-align: center;
+    }
+
+    #navigation ul li {
+      list-style-type: none;
+      display: inline;
+    }
+
+    #navigation li:before {
+    content: " | ";
+    }
+
+    #navigation li:first-child:before {
+    content: none;
+    }
+
+    #navigation li a {
+      color: #5DC98F;
+      margin: 25px;
+      display: inline-block;
     }
 
     #copyright {
-      padding-top: 10px;
+      padding-top: 30px;
       text-align: center;
     }
-
-
-
 
 /*    @media (max-width: 480px) {
       .pagination {
