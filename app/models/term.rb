@@ -26,7 +26,7 @@ class Term < ActiveRecord::Base
         stops_and_synonyms: {
           type: 'standard',
           tokenizer: 'standard',
-          stopwords: ["and", "the", "in", "on", "or", "to", "a", "an" "of", "that", "have", "it", "is", "for", "not", "with", "as", "do", "not", "at", "this", "but", "by", "from", "will", "would", "there", "what", "so", "if", "when", "can", "no", "into", "some", "than", "then", "only", "its", "also", "back", "after", "use", "two", "how", "where", "first", "because", "any", "these", "most"],
+          stopwords: ["and", "the", "in", "on", "or", "to", "a", "an", "of", "that", "have", "it", "is", "for", "not", "with", "as", "do", "not", "at", "this", "but", "by", "from", "will", "would", "there", "what", "so", "if", "when", "can", "no", "into", "some", "than", "then", "only", "its", "also", "back", "after", "use", "two", "how", "where", "first", "because", "any", "these", "most"],
           filter: [
             'spanish_stop',
             'spanish_stemmer',

@@ -62,17 +62,17 @@
       </div>  --><!-- /.navbar-collapse -->
     </div>
   </nav>
-  <div class="jumbotron j-format">
+  <div class="jumbotron" id="j-format">
     <div class="container-fluid">
-      <div class="banner-title">
+      <div id="banner-title">
         Spanish Etymological Dictionary
       </div>
-      <div class="slogan">
+      <div id="slogan">
         The free online dictionary for Spanish etymology
       </div>
       <div>
         <!-- How to add link to image without errors? -->
-        <img class="img-responsive center-block logo" src="/assets/images/etylogo.png">
+        <img class="img-responsive center-block" id="logo" src="/assets/images/etylogo.png">
       </div>
       <div id="alphabet">
         <ul>
@@ -100,16 +100,16 @@
 <%= yield %>
 
 <footer class="footer">
-  <div class="container">
-    <div id="navigation">
+  <div class="wrapper">
+    <div id="navigation" class="container-fluid">
       <ul>
         <li><%= link_to "About", about_path %></li>
         <li><%= link_to "Contact", contact_path %></li>
-        <li><a href="http://www.cranberryletters.com/">Cranberry Letters</a></li>
         <li><a href="/">Support</a></li>
+        <li><a href="http://www.cranberryletters.com/">Cranberry Letters</a></li>
       </ul>
     </div>
-    <div class="row">
+    <div>
       <p id="copyright">&#169; 2016 OEDoS. All Rights Reserved.</p>
     </div>
   </div>
