@@ -9,7 +9,7 @@
       <p></p>
       <p>&#42; required field</p>
       <p></p>
-      <form action="mailto:emplumb@gmail.com" method="GET" enctype="text/plain">
+      <form action="/submit_message" method="POST">
         <!-- Hidden input for authenticity token to protect from forgery -->
         <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
@@ -18,11 +18,11 @@
           <label for="name" class="control-label">
             Name &#42;
           </label>
-          <input required type="text" id="first-name" name="first-name" placeholder="First Name" class="form-control" maxlength="50" pattern="[a-zA-ZáéíñóúüÁÉÍÑÓÚÜ\- ]+" title="Name should only contain letters">
+          <input required type="text" id="firstname" name="firstname" placeholder="First Name" class="form-control" maxlength="50" pattern="[a-zA-ZáéíñóúüÁÉÍÑÓÚÜ\- ]+" title="Name should only contain letters">
         </div>
         <!-- Label and input for last name -->
         <div class="form-group">
-          <input required type="text" id="last-name" name="last-name" placeholder="Last Name" class="form-control" maxlength="50" pattern="[a-zA-ZáéíñóúüÁÉÍÑÓÚÜ\- ]+" title="Name should only contain letters">
+          <input required type="text" id="lastname" name="lastname" placeholder="Last Name" class="form-control" maxlength="50" pattern="[a-zA-ZáéíñóúüÁÉÍÑÓÚÜ\- ]+" title="Name should only contain letters">
         </div>
 
         <!-- Label and input for email -->
@@ -43,9 +43,9 @@
 
         <!-- Label and input for message -->
         <div class="form-group">
-          <label for="comment" class="control-label">Message &#42;
+          <label for="body" class="control-label">Body &#42;
           </label>
-          <textarea required name="comment" class="form-control" rows="5" id="comment/"></textarea>
+          <textarea required name="body" class="form-control" rows="5" id="body"></textarea>
         </div>
         <button class="btn btn-primary" id="submit">
           Submit

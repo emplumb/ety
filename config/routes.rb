@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   # turns into:
   get "search" => "terms#search"
 
+  post "/submit_message", :controller => "contact", :action => "submit_message"
+
+  get "/email_confirmation", :controller => "contact", :action => "email_confirmation"
+
 
   #revisit below
   # get "/directory/search", :controller => "terms", :action => "search"

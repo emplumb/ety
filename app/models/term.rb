@@ -1,6 +1,8 @@
 require 'elasticsearch/model'
 
 class Term < ActiveRecord::Base
+  paginates_per 10
+
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
