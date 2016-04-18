@@ -1,6 +1,64 @@
-
-
 terms = [
+  # {
+  # name: "aaa",
+  # gender: "",
+  # part_of_speech: "Adverb ",
+  # definition: "\"at,\" \"in\"",
+  # etymology1: "A post-Latin development from the Old Spanish era, deriving from Latin <i>ad</i> \"to,\" \"toward.\"",
+  # etymology2: "",
+  # uses: "The word is extremely common with myriad senses, the total number of which has only grown over the centuries. Connective element in light verbs, for example \"conoce a María\" or \"se lo dices a el.\"",
+  # romance_cognates: "N/A",
+  # notes1: "",
+  # notes2: "",
+  # quote1: "",
+  # quote2: ""
+  # },
+
+  {
+  name: "a(d)-",
+  gender: "",
+  part_of_speech: "Prefix",
+  definition: "\"at,\" \"towards\"",
+  etymology1: "From Latin <i>ad-</i>, <i>-d-</i> is eliminated under the influence of some consonants. For example, <a href='/term/abogado'>abogado</a> from Latin <i>advocatus<i>.",
+  etymology2: "",
+  uses: "A common element, appears in words like asustar and avenar. ",
+  romance_cognates: "N/A",
+  notes1: "",
+  notes2: "",
+  quote1: "",
+  quote2: ""
+  },
+
+  {
+  name: "-ado",
+  gender: "Suffix",
+  part_of_speech: "",
+  definition: "",
+  etymology1: "From Latin <i>-atus</i> \'id.\'",
+  etymology2: "",
+  uses: "Primarily a suffix marking the past-tense of <i>-ar</i> verbs. Secondarily added to form adjectives from nouns or other adjectives, indicating its passive quality (e.g. <i>demás</i> > <i>demas-ía</i> > <i>demas-i-ado</i>).",
+  romance_cognates: "Asturian <i>-áu</i>, Portuguese <i>-ado</i>, Galician <i>-ado</i>, Catalan <i>-at</i>, French <i>-é</i>, Italian <i>-ato</i>, Romanian <i>-at</i>.",
+  notes1: "",
+  notes2: "",
+  quote1: "",
+  quote2: ""
+  },
+
+  {
+  name: "a(n)-",
+  gender: "",
+  part_of_speech: "Prefix",
+  definition: "negation",
+  etymology1: "From Greek a(n)-",
+  etymology2: "",
+  uses: "A common prefix found in words like <i>ateismo</i> and <i>anabautista</i>. ",
+  romance_cognates: "N/A",
+  notes1: "",
+  notes2: "",
+  quote1: "",
+  quote2: ""
+  },
+
   {
   name: "abajo",
   gender: "",
@@ -11,6 +69,36 @@ terms = [
   uses: "",
   romance_cognates: "Cognate with French <i>à bas</i>, Catalan <i>abaixo</i>, Portuguese <i>abaixo</i>, Galician <i>abaixo</i>.",
   notes1: "Its wide distribution among Romance languages in the west identifies this as a Late Latin phrase, with strongest use in Iberia.",
+  notes2: "",
+  quote1: "",
+  quote2: ""
+  },
+
+  {
+  name: "abogado",
+  gender: "",
+  part_of_speech: "Noun",
+  definition: "\"lawyer,\" \"advocate,\" \"counsel\"",
+  etymology1: "From Latin <i>advocatus</i> \"aide,\" \"advocate,\" \"witness.\"",
+  etymology2: "",
+  uses: "",
+  romance_cognates: "Wide distribution among European languages, thanks especially to the confluential legal traditions emerging from the Middle Ages. Cognates in Iberia include Catalan <i>advocat</i>, Portuguese <i>advogado</i>. Other Romance cognates include Italian <i>avvocato</i>, Dalmatian <i>abucat</i>, and Romanian <i>a(d)vocat</i>.",
+  notes1: "Reduction of <i>-dv-</i> to <i>-b-</i> due to the influence of the bilabial \<v\> is entirely normal and a somewhat late development (compare Catalan and Portuguese, which retain the older form).",
+  notes2: "",
+  quote1: "",
+  quote2: ""
+  },
+
+  {
+  name: "abrir",
+  gender: "",
+  part_of_speech: "Noun, Verb",
+  definition: "(1) \"opening\" (2) \"open\"",
+  etymology1: "Both from Latin <i>aperire<i> \"open.\" Spanish may create a noun via an article (<i>el</i>, <i>la</i>, …) and the infinitive, typical of other Indo-European languages.",
+  etymology2: "",
+  uses: "",
+  romance_cognates: "Romance cognates include Catalan <i>obrir</i>, Aragonese <i>ubrir</i>, Occitan <i>(d)obrir</i>, Italian <i>aprire</i>, Sardinian <i>abbèrrere</i> as well as cognates in virtually every Romance language and dialect.",
+  notes1: "Prior to the advent of modern linguistics, scholars philologized this as from a putative pre-Latin word <i>**adpario</i> \"I produce to the light\" from <i>ad-</i> and <i>parir</i>.",
   notes2: "",
   quote1: "",
   quote2: ""
@@ -30,6 +118,81 @@ terms = [
   quote1: "\"Quien no sabe de abuelo, no sabe de bueno.\" He who does not know their grandfather, does not know what is good. Spanish proverb.",
   quote2: "\"Ay, abuelo, sembráste alazor, y naciónos anapelo.\" 18th century proverb. The origin, Stevens (1725) recounts, comes from \"a grandfather who marry'd a granddaughter to one he had great conceit of, and he proved a meer rake; whereupon another granddaughter cry'd, \"Grandfather, you sow'd saffron (which is rich and cordial, meaning he thought he had got an excellent son-in-law) and there came up poisonous wolfsbane;\" that is, he proved a vile husband.\" This popular etymology is echoed in Caro y Cejudo (1792)."
   },
+
+  {
+  name: "acá",
+  gender: "",
+  part_of_speech: "Adverb",
+  definition: "\"here,\" \"hither\"",
+  etymology1: "From Vulgar Latin <i>*ac(cu) hac</i> from Latin <i>eccum hac</i> \"look (at) this\"",
+  etymology2: "",
+  uses: "Its use as a contrastive with <a href='/term/aquí'>aquí</a> is mostly in Latin America and is much less frequent in Iberia. Acá is used with motion verbs (e.g., <i>vienes acá</i> \"you come here\") and aquí is used elsewhere (e.g., <i>se renta carros aquí</i> \"cars are rented out here\").",
+  romance_cognates: "Cognate with Portuguese <i>cá</i> and Italian <i>qua</i>.",
+  notes1: "<i>Mas acá</i>, meaning \"this side\" or \"this way,\" derives from its use as an intensifier. Unlike <i>mas allá</i>, which neatly translates as \"beyond,\" <i>mas acá</i> has no isomorphic equivalent.",
+  notes2: "\"Acá y acullá.\" Hither and thither. Antique turn-of-phrase with some currency to this day.",
+  quote1: "",
+  quote2: ""
+  },
+
+  {
+  name: "acabar",
+  gender: "",
+  part_of_speech: "Verb",
+  definition: "\"to finish,\" \"to end\"",
+  etymology1: "From <i>a-</i> and <i>cabo</i>, ultimately from Latin <i>a(d)-</i> and <i>caput</i> \"head.\"",
+  etymology2: "",
+  uses: "",
+  romance_cognates: "Asturian <i>acabar</i>, Portuguese <i>acabar</i>, Catalan <i>acabar</i>, French <i>achever</i>",
+  notes1: "In Vulgar Latin <i>caput</i> may have meant the end as well as the beginning, as seen in Italian <i>far capo</i> \"to commence.\"",
+  notes2: "",
+  quote1: "",
+  quote2: ""
+  },
+
+  {
+  name: "accidente",
+  gender: "m.",
+  part_of_speech: "Noun",
+  definition: "\"accident\"",
+  etymology1: "Frome Latin <i>accidentem</i>, from <i>accidere</i> \"to happen,\" \"to befall.\" From <i>ad-</i> and <i>cadere</i> \"to fall.\"",
+  etymology2: "",
+  uses: "The original sense of \"to happen\" is better preserved in the phrase <i>por accidente</i> \"by chance,\" \"coincidentally,\" and when used to describe the Christian eucharist (e.g. <i>los accidentes del pan y vino</i> \"the qualities of the bread and wine\").",
+  romance_cognates: "Old French <i>accident</i>",
+  notes1: "",
+  notes2: "",
+  quote1: "",
+  quote2: ""
+  },
+
+  {
+  name: "-acho",
+  gender: "",
+  part_of_speech: "Noun-forming suffix, often with a pejorative sense.",
+  definition: "",
+  etymology1: "Perhaps from Latin <i>-atio</i>, a noun-forming suffix used to indicate the end result of a verb.",
+  etymology2: "",
+  uses: "",
+  romance_cognates: "N/A",
+  notes1: "",
+  notes2: "",
+  quote1: "",
+  quote2: ""
+  },
+
+  # {
+  # name: "",
+  # gender: "",
+  # part_of_speech: "",
+  # definition: "",
+  # etymology1: "",
+  # etymology2: "",
+  # uses: "",
+  # romance_cognates: "",
+  # notes1: "",
+  # notes2: "",
+  # quote1: "",
+  # quote2: ""
+  # },
 
   {
   name: "bajo",
@@ -100,7 +263,7 @@ terms = [
   etymology2: "",
   uses: "Typically treated as masculine singular by the article, <i>el agua</i>, unless an adjective intrudes and the word is treated as feminine.",
   romance_cognates: "Aragonese <i>arma</i>, Asturian <i>arma</i>, Portuguese <i>arma</i>, Galician <i>arma</i>, Catalan <i>arma</i>, French <i>arme</i>, Italian <i>arma</i>, Dalmatian jarma</i>, Aromanian <i>armã</i>, Romanian <i>armă</i>, Sardinian <i>aràrma</i>.",
-  notes1: "Originally a neuter plural in Latin. In Vulgar Latin, neuter plural words were reanalyzed as feminine singulars (as was the case in Spanish <a href='/directory/hoja'>hoja</a>). The change from neuter to feminine must have occurred early in Latin and not after, as the word is feminine even in languages that preserve the neuter case (Asturian, Romanian, etc...).",
+  notes1: "Originally a neuter plural in Latin. In Vulgar Latin, neuter plural words were reanalyzed as feminine singulars (as was the case in Spanish <a href='/term/hoja'>hoja</a>). The change from neuter to feminine must have occurred early in Latin and not after, as the word is feminine even in languages that preserve the neuter case (Asturian, Romanian, etc...).",
   notes2: "",
   quote1: "",
   quote2: ""
