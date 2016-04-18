@@ -94,7 +94,7 @@ terms = [
   gender: "",
   part_of_speech: "Noun, Verb",
   definition: "(1) \"opening\" (2) \"open\"",
-  etymology1: "Both from Latin <i>aperire<i> \"open.\" Spanish may create a noun via an article (<i>el</i>, <i>la</i>, …) and the infinitive, typical of other Indo-European languages.",
+  etymology1: "Both from Latin <i>aperire</i> \"open.\" Spanish may create a noun via an article (<i>el</i>, <i>la</i>, …) and the infinitive, typical of other Indo-European languages.",
   etymology2: "",
   uses: "",
   romance_cognates: "Romance cognates include Catalan <i>obrir</i>, Aragonese <i>ubrir</i>, Occitan <i>(d)obrir</i>, Italian <i>aprire</i>, Sardinian <i>abbèrrere</i> as well as cognates in virtually every Romance language and dialect.",
