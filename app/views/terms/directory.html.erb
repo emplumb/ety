@@ -11,9 +11,9 @@
         <dl>
           <tr>
             <td class="table-spacing">
-              <b><a href="/term/<%=term.name %>"><%= term.name.html_safe %></a></b>
-              (<%= term.gender %>
-              <%= term.part_of_speech %>)
+              <b><a href="/term/<%=term.name %>"><%= term.name %></a></b>
+              <%= term.gender %>
+              (<%= term.part_of_speech %>)
               <%= term.definition.html_safe %>
               <%= term.etymology1.html_safe %>
               <%= term.etymology2.html_safe %>
