@@ -1,25 +1,25 @@
 terms = [
-  # {
-  # name: "aaa",
-  # gender: "",
-  # part_of_speech: "Adverb ",
-  # definition: "\"at,\" \"in\"",
-  # etymology1: "A post-Latin development from the Old Spanish era, deriving from Latin <i>ad</i> \"to,\" \"toward.\"",
-  # etymology2: "",
-  # uses: "The word is extremely common with myriad senses, the total number of which has only grown over the centuries. Connective element in light verbs, for example \"conoce a María\" or \"se lo dices a el.\"",
-  # romance_cognates: "N/A",
-  # notes1: "",
-  # notes2: "",
-  # quote1: "",
-  # quote2: ""
-  # },
+  {
+  name: "a",
+  gender: "",
+  part_of_speech: "Adverb",
+  definition: "\"at,\" \"in\"",
+  etymology1: "A post-Latin development from the Old Spanish era, deriving from Latin <i>ad</i> \"to,\" \"toward.\"",
+  etymology2: "",
+  uses: "The word is extremely common with myriad senses, the total number of which has only grown over the centuries. Connective element in light verbs, for example \"conoce a María\" or \"se lo dices a el.\"",
+  romance_cognates: "N/A",
+  notes1: "",
+  notes2: "",
+  quote1: "",
+  quote2: ""
+  },
 
   {
   name: "a(d)-",
   gender: "",
   part_of_speech: "Prefix",
   definition: "\"at,\" \"towards\"",
-  etymology1: "From Latin <i>ad-</i>, <i>-d-</i> is eliminated under the influence of some consonants. For example, <a href='/term/abogado'>abogado</a> from Latin <i>advocatus<i>.",
+  etymology1: "From Latin <i>ad-</i>, <i>-d-</i> is eliminated under the influence of some consonants. For example, <a href='/term/abogado'>abogado</a> from Latin <i>advocatus</i>.",
   etymology2: "",
   uses: "A common element, appears in words like asustar and avenar. ",
   romance_cognates: "N/A",
@@ -31,8 +31,8 @@ terms = [
 
   {
   name: "-ado",
-  gender: "Suffix",
-  part_of_speech: "",
+  gender: "",
+  part_of_speech: "Suffix",
   definition: "",
   etymology1: "From Latin <i>-atus</i> \'id.\'",
   etymology2: "",
@@ -112,7 +112,7 @@ terms = [
   etymology1: "From Vulgar Latin <i>*aviolus</i>, from Latin avus</i> and diminutive suffix <i>-olus</i>.",
   etymology2: "",
   uses: "",
-  romance_cognates:"Cognates in Asturian <i>güelu</i> and French aïeul</i> prove that the Vulgar Latin term was widespread in Western Romance. Cognates like Portuguese avô</i> derive directly from <i>avus</i>.",
+  romance_cognates:"Cognates in Asturian <i>güelu</i> and French <i>aïeul</i> prove that the Vulgar Latin term was widespread in Western Romance. Cognates like Portuguese avô</i> derive directly from <i>avus</i>.",
   notes1: "Latin <i>avus</i>, without the <i>-olus</i> suffix, became Spanish <i>ayo</i> \"tutor.\"",
   notes2: "",
   quote1: "\"Quien no sabe de abuelo, no sabe de bueno.\" He who does not know their grandfather, does not know what is good. Spanish proverb.",
@@ -154,7 +154,7 @@ terms = [
   gender: "m.",
   part_of_speech: "Noun",
   definition: "\"accident\"",
-  etymology1: "Frome Latin <i>accidentem</i>, from <i>accidere</i> \"to happen,\" \"to befall.\" From <i>ad-</i> and <i>cadere</i> \"to fall.\"",
+  etymology1: "From Latin <i>accidentem</i>, from <i>accidere</i> \"to happen,\" \"to befall.\" From <i>ad-</i> and <i>cadere</i> \"to fall.\"",
   etymology2: "",
   uses: "The original sense of \"to happen\" is better preserved in the phrase <i>por accidente</i> \"by chance,\" \"coincidentally,\" and when used to describe the Christian eucharist (e.g. <i>los accidentes del pan y vino</i> \"the qualities of the bread and wine\").",
   romance_cognates: "Old French <i>accident</i>",
@@ -314,20 +314,27 @@ terms = [
   quote2: ""
   },
 
-  # {
-  # name: "",
-  # gender: "",
-  # part_of_speech: "",
-  # definition: "",
-  # etymology1: "",
-  # etymology2: "",
-  # uses: "",
-  # romance_cognates: "",
-  # notes1: "",
-  # notes2: "",
-  # quote1: "",
-  # quote2: ""
-  # },
+  {
+  name: "a-",
+  gender: "",
+  part_of_speech: "Feminine suffix",
+  definition: "",
+  etymology1: "From Latin <i>-a</i>, from Proto-Italic *<i>-ā</i>, from late Proto-Indo-European *-(e)h<sub>2</sub>, from Proto-Indo-European *-h<sub>2</sub>, a suffix indicating collective and abstract animate nouns, from Pre-Proto-Indo-European *<i>-h<sub>2</sub></i>, a suffix indicating <i>plurale tantum</i>.",
+  etymology2: "",
+  uses: "",
+  romance_cognates: "N/A",
+  notes1: "A late development not present in the earliest stage of Proto-Indo-European. After the Anatolian branch separated, there were two language phylums: Proto-Anatolian and \"Core\" Indo-European (a late stage of spoken Proto-Indo-European). Early Proto-Indo-European, prior to the Anatolian departure, did not have the three-gender system found in Latin (masculine, feminine, and neuter), but had a two-gender system (animate and inanimate). Animate nouns could be declined into four numbers: singular, dual, plural, and collective. For contrast, consider modern Spanish <i>perro</i> (singular), <i>perros</i> (plural), and a collective noun like <i>pan</i> (the grammatical treatment of this noun resembles a singular noun, but is in fact neither singular nor plural). There is no true example of the dual form in modern Spanish, where a suffix indicates there are two of something, however the suffix survives as a fossil in <i>ambos</i> and <i>veinte</i>. In the inanimate gender, nouns were classified as singular, dual, or plural.
+<p></p>
+In Pre-Proto-Indo-European, a suffix *<i>-h<sub>2</sub></i> was used to form <i>plurale tantum</i> nouns out of collective nouns (e.g., \"waters\" from \"water\"). This was attached to the vowel stem *<i>-e-</i>, *<i>-i-</i>, *<i>-u-</i> and *<i>-0-</i> to form *<i>-eh<sub>2</sub></i>, *<i>-ih<sub>2</sub></i>, *<i>-uh<sub>2</sub></i>, and *<i>-h<sub>2</sub></i>.  The four different endings all to express a single idea of plurality would not last. But now we must discuss the historic Proto-Indo-European method for feminizing words.
+<p></p>
+In Proto-Indo-European *<i>sor</i> \"woman\" was added as a suffix to animate nouns (preserved in Anatolian but also as a fossil in a smattering of non-Anatolian words, like Spanish <i>sor</i>. Linguists do not precisely agree as to why *<i>-sor</i> as a feminine marker was gradually replaced by the *<i>-(e)h<sub>2</sub></i> collective suffix.<p></p>",
+
+  notes2: "The most recent theories involve the suffix playing an \"individualizing\" role. As a collective/abstract suffix *<i>-(e)h<sub>2</sub></i> referred to a subset of larger mass nouns (returning to the example \"waters\" (collective) versus \"water\" (mass), the \"waters\" is plural but refers to a subset of all \"water\"). Over time, the dependence on *<i>-(e)h<sub>2</sub></i> to refer to a subset of a broader category began to individualize the subject. By the late Proto-Indo-European period *<i>-(e)h<sub>2</sub></i> was heavily used, and stood in contrast to the typical animate ending *<i>-s</i>. *<i>-(e)h<sub>2</sub></i> acquired a new sense of \"the other.\"
+<p></p>
+In compelling support of this theory, a word that looks to be a relic from the transition period from collective/abstract suffix (as preserved in Anatolian and in some Core Indo-European fossils) to a feminine suffix (the familiar <i>-a</i> in Core Indo-European). The Proto-Indo-European word *<i>h<sub>2</sub>u̯id<sup>h</sup>éu̯eh<sub>2</sub>-</i> \"widow\" (animate in Anatolian and feminine in late Proto-Indo-European), looks built off of <i>*h<sub>2</sub>u̯id<sup>h</sup>éu̯o-</i> \"belonging to the one fatally struck.\" Thus the original sense of a widow would have been \"the one of whom was fatally struck,\" then later \"the bereaved,\" and finally \"the female bereaved.\" See Luraghi (2011), Tichy (1993), and Melchert (2014) for a broader discussion.",
+  quote1: "",
+  quote2: ""
+  },
 
   # {
   # name: "",
@@ -347,8 +354,10 @@ terms = [
 ]
 
 terms.each do |z|
-  if z[:name][0] + z[:name][1] == "ch" || z[:name][0] + z[:name][1] == "ll"
-    z[:first] = z[:name][0] + z[:name][1]
+  if z[:name] == "a"
+    z[:first] = z[:name][0]
+  # else z[:name][0] + z[:name][1] == "ch" || z[:name][0] + z[:name][1] == "ll"
+  #   z[:first] = z[:name][0] + z[:name][1]
   else
     z[:first] = z[:name][0]
   end
