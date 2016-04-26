@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get "/about", :controller => "terms", :action => "about"
 
+  get "/faq", :controller => "terms", :action => "faq"
+
   get "/contact", :controller => "terms", :action => "contact"
 
   get "/directory", :controller => "terms", :action => "directory"

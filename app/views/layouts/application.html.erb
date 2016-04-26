@@ -36,6 +36,7 @@
       <div class="collapse navbar-collapse navbar-left" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><%= link_to "About", about_path %></li>
+          <li><%= link_to "FAQ", faq_path %></li>
           <li><%= link_to "Contact", contact_path %></li>
           <!-- fix this so it disappears at specific screen size -->
           <li><%= link_to "Directory", directory_path %></li>
@@ -97,23 +98,38 @@
 <!-- <div class="left"></div>
 <div class="right"></div> -->
 
-<%= yield %>
-
-<footer class="footer">
-  <div class="wrapper">
-    <div id="navigation" class="container-fluid">
-      <ul>
-        <li><%= link_to "About", about_path %></li>
-        <li><%= link_to "Contact", contact_path %></li>
-        <li><a href="/">Support</a></li>
-        <li><a href="http://www.cranberryletters.com/">Cranberry Letters</a></li>
-      </ul>
-    </div>
-    <div>
-      <p id="copyright">&#169; 2016 OEDoS. All Rights Reserved.</p>
+  <!-- popup notice for email submitted in contact form -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <% if notice.present? %>
+          <div class="alert alert-dismissable alert-success text-center">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4><%= notice %></h4>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</footer>
+
+  <%= yield %>
+
+  <footer class="footer">
+    <div class="wrapper">
+      <div id="navigation" class="container-fluid">
+        <ul>
+          <li><%= link_to "About", about_path %></li>
+          <li><%= link_to "FAQ", faq_path %></li>
+          <li><%= link_to "Contact", contact_path %></li>
+          <li><a href="/">Support</a></li>
+          <li><a href="http://www.cranberryletters.com/">Cranberry Letters</a></li>
+        </ul>
+      </div>
+      <div>
+        <p id="copyright">&#169; 2016 OEDoS. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
