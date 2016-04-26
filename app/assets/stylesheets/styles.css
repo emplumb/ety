@@ -3,72 +3,16 @@
       min-height: 100%;
       }
 
-
-/*    body {
-      border: solid;
-      border-color: #2F4F4F;
-      background-color: #2F4F4F;
-    }*/
-
     body {
       padding-top: 10px;
       font-family: Georgia, Times, 'Times New Roman', serif!important;
     }
-
-/*    .left,.right {
-      position: absolute;
-      width: 1.5%;
-      top: 0;
-      bottom: 0;
-      background-color: #f8f8f8;
-      background-color: #a29199;
-      z-index: 1;
-      height: 100%;
-
-    }
-
-    .left {
-      left: 0;
-
-
-    .right {
-      right: 0;
-
-    }*/
-
-/*    @media (max-width: 599px) {
-      .pagination
-        .page-away-4 {
-          display: none;
-        }
-    }*/
-
-/*    @media (max-width: 499px) {
-      .pagination
-        .page-away-3 {
-          display: none;
-        }
-    }*/
-
-/*    @media (max-width: 399px) {
-      .pagination
-        .page-away-2 {
-          display: none;
-        }
-    }*/
-
 
     @media (max-width: 767px) {
       body {
         padding-top: 100px;
       }
     }
-
-/*    @media (min-width: 768px) {
-      .hide {
-        display: none;
-      }
-    }*/
 
     #j-format {
       background-color: #455d58!important;
@@ -162,15 +106,6 @@
       padding-top: 35px;
     }
 
-/*    .table-spacing {
-      border-bottom: 15px solid #fff;
-    }
-
-    .table-striped {
-      background-color: #D3D3D3!important;
-      border-top, border-bottom: 15px solid #fff;
-    }
-*/
     footer {
       position: absolute;
       bottom: 0;
@@ -239,19 +174,6 @@
         text-align: center;
       }
     }
-
-
-
-/*    @media (max-width: 480px) {
-      .pagination {
-        ul {
-          display: none;
-          &.active,&.prev,&.next {
-            display: inline;
-          }
-        }
-      }
-    }*/
 
     #submit {
       color: white;
