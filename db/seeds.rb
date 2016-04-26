@@ -1,20 +1,5 @@
 terms = [
   {
-  name: "a",
-  gender: "",
-  part_of_speech: "Adverb",
-  definition: "\"at,\" \"in\"",
-  etymology1: "A post-Latin development from the Old Spanish era, deriving from Latin <i>ad</i> \"to,\" \"toward.\"",
-  etymology2: "",
-  uses: "The word is extremely common with myriad senses, the total number of which has only grown over the centuries. Connective element in light verbs, for example \"conoce a María\" or \"se lo dices a el.\"",
-  romance_cognates: "N/A",
-  notes1: "",
-  notes2: "",
-  quote1: "",
-  quote2: ""
-  },
-
-  {
   name: "a(d)-",
   gender: "",
   part_of_speech: "Prefix",
@@ -351,13 +336,26 @@ In compelling support of this theory, a word that looks to be a relic from the t
   # quote2: ""
   # },
 
+  {
+  name: "a",
+  gender: "",
+  part_of_speech: "Adverb",
+  definition: "\"at,\" \"in\"",
+  etymology1: "A post-Latin development from the Old Spanish era, deriving from Latin <i>ad</i> \"to,\" \"toward.\"",
+  etymology2: "",
+  uses: "The word is extremely common with myriad senses, the total number of which has only grown over the centuries. Connective element in light verbs, for example \"conoce a María\" or \"se lo dices a el.\"",
+  romance_cognates: "N/A",
+  notes1: "",
+  notes2: "",
+  quote1: "",
+  quote2: ""
+  },
+
 ]
 
 terms.each do |z|
-  if z[:name] == "a"
-    z[:first] = z[:name][0]
-  # else z[:name][0] + z[:name][1] == "ch" || z[:name][0] + z[:name][1] == "ll"
-  #   z[:first] = z[:name][0] + z[:name][1]
+  if z[:name].first(2) == "ch" || z[:name].first(2) == "ll"
+    z[:first] = z[:name][0] + z[:name][1]
   else
     z[:first] = z[:name][0]
   end
