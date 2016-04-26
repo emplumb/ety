@@ -8,9 +8,9 @@ class TermsController < ApplicationController
     number_generator = Random.new(daystamp)
     min_term_id = Term.minimum(:id)
     max_term_id = Term.maximum(:id)
+
+    #Will always be the same until daystamp changes or if a new Term is added or removed from the database
     random_term_id = number_generator.rand(min_term_id..max_term_id)
-    # this random_term_id will always be the same until daystamp changes
-    # or a new Term is added or removed from the database
 
     @term = Term.find(random_term_id)
   end
