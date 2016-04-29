@@ -30,7 +30,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="/" class="navbar-brand">Home</a>
+        <a href="/" class="navbar-brand"><img class="navlogo" src="/assets/images/etylogo.png"></a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-left" id="bs-example-navbar-collapse-1">
@@ -42,7 +42,7 @@
           <li><%= link_to "Directory", directory_path %></li>
         </ul>
       </div><!-- /.navbar-collapse -->
-      <!-- Add search form -->
+      <!-- Adds search form -->
       <div class="navbar-right">
         <!-- flips directory link from left to right of search bar -->
         <!-- <div class="navbar-header navbar-search"> -->
@@ -63,17 +63,16 @@
       </div>  --><!-- /.navbar-collapse -->
     </div>
   </nav>
-  <div class="jumbotron" id="j-format">
+  <div class="jumbotron">
     <div class="container-fluid">
       <div id="banner-title">
         Spanish Etymological Dictionary
       </div>
       <div id="slogan">
-        The free online dictionary for Spanish etymology
+        The free etymological dictionary of the Spanish language online
       </div>
       <div>
-        <!-- How to add link to image without errors? -->
-        <img class="img-responsive center-block" id="logo" src="/assets/images/etylogo.png">
+        <a href="/"><img class="img-responsive center-block" id="banner-logo" src="/assets/images/etylogo.png"></a>
       </div>
       <div id="alphabet">
         <ul>
@@ -97,20 +96,6 @@
   </div>
 <!-- <div class="left"></div>
 <div class="right"></div> -->
-
-  <!-- popup notice for email submitted in contact form -->
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <% if notice.present? %>
-          <div class="alert alert-dismissable alert-success text-center">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <h4><%= notice %></h4>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
 
   <%= yield %>
 

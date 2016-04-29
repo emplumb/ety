@@ -18,6 +18,6 @@ Rails.application.routes.draw do
 
   post "/submit_message", :controller => "contact", :action => "submit_message"
 
-  get "/email_confirmation", :controller => "contact", :action => "email_confirmation"
+  # get "/email_confirmation", :controller => "contact", :action => "email_confirmation"
 
 end

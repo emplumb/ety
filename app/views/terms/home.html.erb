@@ -1,13 +1,13 @@
-<div class="container-fluid" id="home">
-  <div class="row">
+<div class="container-fluid">
+  <div class="row end-pad">
     <div class="col-md-6 col-md-offset-3">
       <div class="page-header">
         <h3 class="text-center">Word of the Day</h3>
       </div>
-      <table class="table table-striped table-hover">
+      <table class="table table-striped">
         <dl>
           <tr>
-            <td class="table-spacing">
+            <td>
               <b><a href="/term/<%= @term.name %>"><%= @term.name %></a></b>
               <%= @term.gender %>
               (<%= @term.part_of_speech %>)
@@ -26,6 +26,34 @@
           </tr>
         </dl>
       </table>
+      <div id="m-alph-pad">
+        <table class="table table-striped" id="m-table">
+          <dl>
+            <tr>
+              <td>
+                <div id="alphabet-mobile">
+                  <ul>
+                    <% ('A' .. 'C').each do |alphabet| %>
+                    <li><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
+                    <% end %>
+                    <li><a href="/directory/ch">CH</a></li>
+                    <% ('D' .. 'L').each do |alphabet| %>
+                    <li><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
+                    <% end %>
+                    <li><a href="/directory/ll">LL</a></li>
+                    <li><a href="/directory/m">M</a></li>
+                    <li><a href="/directory/n">N</a></li>
+                    <li><a href="/directory/ñ">Ñ</a></li>
+                    <% ('O' .. 'Z').each do |alphabet| %>
+                    <li><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
+                    <% end %>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+          </dl>
+        </table>
+      </div>
     </div>
   </div>
 </div>

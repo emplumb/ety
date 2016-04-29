@@ -1,6 +1,6 @@
     html {
       position: relative;
-      min-height: 100%;
+      min-height: 85%;
       }
 
     body {
@@ -12,14 +12,34 @@
       body {
         padding-top: 100px;
       }
+
     }
 
-    #j-format {
+    .font {
+      font-size: 120%;
+    }
+
+    p + p {
+      margin-top: 35px;
+    }
+
+    .indent {
+      margin-left: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .navbar-brand {
+        padding-top: 11px!important;
+      }
+    }
+
+    .jumbotron {
       background-color: #455d58!important;
       text-align: center;
       padding-bottom: 15px!important;
+      margin-bottom: 40px!important;
       letter-spacing: 1px;
-      box-shadow: 0px 2px 2px #aaaaaa;
+      box-shadow: 0px 2px 2px #AAA;
     }
 
     #banner-title {
@@ -41,15 +61,29 @@
       #slogan {
         font-size: 80%;
       }
+      .jumbotron {
+        margin-bottom: 20px!important;
+      }
+/*      #home {
+        padding: none;
+      }*/
     }
 
     @media (min-width: 401px) and (max-width: 600px) {
       #banner-title {
         font-size: 212%;
       }
+      #slogan {
+        font-size: 80%;
+      }
     }
 
-    #logo {
+    .navlogo {
+      width: 35px;
+      height: 30px;
+    }
+
+    #banner-logo {
       padding: 20px;
       width: 15%;
       height: 15%;
@@ -83,22 +117,63 @@
       }
     }
 
-    .font {
-      font-size: 120%;
+    @media (max-width: 450px) {
+      #banner-logo {
+        display: none;
+      }
+      #alphabet {
+        display: none;
+      }
+      #alphabet-mobile ul {
+        list-style-type: none;
+        margin: 0;
+        overflow: hidden;
+        font-weight: bold;
+        text-align: center;
+        padding-left: 0;
+      }
+      #alphabet-mobile li {
+        display: inline-block;
+        float: none;
+      }
+      #alphabet-mobile li a {
+        color: #5DC98F;
+        width: 33px;
+        display: inline-block;
+      }
+      .end-pad {
+        padding-bottom: 80px;
+      }
+      #m-alph-pad {
+        padding-top: 15px;
+      }
+      .footer {
+        margin: 0 auto -185px;
+      }
     }
 
-    p + p {
-      margin-top: 35px;
+    @media (min-width: 451px) {
+      #alphabet-mobile {
+        display: none;
+      }
+      #m-table {
+        display: none;
+      }
+      .end-pad {
+        padding-bottom: 70px;
+      }
     }
 
-    #home {
-      padding-top: 20px;
-      padding-bottom: 70px;
+    #dir-pad {
+      padding-bottom: 30px;
     }
 
+    .table {
+      border-bottom: 1px solid #DDD;
+    }
 
-    .indent {
-      margin-left: 40px;
+    #m-table {
+      border-bottom: 1px solid #DDD;
     }
 
     #footnote {
@@ -110,7 +185,7 @@
       position: absolute;
       bottom: 0;
       width: 100%;
-      margin: 0 auto -250px;
+      margin: 0 auto -195px;
       color: white;
       box-shadow: 0px -2px 2px #CCC;
     }
@@ -121,13 +196,6 @@
       padding-bottom: 15px;
       width: 100%;
       margin: auto;
-    }
-
-    #copyright {
-      padding: 20px 0;
-      text-align: center;
-      background-color: #30413D;
-      margin: 0;
     }
 
     #navigation ul {
@@ -175,6 +243,13 @@
       }
     }
 
+    #copyright {
+      padding: 20px 0;
+      text-align: center;
+      background-color: #30413D;
+      margin: 0;
+    }
+
     #submit {
       color: white;
       font-size: 105%;
@@ -186,7 +261,17 @@
       margin-left: 20px;
     }
 
+    .alert {
+      height: 100px;
+    }
+
+    #notice {
+      margin-top: 25px;
+    }
+
     #show {
       padding-top: 20px;
       padding-bottom: 70px;
     }
+
+

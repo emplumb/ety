@@ -11,8 +11,6 @@
         <dl>
           <tr>
             <td>
-<!--               Below code is more correct but can't get proper route
-              <!%= link_to @term, term.name.html_safe %> -->
               <b><a href="/term/<%=term.name %>"><%= term.name %></a></b>
               <%= term.gender %>
               (<%= term.part_of_speech %>)
@@ -38,7 +36,7 @@
     <div class="text-center kaminari-font">
       <%= paginate @terms %>
     </div>
-    <div class="text-center">
+    <div class="text-center end-pad">
       <p><%= page_entries_info(@terms, :entry_name => 'results') %></p>
     </div>
   </div>
