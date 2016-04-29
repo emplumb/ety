@@ -58,15 +58,9 @@
       #banner-title {
         font-size: 175%;
       }
-      #slogan {
-        font-size: 80%;
-      }
       .jumbotron {
         margin-bottom: 20px!important;
       }
-/*      #home {
-        padding: none;
-      }*/
     }
 
     @media (min-width: 401px) and (max-width: 600px) {
@@ -150,6 +144,15 @@
       .footer {
         margin: 0 auto -185px;
       }
+      .row {
+        font-size: 140%;
+      }
+/*      .form-control {
+        font-size: 140%;
+      }*/
+/*      .row {
+        font-size: 140%;
+      }*/
     }
 
     @media (min-width: 451px) {
@@ -170,6 +173,7 @@
 
     .table {
       border-bottom: 1px solid #DDD;
+      font-size: 120%;
     }
 
     #m-table {

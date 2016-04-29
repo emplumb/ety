@@ -300,7 +300,7 @@ terms = [
   },
 
   {
-  name: "a-",
+  name: "-a",
   gender: "",
   part_of_speech: "Feminine suffix",
   definition: "",
