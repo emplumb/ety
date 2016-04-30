@@ -130,11 +130,12 @@
         display: inline-block;
         float: none;
         margin: 7px 0 7px 3px;
+        font-size: 130%;
       }
       #mobile-alphabet li a {
         color: #5DC98F;
         font-weight: bold;
-        width: 33px;
+        width: 35px;
         display: inline-block;
       }
       .end-pad {
