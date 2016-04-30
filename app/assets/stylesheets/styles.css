@@ -101,6 +101,7 @@
       color: #5DC98F;
       width: 38px;
       display: inline-block;
+      font-weight: bold;
     }
 
     @media (max-width: 1153px) {
@@ -118,20 +119,21 @@
       #alphabet {
         display: none;
       }
-      #alphabet-mobile ul {
+      #mobile-alphabet ul {
         list-style-type: none;
         margin: 0;
         overflow: hidden;
-        font-weight: bold;
         text-align: center;
         padding-left: 0;
       }
-      #alphabet-mobile li {
+      #mobile-alphabet li {
         display: inline-block;
         float: none;
+        margin: 5px 0 5px 3px;
       }
-      #alphabet-mobile li a {
+      #mobile-alphabet li a {
         color: #5DC98F;
+        font-weight: bold;
         width: 33px;
         display: inline-block;
       }
@@ -147,16 +149,9 @@
       .row {
         font-size: 120%;
       }
-/*      .form-control {
-        font-size: 140%;
-      }*/
-/*      .row {
-        font-size: 140%;
-      }*/
-    }
 
     @media (min-width: 451px) {
-      #alphabet-mobile {
+      #mobile-alphabet {
         display: none;
       }
       #m-table {

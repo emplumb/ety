@@ -26,34 +26,56 @@
           </tr>
         </dl>
       </table>
-      <div id="m-alph-pad">
+      <div class="dropdown" id="m-alpha-pad mobile-alphabet">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Browse by letter
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" id="mobile-alphabet" aria-labelledby="dropdownMenu1">
+          <% ('A' .. 'C').each do |alphabet| %>
+          <li id="mobile-alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
+          <% end %>
+          <li id="mobile-alphabet"><a href="/directory/ch">CH</a></li>
+          <% ('D' .. 'L').each do |alphabet| %>
+          <li id="mobile-alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
+          <% end %>
+          <li id="mobile-alphabet"><a href="/directory/ll">LL</a></li>
+          <li id="mobile-alphabet"><a href="/directory/m">M</a></li>
+          <li id="mobile-alphabet"><a href="/directory/n">N</a></li>
+          <li id="mobile-alphabet"><a href="/directory/ñ">Ñ</a></li>
+          <% ('O' .. 'Z').each do |alphabet| %>
+          <li id="mobile-alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
+          <% end %>
+        </ul>
+      </div>
+<!--       <div id="m-alph-pad">
         <table class="table table-striped" id="m-table">
           <dl>
             <tr>
               <td>
                 <div id="alphabet-mobile">
                   <ul>
-                    <% ('A' .. 'C').each do |alphabet| %>
-                    <li><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
-                    <% end %>
+                    <!% ('A' .. 'C').each do |alphabet| %>
+                    <li><a href="/directory/<!%= alphabet.downcase %>"><!%= alphabet %></a></li>
+                    <!% end %>
                     <li><a href="/directory/ch">CH</a></li>
-                    <% ('D' .. 'L').each do |alphabet| %>
-                    <li><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
-                    <% end %>
+                    <!% ('D' .. 'L').each do |alphabet| %>
+                    <li><a href="/directory/<!%= alphabet.downcase %>"><!%= alphabet %></a></li>
+                    <!% end %>
                     <li><a href="/directory/ll">LL</a></li>
                     <li><a href="/directory/m">M</a></li>
                     <li><a href="/directory/n">N</a></li>
                     <li><a href="/directory/ñ">Ñ</a></li>
-                    <% ('O' .. 'Z').each do |alphabet| %>
-                    <li><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
-                    <% end %>
+                    <!% ('O' .. 'Z').each do |alphabet| %>
+                    <li><a href="/directory/<!%= alphabet.downcase %>"><!%= alphabet %></a></li>
+                    <!% end %>
                   </ul>
                 </div>
               </td>
             </tr>
           </dl>
         </table>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
