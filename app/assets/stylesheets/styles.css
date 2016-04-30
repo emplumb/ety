@@ -129,7 +129,7 @@
       #mobile-alphabet li {
         display: inline-block;
         float: none;
-        margin: 5px 0 5px 3px;
+        margin: 7px 0 7px 3px;
       }
       #mobile-alphabet li a {
         color: #5DC98F;
@@ -152,7 +152,7 @@
     }
 
     @media (min-width: 451px) {
-      #mobile-alphabet {
+      .mobile-hidden {
         display: none;
       }
       #m-table {
