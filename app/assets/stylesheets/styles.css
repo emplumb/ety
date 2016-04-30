@@ -149,6 +149,7 @@
       .row {
         font-size: 120%;
       }
+    }
 
     @media (min-width: 451px) {
       #mobile-alphabet {
