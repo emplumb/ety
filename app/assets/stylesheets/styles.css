@@ -75,7 +75,7 @@
     .navlogo {
       width: 35px;
       height: 30px;
-      overflow: hidden;
+      margin-left: -5px;
     }
 
     #banner-logo {

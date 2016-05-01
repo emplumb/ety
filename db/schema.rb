@@ -25,8 +25,7 @@ ActiveRecord::Schema.define(version: 20151128151128) do
     t.text     "romance_cognates"
     t.text     "notes1"
     t.text     "notes2"
-    t.text     "quote1"
-    t.text     "quote2"
+    t.text     "quote"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

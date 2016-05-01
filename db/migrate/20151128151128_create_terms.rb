@@ -12,8 +12,8 @@ class CreateTerms < ActiveRecord::Migration
       t.text :romance_cognates
       t.text :notes1
       t.text :notes2
-      t.text :quote1
-      t.text :quote2
+      t.text :quote
+
 
       t.timestamps
 

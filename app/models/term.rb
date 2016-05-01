@@ -57,8 +57,7 @@ class Term < ActiveRecord::Base
       indexes :romance_cognates, analyzer: 'stops_and_synonyms', index_options: 'offsets'
       indexes :notes1, analyzer: 'stops_and_synonyms', index_options: 'offsets'
       indexes :notes2, analyzer: 'stops_and_synonyms', index_options: 'offsets'
-      indexes :quote1, analyzer: 'stops_and_synonyms', index_options: 'offsets'
-      indexes :quote2, analyzer: 'stops_and_synonyms', index_options: 'offsets'
+      indexes :quote, analyzer: 'stops_and_synonyms', index_options: 'offsets'
     end
   end
 
@@ -68,7 +67,7 @@ class Term < ActiveRecord::Base
         query: {
           multi_match: {
             query: query,
-            fields: ['name^10', 'definition^9', 'etymology1', 'etymology2', 'uses', 'romance_cognates', 'notes1', 'notes2', 'quote1', 'quote2']
+            fields: ['name^10', 'definition^9', 'etymology1', 'etymology2', 'uses', 'romance_cognates', 'notes1', 'notes2', 'quote']
           }
         }
       }
