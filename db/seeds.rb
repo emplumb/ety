@@ -2,7 +2,8 @@ terms = [
   {
   name: "a(d)-",
   gender: "",
-  part_of_speech: "Prefix",
+  prefix_suffix: "Prefix",
+  part_of_speech: "",
   definition: "\"at,\" \"towards\"",
   etymology1: "From Latin <i>ad-</i>, <i>-d-</i> is eliminated under the influence of some consonants. For example, <a href='/term/abogado'>abogado</a> from Latin <i>advocatus</i>.",
   etymology2: "",
@@ -16,7 +17,8 @@ terms = [
   {
   name: "-ado",
   gender: "",
-  part_of_speech: "Suffix",
+  prefix_suffix: "Suffix",
+  part_of_speech: "",
   definition: "",
   etymology1: "From Latin <i>-atus</i> \'id.\'",
   etymology2: "",
@@ -30,8 +32,9 @@ terms = [
   {
   name: "a(n)-",
   gender: "",
-  part_of_speech: "Prefix",
-  definition: "negation",
+  prefix_suffix: "Negation prefix",
+  part_of_speech: "",
+  definition: "not",
   etymology1: "From Greek a(n)-",
   etymology2: "",
   uses: "A common prefix found in words like <i>ateismo</i> and <i>anabautista</i>. ",
@@ -44,6 +47,7 @@ terms = [
   {
   name: "abajo",
   gender: "",
+  prefix_suffix: "",
   part_of_speech: "Adverb",
   definition: "\"down,\" \"below\"",
   etymology1: "From Latin <i>a-</i> \"at,\" \"toward\" and <i>bassus</i> \"down.\"",
@@ -58,6 +62,7 @@ terms = [
   {
   name: "abogado",
   gender: "",
+  prefix_suffix: "",
   part_of_speech: "Noun",
   definition: "\"lawyer,\" \"advocate,\" \"counsel\"",
   etymology1: "From Latin <i>advocatus</i> \"aide,\" \"advocate,\" \"witness.\"",
@@ -72,6 +77,7 @@ terms = [
   {
   name: "abrir",
   gender: "",
+  prefix_suffix: "",
   part_of_speech: "Noun, Verb",
   definition: "(1) \"opening\" (2) \"open\"",
   etymology1: "Both from Latin <i>aperire</i> \"open.\" Spanish may create a noun via an article (<i>el</i>, <i>la</i>, …) and the infinitive, typical of other Indo-European languages.",
@@ -86,6 +92,7 @@ terms = [
   {
   name: "abuelo, -a",
   gender: "",
+  prefix_suffix: "",
   part_of_speech: "Noun",
   definition: "\"grandparent\"",
   etymology1: "From Vulgar Latin <i>*aviolus</i>, from Latin avus</i> and diminutive suffix <i>-olus</i>.",
@@ -100,6 +107,7 @@ terms = [
   {
   name: "acá",
   gender: "",
+  prefix_suffix: "",
   part_of_speech: "Adverb",
   definition: "\"here,\" \"hither\"",
   etymology1: "From Vulgar Latin <i>*ac(cu) hac</i> from Latin <i>eccum hac</i> \"look (at) this\"",
@@ -114,6 +122,7 @@ terms = [
   {
   name: "acabar",
   gender: "",
+  prefix_suffix: "",
   part_of_speech: "Verb",
   definition: "\"to finish,\" \"to end\"",
   etymology1: "From <i>a-</i> and <i>cabo</i>, ultimately from Latin <i>a(d)-</i> and <i>caput</i> \"head.\"",
@@ -128,6 +137,7 @@ terms = [
   {
   name: "accidente",
   gender: "m.",
+  prefix_suffix: "",
   part_of_speech: "Noun",
   definition: "\"accident\"",
   etymology1: "From Latin <i>accidentem</i>, from <i>accidere</i> \"to happen,\" \"to befall.\" From <i>ad-</i> and <i>cadere</i> \"to fall.\"",
@@ -142,7 +152,8 @@ terms = [
   {
   name: "-acho",
   gender: "",
-  part_of_speech: "Noun-forming suffix, often with a pejorative sense.",
+  prefix_suffix: "Noun-forming suffix, often with a pejorative sense.",
+  part_of_speech: "",
   definition: "",
   etymology1: "Perhaps from Latin <i>-atio</i>, a noun-forming suffix used to indicate the end result of a verb.",
   etymology2: "",
@@ -156,6 +167,7 @@ terms = [
   # {
   # name: "",
   # gender: "",
+  # prefix_suffix: "",
   # part_of_speech: "",
   # definition: "",
   # etymology1: "",
@@ -170,6 +182,7 @@ terms = [
   {
   name: "bajo",
   gender: "",
+  prefix_suffix: "",
   part_of_speech: "Adjective; Adverb",
   definition: "\"short,\" \"low\"",
   etymology1: "From Latin <i>bassus</i> \"base;\" \"fat.\"",
@@ -184,6 +197,7 @@ terms = [
   {
   name: "baño",
   gender: "m.",
+  prefix_suffix: "",
   part_of_speech: "Noun",
   definition: "\"bath\"",
   etymology1: "From Vulgar Latin <i>baneum</i> \'id.,\' from Latin <i>balneum</i> - a variant of the more conservative <i>balineum</i> - borrowed from Greek βαλανεῖον (balaneîon) \"bath,\" \"bathing room.\"",
@@ -198,6 +212,7 @@ terms = [
   {
   name: "cabeza",
   gender: "f.",
+  prefix_suffix: "",
   part_of_speech: "Noun",
   definition: "\"head\"",
   etymology1: "From Vulgar Latin <i>*capitia</i> \'id.,\' a feminine singular taken from the neuter plural of <i>capitium</i> (whence <i>cabezo</i> \"mountain peak\"), diminutive of <i>caput</i>.",
@@ -212,6 +227,7 @@ terms = [
   {
   name: "buscar",
   gender: "",
+  prefix_suffix: "",
   part_of_speech: "Verb",
   definition: "\"to search for\"",
   etymology1: "Unknown origin but present in some form in Western Vulgar Latin. Perhaps from a hypothetical Vulgar Latin verb <i>*boscare</i>, derived from <i>*boscus</i> \"woods,\" in the sense of searching for kindling. See bosque.",
@@ -226,6 +242,7 @@ terms = [
   {
   name: "arma",
   gender: "",
+  prefix_suffix: "",
   part_of_speech: "Noun",
   definition: "\"weapon\"",
   etymology1: "From Latin <i>arma</i> \"weapons.\"",
@@ -240,6 +257,7 @@ terms = [
   {
   name: "chico, -a",
   gender: "",
+  prefix_suffix: "",
   part_of_speech: "Adjective, Noun",
   definition: "\"small;\" (masc.) \"boy,\" \"child;\" (fem.) \"girl\"",
   etymology1: "Perhaps from Latin <i>ciccus</i> \"nothing,\" earlier \"something worthless,\" but originally \"the thin membrane surrounding the grains of a pomegranate.\" Presumably borrowed from an unattested Ancient Greek word *κίκκος (kíkkos) \"shell of a pomegranate,\" hypothesized by Beekes (2008) on the basis of the Latin word and possible Greek derivatives κίκκαβος (kíkkabos) \"small coin in the Underworld,\" κικκάβι(ο)ν (kikkábi(o)n) \"nothing,\" and κικαῖος (kikaios) of obscure meaning. Ultimately of unknown origin.",
@@ -254,6 +272,7 @@ terms = [
   {
   name: "llegar",
   gender: "",
+  prefix_suffix: "",
   part_of_speech: "Verb",
   definition: "\"to arrive\"",
   etymology1: "From Latin <i>plicare</i> \"to fold.\" According to Roberts (2014), an extension of the sense of being \'folded\' into something as an arrival at a destination.",
@@ -268,6 +287,7 @@ terms = [
   {
   name: "listo",
   gender: "m.",
+  prefix_suffix: "",
   part_of_speech: "Adjective",
   definition: "\"skillful,\" \"ready\"",
   etymology1: "Probably from Vulgar Latin <i>*lex(i)tus</i>, past participle from Latin <i>legere</i> \"read,\" \"gather.\"",
@@ -282,7 +302,8 @@ terms = [
   {
   name: "-a",
   gender: "",
-  part_of_speech: "Feminine suffix",
+  prefix_suffix: "Feminine suffix",
+  part_of_speech: "",
   definition: "",
   etymology1: "From Proto-Italic *<i>-ā</i> 'id.,' from late Proto-Indo-European *-(e)h<sub>2</sub> 'id.' Modeled from an earlier suffix in Proto-Indo-European *-<i>h<sub>2</sub></i>, which formed collective and abstract animate nouns, from Pre-Proto-Indo-European *<i>-h<sub>2</sub></i>, a suffix indicating <i>plurale tantum</i>.",
   etymology2: "",
@@ -303,6 +324,7 @@ terms = [
   # {
   # name: "",
   # gender: "",
+  # prefix_suffix: "",
   # part_of_speech: "",
   # definition: "",
   # etymology1: "",
@@ -317,6 +339,7 @@ terms = [
   # {
   # name: "",
   # gender: "",
+  # prefix_suffix: "",
   # part_of_speech: "",
   # definition: "",
   # etymology1: "",
@@ -331,6 +354,7 @@ terms = [
   # {
   # name: "",
   # gender: "",
+  # prefix_suffix: "",
   # part_of_speech: "",
   # definition: "",
   # etymology1: "",
@@ -345,6 +369,7 @@ terms = [
   {
   name: "a",
   gender: "",
+  prefix_suffix: "",
   part_of_speech: "Adverb",
   definition: "\"at,\" \"in\"",
   etymology1: "A post-Latin development from the Old Spanish era, deriving from Latin <i>ad</i> \"to,\" \"toward.\"",
