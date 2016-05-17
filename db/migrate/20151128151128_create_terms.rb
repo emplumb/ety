@@ -1,9 +1,10 @@
 class CreateTerms < ActiveRecord::Migration
   def change
     create_table :terms do |t|
-      t.string :first
+      t.string :prefix
       t.string :name
       t.string :gender
+      t.string :p_s
       t.string :part_of_speech
       t.text :definition
       t.text :etymology1
@@ -13,7 +14,6 @@ class CreateTerms < ActiveRecord::Migration
       t.text :notes1
       t.text :notes2
       t.text :quote
-
 
       t.timestamps
 

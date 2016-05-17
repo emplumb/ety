@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160507203715) do
+ActiveRecord::Schema.define(version: 20151128151128) do
 
   create_table "terms", force: :cascade do |t|
-    t.string   "first"
+    t.string   "prefix"
     t.string   "name"
     t.string   "gender"
+    t.string   "p_s"
     t.string   "part_of_speech"
     t.text     "definition"
     t.text     "etymology1"
@@ -28,7 +29,6 @@ ActiveRecord::Schema.define(version: 20160507203715) do
     t.text     "quote"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "prefix_suffix"
   end
 
 end

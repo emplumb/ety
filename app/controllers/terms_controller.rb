@@ -30,7 +30,7 @@ class TermsController < ApplicationController
 
   def directory
     if params[:letter].present?
-      @terms = Term.where(first: params[:letter]).order(:name).page(params[:page])
+      @terms = Term.where(prefix: params[:letter]).order(:name).page(params[:page])
     else
       @terms = Term.all.order(:name).page(params[:page])
     end
