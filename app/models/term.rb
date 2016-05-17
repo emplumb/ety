@@ -1,7 +1,18 @@
 require 'elasticsearch/model'
 
 class Term < ActiveRecord::Base
-  paginates_per 10
+  validates :name, presence: true
+  validates :etymology1, presence: true
+
+  MULTI_TERM_PREFIX = ['ch', 'll']
+  before_validation :update_prefix, if: :name_changed?
+
+  private
+    def update_prefix
+      self.prefix = MULTI_TERM_PREFIX.detect do |prefix|
+        self.name.start_with?(prefix)
+      end || self.name[0]
+    end
 
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
@@ -48,6 +59,7 @@ class Term < ActiveRecord::Base
     mappings dynamic: 'false' do
       indexes :id, index: :not_analyzed
       indexes :name, analyzer: 'spanish', index_options: 'offsets'
+      indexes :p_s, index: :not_analyzed
       indexes :gender, index: :not_analyzed
       indexes :part_of_speech, index: :not_analyzed
       indexes :definition, index_options: 'offsets'
