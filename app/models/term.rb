@@ -2,7 +2,7 @@ require 'elasticsearch/model'
 
 class Term < ActiveRecord::Base
   validates :name, presence: true
-  validates :etymology1, presence: true
+  # validates :etymology1, presence: true
 
   MULTI_TERM_PREFIX = ['ch', 'll']
   before_validation :update_prefix, if: :name_changed?
@@ -66,10 +66,8 @@ class Term < ActiveRecord::Base
       indexes :etymology1, analyzer: 'stops_and_synonyms', index_options: 'offsets'
       indexes :etymology2, analyzer: 'stops_and_synonyms', index_options: 'offsets'
       indexes :uses, analyzer: 'stops_and_synonyms', index_options: 'offsets'
-      indexes :romance_cognates, analyzer: 'stops_and_synonyms', index_options: 'offsets'
       indexes :notes1, analyzer: 'stops_and_synonyms', index_options: 'offsets'
       indexes :notes2, analyzer: 'stops_and_synonyms', index_options: 'offsets'
-      indexes :quote, analyzer: 'stops_and_synonyms', index_options: 'offsets'
     end
   end
 
@@ -79,7 +77,7 @@ class Term < ActiveRecord::Base
         query: {
           multi_match: {
             query: query,
-            fields: ['name^10', 'definition^9', 'etymology1', 'etymology2', 'uses', 'romance_cognates', 'notes1', 'notes2', 'quote']
+            fields: ['name^10', 'definition^9', 'etymology1', 'etymology2', 'uses', 'notes1', 'notes2']
           }
         }
       }

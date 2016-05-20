@@ -11,17 +11,15 @@
               <b><a href="/term/<%= @term.name %>"><%= @term.name %></a></b>
               <%= @term.gender %>
               <%= @term.p_s %>
-              <%= @term.part_of_speech %>
+              <%= @term.part_of_speech.try(:html_safe) %>
               <%= @term.definition.try(:html_safe) %>
               <%= @term.etymology1.try(:html_safe) %>
               <%= @term.etymology2.try(:html_safe) %>
               <%= @term.uses.try(:html_safe) %>
               <p></p>
-              <div class="indent"><u><b>Romance Cognates:</b></u> <%= @term.romance_cognates.try(:html_safe) %></div>
-              <p></p>
               <%= @term.notes1.try(:html_safe) %>
+              <p></p>
               <%= @term.notes2.try(:html_safe) %>
-              <%= @term.quote.try(:html_safe) %>
             </td>
           </tr>
         </dl>
