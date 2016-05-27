@@ -142,7 +142,7 @@
       .end-pad {
         padding-bottom: 80px;
       }
-      #m-alph-pad {
+      #m-alpha-pad {
         padding-top: 15px;
       }
       .footer {
@@ -163,10 +163,6 @@
       .end-pad {
         padding-bottom: 70px;
       }
-    }
-
-    #dir-pad {
-      padding-bottom: 30px;
     }
 
     .table {
