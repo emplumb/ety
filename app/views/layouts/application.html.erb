@@ -14,8 +14,8 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
+  <script src="jq/jquery-2.1.1.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 
@@ -42,7 +42,6 @@
       </div><!-- /.navbar-collapse -->
       <!-- Adds search form -->
       <div class="navbar-right">
-        <!-- <div class="navbar-header navbar-search"> -->
         <form class="navbar-form" role="search" method="get" action="/search">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Search" name="query" id="search-term">
@@ -85,8 +84,6 @@
       </div>
     </div>
   </div>
-<!-- <div class="left"></div>
-<div class="right"></div> -->
 
   <%= yield %>
 
@@ -95,6 +92,8 @@
       <div id="navigation" class="container-fluid">
         <ul>
           <li><%= link_to "About", about_path %></li>
+          <li><%= link_to "Appendix", appendix_path %></li>
+          <li><%= link_to "Sources", sources_path %></li>
           <li><%= link_to "Contact", contact_path %></li>
           <li><a href="http://www.cranberryletters.com/">Cranberry Letters</a></li>
         </ul>
