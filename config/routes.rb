@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   get "/about", :controller => "terms", :action => "about"
 
-  get "/faq", :controller => "terms", :action => "faq"
+  get "/appendix", :controller => "terms", :action => "appendix"
+
+  get "/sources", :controller => "terms", :action => "sources"
 
   get "/contact", :controller => "terms", :action => "contact"
 
@@ -17,7 +19,5 @@ Rails.application.routes.draw do
   get "search" => "terms#search"
 
   post "/submit_message", :controller => "contact", :action => "submit_message"
-
-  # get "/email_confirmation", :controller => "contact", :action => "email_confirmation"
 
 end

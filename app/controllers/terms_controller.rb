@@ -18,10 +18,13 @@ class TermsController < ApplicationController
   def about
   end
 
-  def faq
+  def contact
   end
 
-  def contact
+  def sources
+  end
+
+  def appendix
   end
 
   def show
