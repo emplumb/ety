@@ -14,5 +14,15 @@
 //= require jquery_ujs
 
 $(document).ready(function() {
-    $(".dropdown-toggle").dropdown();
+
+
+  $(".expand").click(function() {
+    event.preventDefault();
+    $(".background").toggleClass("background-truncate");
+
+     if ($(this).text() == "Read More")
+       $(this).text("Collapse")
+    else
+       $(this).text("Read More");
+  });
 });
