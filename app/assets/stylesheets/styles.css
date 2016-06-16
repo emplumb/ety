@@ -271,8 +271,6 @@ footer {
   padding-bottom: 70px;
 }
 
-.background-truncate p:not(.exempt) {
+.hide {
   display: none;
 }
-
-
