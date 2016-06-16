@@ -156,9 +156,6 @@ p + p {
   .mobile-hidden {
     display: none;
   }
-  #m-table {
-    display: none;
-  }
   .end-pad {
     padding-bottom: 70px;
   }
@@ -167,10 +164,6 @@ p + p {
 .table {
   border-bottom: 1px solid #DDD;
   font-size: 120%;
-}
-
-#m-table {
-  border-bottom: 1px solid #DDD;
 }
 
 #footnote {
