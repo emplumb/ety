@@ -161,6 +161,16 @@ p + p {
   }
 }
 
+.hide {
+  display: none;
+}
+
+@media (min-width: 620px) and (max-width: 765px) {
+  #tab-pad {
+    padding-bottom: 70px;
+  }
+}
+
 .table {
   border-bottom: 1px solid #DDD;
   font-size: 120%;
@@ -264,6 +274,3 @@ footer {
   padding-bottom: 70px;
 }
 
-.hide {
-  display: none;
-}
