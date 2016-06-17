@@ -26,6 +26,27 @@ p + p {
   margin-left: 40px;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .input-group {
+    width: 25em;
+    margin-left: 1em;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .input-group {
+    width: 35em;
+    margin-left: 4.5em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .input-group {
+    width: 45em;
+    margin-left: 7.5em;
+  }
+}
+
 @media (min-width: 768px) {
   .navbar-brand {
     padding-top: 11px!important;
