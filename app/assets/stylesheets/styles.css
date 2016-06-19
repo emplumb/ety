@@ -26,24 +26,43 @@ p + p {
   margin-left: 40px;
 }
 
+.navbar-form .input-group .input-group-btn {
+  display: block;
+}
+
 @media (min-width: 768px) and (max-width: 991px) {
   .input-group {
-    width: 25em;
-    margin-left: 1em;
+    width: 300px;
+  }
+  .navbar {
+    margin: 0px!important;
+  }
+  .npad-right {
+    padding-left: 60px;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
   .input-group {
-    width: 35em;
-    margin-left: 4.5em;
+    width: 400px;
+  }
+  .navbar {
+    margin: 0px!important;
+  }
+  .npad-right {
+    padding-left: 180px;
   }
 }
 
 @media (min-width: 1200px) {
   .input-group {
-    width: 45em;
-    margin-left: 7.5em;
+    width: 500px;
+  }
+  .navbar {
+    margin: 0px!important;
+  }
+  .npad-right {
+    padding-left: 275px;
   }
 }
 
