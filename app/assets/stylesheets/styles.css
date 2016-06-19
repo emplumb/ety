@@ -26,16 +26,15 @@ p + p {
   margin-left: 40px;
 }
 
-.navbar-form .input-group .input-group-btn {
-  display: block;
+@media (min-width: 768px) {
+  .input-group-btn {
+    width: 5px!important;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   .input-group {
     width: 300px;
-  }
-  .navbar {
-    margin: 0px!important;
   }
   .npad-right {
     padding-left: 60px;
@@ -46,9 +45,6 @@ p + p {
   .input-group {
     width: 400px;
   }
-  .navbar {
-    margin: 0px!important;
-  }
   .npad-right {
     padding-left: 180px;
   }
@@ -58,11 +54,8 @@ p + p {
   .input-group {
     width: 500px;
   }
-  .navbar {
-    margin: 0px!important;
-  }
   .npad-right {
-    padding-left: 275px;
+    padding-left: 310px;
   }
 }
 
