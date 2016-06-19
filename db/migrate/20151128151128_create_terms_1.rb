@@ -1,4 +1,4 @@
-class CreateTerms < ActiveRecord::Migration
+class CreateTerms1 < ActiveRecord::Migration
   def change
     create_table :terms do |t|
       t.string :prefix
