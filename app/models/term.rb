@@ -23,8 +23,8 @@ class Term < ActiveRecord::Base
   private
     def update_prefix
       self.prefix = MULTI_TERM_PREFIX.detect do |prefix|
-        self.name.start_with?(prefix)
-      end || self.name[0]
+        self.name.downcase.start_with?(prefix)
+      end || self.name[0].downcase
     end
 
   include Elasticsearch::Model
