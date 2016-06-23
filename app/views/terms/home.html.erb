@@ -8,7 +8,7 @@
         <dl>
           <tr>
             <td>
-              <b><a href="/term/<%= @term.name %>"><%= @term.name %></a></b>
+              <b><a href="/term/<%= @term.slug %>"><%= @term.name %></a></b>
               <%= @term.gender %>
               <%= @term.p_s %>
               <%= @term.part_of_speech.try(:html_safe) %>

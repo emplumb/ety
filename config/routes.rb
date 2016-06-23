@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get "/directory/:letter", :controller => "terms", :action => "directory"
 
-  get "/term/:name", :controller => "terms", :action => "show"
+  get "/term/:id", :controller => "terms", :action => "show"
 
   get "search" => "terms#search"
 
