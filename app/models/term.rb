@@ -4,7 +4,18 @@ class Term < ActiveRecord::Base
   validates :name, presence: true
 
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
+
+  def should_generate_new_friendly_id?
+    slug.blank? || title_changed?
+  end
+
+  def slug_candidates
+    [
+      :name,
+      [:name, "2"]
+    ]
+  end
 
   MULTI_TERM_PREFIX = ['ch', 'll']
   before_validation :update_prefix, if: :name_changed?
