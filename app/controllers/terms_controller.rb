@@ -28,7 +28,7 @@ class TermsController < ApplicationController
   end
 
   def show
-    @term = Term.find_by_name(params[:name])
+    @term = Term.friendly.find(params[:id])
   end
 
   def directory
@@ -42,7 +42,5 @@ class TermsController < ApplicationController
   def search
     @terms = Term.search(params[:query]).page(params[:page])
   end
-
-
 
 end
