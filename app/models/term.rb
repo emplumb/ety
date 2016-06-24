@@ -31,70 +31,46 @@ class Term < ActiveRecord::Base
   include Elasticsearch::Model::Callbacks
 
   settings index: { number_of_shards: 1, number_of_replicas: 0 },
-
     analysis: {
       filter: {
+        english_stop: {
+          type: 'stop',
+          stopwords: ['and', 'the', 'in', 'on', 'or', 'to', 'a', 'an', 'of', 'that', 'have', 'it', 'is', 'for', 'not', 'with', 'as', 'do', 'not', 'at', 'this', 'but', 'by', 'from', 'will', 'would', 'there', 'what', 'so', 'if', 'when', 'can', 'no', 'into', 'some', 'than', 'then', 'only', 'its', 'also', 'back', 'after', 'use', 'two', 'how', 'where', 'first', 'because', 'any', 'these', 'most']
+        },
+        english_stemmer: {
+          type: 'stemmer',
+          name: 'porter2'
+        },
         spanish_stop: {
           type: 'stop',
-          stopwords: '_spanish_'
+          stopwords: ['el', 'él', 'la', 'que', 'qué', 'de', 'y', 'en', 'un', 'se', 'ser', 'haber', 'por', 'con', 'su', 'para', 'como', 'estar', 'tener', 'le', 'lo', 'todo', 'pero', 'mas', 'más', 'hacer', 'o', 'poder', 'este', 'ir', 'ese', 'si', 'me', 'ya', 'ver' 'porque', 'dar', 'cuando', 'muy', 'sin', 'mucho', 'mi', 'alguno', 'desde', 'eso', 'nos', 'sí', 'uno', 'bien', 'entonces', 'donde', 'yo', 'también', 'e', 'del']
         },
-        my_stop: {
-          type: 'stop',
-          # stopwords: ['and', 'the', 'in', 'on', 'or', 'to', 'a', 'an', 'of', 'that', 'have', 'it', 'is', 'for', 'not', 'with', 'as', 'do', 'not', 'at', 'this', 'but', 'by', 'from', 'will', 'would', 'there', 'what', 'so', 'if', 'when', 'can', 'no', 'into', 'some', 'than', 'then', 'only', 'its', 'also', 'back', 'after', 'use', 'two', 'how', 'where', 'first', 'because', 'any', 'these', 'most', 'el', 'él', 'la', 'que', 'qué', 'de', 'y', 'en', 'un', 'se', 'por', 'con', 'su', 'para', 'como', 'le', 'lo', 'pero', 'mas', 'más', 'o', 'ir', 'ese', 'si', 'me', 'ya', 'porque', 'muy', 'mucho', 'mi', 'yo', 'también']
-          stopwords: 'él'
+        spanish_stemmer: {
+          type: 'stemmer',
+          name: 'light_spanish'
         }
       },
-        # synonym: {
-        #   type: 'synonym',
-        #   synonyms_path: 'synonyms.txt',
-        #   ignore_case: 'true'
-        # },
-      #   spanish_stemmer: {
-      #     type: 'stemmer',
-      #     language: 'light_spanish'
-      #   }
-      # },
       analyzer: {
-        my_analyzer: {
+        combined_analyzer: {
           tokenizer: 'standard',
-          filter: 'my_stop',
-          # char_filter: 'html_strip',
-          type: 'stop'
+          filter: [ 'lowercase', 'english_stop', 'english_stemmer', 'spanish_stop', 'spanish_stemmer'],
+          char_filter: 'html_strip'
         }
-
-      # analyzer: {
-      #   stops_and_synonyms: {
-      #     type: 'custom',
-      #     tokenizer: 'standard',
-      #     stopwords: ["and", "the", "in", "on", "or", "to", "a", "an", "of", "that", "have", "it", "is", "for", "not", "with", "as", "do", "not", "at", "this", "but", "by", "from", "will", "would", "there", "what", "so", "if", "when", "can", "no", "into", "some", "than", "then", "only", "its", "also", "back", "after", "use", "two", "how", "where", "first", "because", "any", "these", "most"],
-      #     char_filter: 'html_strip',
-      #     filter: [
-      #       'spanish_stop',
-      #       'spanish_stemmer',
-      #       # 'synonym',
-      #       'lowercase'
-      #     ]
-      #   },
-        # spanish: {
-        #   tokenizer: 'standard',
-        #   # filter: 'synonym',
-        #   language: 'spanish'
-        # }
       }
     } do
 
     mappings dynamic: 'false' do
       indexes :id, index: :not_analyzed
-      indexes :name, analyzer: :my_analyzer, index_options: 'offsets'
-      indexes :p_s, analyzer: :my_analyzer, index: :not_analyzed
-      indexes :gender, analyzer: :my_analyzer, index: :not_analyzed
-      indexes :part_of_speech, analyzer: :my_analyzer, index: :not_analyzed
-      indexes :definition, analyzer: :my_analyzer, index_options: 'offsets'
-      indexes :etymology1, analyzer: :my_analyzer, index_options: 'offsets'
-      indexes :etymology2, analyzer: :my_analyzer, index_options: 'offsets'
-      indexes :uses, analyzer: :my_analyzer, index_options: 'offsets'
-      indexes :notes1, analyzer: :my_analyzer, index_options: 'offsets'
-      indexes :notes2, analyzer: :my_analyzer, index_options: 'offsets'
+      indexes :name
+      indexes :p_s, index: :not_analyzed
+      indexes :gender, index: :not_analyzed
+      indexes :part_of_speech, index: :not_analyzed
+      indexes :definition, analyzer: :combined_analyzer
+      indexes :etymology1, analyzer: :combined_analyzer
+      indexes :etymology2, analyzer: :combined_analyzer
+      indexes :uses, analyzer: :combined_analyzer
+      indexes :notes1, analyzer: :combined_analyzer
+      indexes :notes2, analyzer: :combined_analyzer
     end
   end
 
