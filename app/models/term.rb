@@ -35,7 +35,7 @@ class Term < ActiveRecord::Base
       filter: {
         english_stop: {
           type: 'stop',
-          stopwords: ['and', 'the', 'in', 'on', 'or', 'to', 'a', 'an', 'of', 'that', 'have', 'it', 'is', 'for', 'not', 'with', 'as', 'do', 'not', 'at', 'this', 'but', 'by', 'from', 'will', 'would', 'there', 'what', 'so', 'if', 'when', 'can', 'no', 'into', 'some', 'than', 'then', 'only', 'its', 'also', 'back', 'after', 'use', 'two', 'how', 'where', 'first', 'because', 'any', 'these', 'most']
+          stopwords: ['and', 'the', 'in', 'on', 'or', 'to', 'a', 'an', 'of', 'that', 'have', 'it', 'is', 'for', 'not', 'with', 'as', 'do', 'not', 'at', 'this', 'but', 'by', 'from', 'will', 'would', 'there', 'what', 'so', 'if', 'when', 'can', 'no', 'into', 'some', 'than', 'then', 'only', 'its', 'also', 'back', 'after', 'use', 'two', 'how', 'where', 'first', 'because', 'any', 'these', 'most', 'all', 'why', 'who', 'see', 'dates', 'same', 'meaning', 'indicate', 'indicating']
         },
         english_stemmer: {
           type: 'stemmer',
@@ -43,7 +43,7 @@ class Term < ActiveRecord::Base
         },
         spanish_stop: {
           type: 'stop',
-          stopwords: ['el', 'él', 'la', 'que', 'qué', 'de', 'y', 'en', 'un', 'se', 'ser', 'haber', 'por', 'con', 'su', 'para', 'como', 'estar', 'tener', 'le', 'lo', 'todo', 'pero', 'mas', 'más', 'hacer', 'o', 'poder', 'este', 'ir', 'ese', 'si', 'me', 'ya', 'ver' 'porque', 'dar', 'cuando', 'muy', 'sin', 'mucho', 'mi', 'alguno', 'desde', 'eso', 'nos', 'sí', 'uno', 'bien', 'entonces', 'donde', 'yo', 'también', 'e', 'del']
+          stopwords: ['el', 'él', 'la', 'que', 'qué', 'de', 'y', 'en', 'un', 'se', 'ser', 'haber', 'por', 'con', 'su', 'para', 'como', 'estar', 'tener', 'le', 'lo', 'todo', 'pero', 'mas', 'más', 'hacer', 'o', 'poder', 'este', 'ir', 'ese', 'si', 'me', 'ya', 'ver' 'porque', 'dar', 'cuando', 'muy', 'sin', 'mucho', 'mi', 'alguno', 'desde', 'eso', 'nos', 'sí', 'uno', 'una', 'bien', 'entonces', 'donde', 'yo', 'también', 'e', 'del', 'a']
         },
         spanish_stemmer: {
           type: 'stemmer',
@@ -53,18 +53,22 @@ class Term < ActiveRecord::Base
       analyzer: {
         combined_analyzer: {
           tokenizer: 'standard',
-          filter: [ 'lowercase', 'english_stop', 'english_stemmer', 'spanish_stop', 'spanish_stemmer'],
+          filter: ['lowercase', 'english_stop', 'english_stemmer', 'spanish_stop', 'spanish_stemmer'],
           char_filter: 'html_strip'
+        },
+        spanish_analyzer: {
+          tokenizer: 'standard',
+          filter: ['lowercase', 'spanish_stemmer']
         }
       }
     } do
 
     mappings dynamic: 'false' do
       indexes :id, index: :not_analyzed
-      indexes :name
-      indexes :p_s, index: :not_analyzed
-      indexes :gender, index: :not_analyzed
-      indexes :part_of_speech, index: :not_analyzed
+      indexes :name, analyzer: :spanish_analyzer
+      indexes :p_s, index: :no
+      indexes :gender, index: :no
+      indexes :part_of_speech, index: :no
       indexes :definition, analyzer: :combined_analyzer
       indexes :etymology1, analyzer: :combined_analyzer
       indexes :etymology2, analyzer: :combined_analyzer
@@ -80,7 +84,8 @@ class Term < ActiveRecord::Base
         query: {
           multi_match: {
             query: query,
-            fields: ['name^7', 'definition^6', 'etymology1^5', 'etymology2^4', 'uses^3', 'notes1^2', 'notes2^1']
+            fields: ['name^7', 'definition^6', 'etymology1^5', 'etymology2^4', 'uses^3', 'notes1^2', 'notes2^1'],
+            operator: 'and'
           }
         }
       }
