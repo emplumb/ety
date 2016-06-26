@@ -28,14 +28,14 @@ class TermsController < ApplicationController
   end
 
   def show
-    @term = Term.friendly.find(params[:id])
+    @term = Term.find_by_slug(params[:id])
   end
 
   def directory
     if params[:letter].present?
-      @terms = Term.where(prefix: params[:letter]).order('LOWER(name)').page(params[:page])
+      @terms = Term.where(prefix: params[:letter]).order(:slug).page(params[:page])
     else
-      @terms = Term.all.order(:name).page(params[:page])
+      @terms = Term.all.order(:slug).page(params[:page])
     end
   end
 

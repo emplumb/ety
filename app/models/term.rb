@@ -3,6 +3,28 @@ require 'elasticsearch/model'
 class Term < ActiveRecord::Base
   validates :name, presence: true
 
+  before_save :update_slug, :update_prefix
+
+  def update_slug
+    pname = name.parameterize
+    self.slug = get_valid_slug(pname, 1)
+  end
+
+  private
+    def get_valid_slug(name, index)
+      index_name = index > 1 ? name + index.to_s : name
+      if Term.exists?(slug: index_name)
+        return get_valid_slug(name, index + 1)
+      end
+      return index_name
+    end
+
+
+
+  def to_param
+    slug
+  end
+
   # extend FriendlyId
   # friendly_id :slug_candidates, use: :slugged
 
@@ -18,13 +40,13 @@ class Term < ActiveRecord::Base
   # end
 
   MULTI_TERM_PREFIX = ['ch', 'll']
-  before_validation :update_prefix, if: :name_changed?
+  # before_validation :update_prefix, if: :name_changed?
 
   private
     def update_prefix
       self.prefix = MULTI_TERM_PREFIX.detect do |prefix|
-        self.name.downcase.start_with?(prefix)
-      end || self.name[0].downcase
+        self.slug.start_with?(prefix)
+      end || self.slug[0]
     end
 
   include Elasticsearch::Model
