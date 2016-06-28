@@ -26,7 +26,6 @@ $(document).ready(function() {
     e.preventDefault();
   });
 
-  // Changes contributed by @diego-rzg
   $('.read-more-hide').on('click', function(e) {
     var p = $(this).parent('.read-more-content');
     p.addClass('hide');
