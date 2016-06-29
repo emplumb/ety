@@ -27,6 +27,9 @@ class TermsController < ApplicationController
   def appendix
   end
 
+  def phonology
+  end
+
   def show
     @term = Term.find_by_slug(params[:id])
   end

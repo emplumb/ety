@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get "/appendix", :controller => "terms", :action => "appendix"
 
+  get "/phonology", :controller => "terms", :action => "phonology"
+
   get "/sources", :controller => "terms", :action => "sources"
 
   get "/contact", :controller => "terms", :action => "contact"
