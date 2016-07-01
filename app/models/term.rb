@@ -12,35 +12,20 @@ class Term < ActiveRecord::Base
 
   private
     def get_valid_slug(name, index)
-      index_name = index > 1 ? name + index.to_s : name
+      index_name = index > 1 ? name + "-" + index.to_s : name
+
       if Term.exists?(slug: index_name)
         return get_valid_slug(name, index + 1)
       end
+
       return index_name
     end
-
-
 
   def to_param
     slug
   end
 
-  # extend FriendlyId
-  # friendly_id :slug_candidates, use: :slugged
-
-  # def should_generate_new_friendly_id?
-  #   slug.blank? || title_changed?
-  # end
-
-  # def slug_candidates
-  #   [
-  #     :name,
-  #     [:name, "2"]
-  #   ]
-  # end
-
   MULTI_TERM_PREFIX = ['ch', 'll']
-  # before_validation :update_prefix, if: :name_changed?
 
   private
     def update_prefix
@@ -86,7 +71,7 @@ class Term < ActiveRecord::Base
     } do
 
     mappings dynamic: 'false' do
-      indexes :id, index: :not_analyzed
+      indexes :id, index: :no
       indexes :name, analyzer: :spanish_analyzer
       indexes :p_s, index: :no
       indexes :gender, index: :no
@@ -97,6 +82,7 @@ class Term < ActiveRecord::Base
       indexes :uses, analyzer: :combined_analyzer
       indexes :notes1, analyzer: :combined_analyzer
       indexes :notes2, analyzer: :combined_analyzer
+      indexes :slug, index: :no
     end
   end
 
@@ -125,5 +111,6 @@ Term.__elasticsearch__.client.indices.create \
 
 # Index all term records from the DB to Elasticsearch
 Term.import(force: true)
+
 
 
