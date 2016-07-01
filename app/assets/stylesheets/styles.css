@@ -6,6 +6,7 @@ html {
 body {
   padding-top: 10px;
   font-family: Georgia, Times, 'Times New Roman', serif!important;
+  /*font-family: 'Tangerine', serif!important;*/
 }
 
 @media (max-width: 767px) {
@@ -22,8 +23,12 @@ p + p {
   margin-top: 35px;
 }
 
-.indent {
+.p-indent {
   margin-left: 40px;
+}
+
+.line-indent {
+    text-indent: 40px;
 }
 
 @media (min-width: 768px) {
@@ -37,7 +42,7 @@ p + p {
     width: 300px;
   }
   .npad-right {
-    padding-left: 60px;
+    padding-left: 82px;
   }
 }
 
@@ -46,7 +51,7 @@ p + p {
     width: 400px;
   }
   .npad-right {
-    padding-left: 180px;
+    padding-left: 200px;
   }
 }
 
@@ -55,7 +60,7 @@ p + p {
     width: 500px;
   }
   .npad-right {
-    padding-left: 310px;
+    padding-left: 300px;
   }
 }
 
@@ -75,12 +80,20 @@ p + p {
 }
 
 #banner-title {
+  /*font-family: 'Tangerine', serif!important;*/
+  /*font-family: 'Cormorant Garamond', serif!important;*/
+  /*font-family: 'Libre Baskerville', serif!important;*/
+  font-family: 'Poiret One', cursive!important;
+  /*font-family: 'Dancing Script', cursive!important;*/
   color: white;
   font-size: 250%;
-  text-transform: uppercase;
+  font-weight: bold;
+  /*font-style: italic;*/
 }
 
 #slogan {
+  font-family: 'Georgia', serif!important;
+  /*font-family: 'Poiret One', cursive!important;*/
   font-style: italic;
   color: white;
   font-size: 120%;
@@ -131,7 +144,7 @@ p + p {
 }
 
 #alphabet li a {
-  color: #5DC98F;
+  color: #7DD4A5;
   width: 38px;
   display: inline-block;
   font-weight: bold;
@@ -166,7 +179,7 @@ p + p {
     font-size: 130%;
   }
   #mobile-alphabet li a {
-    color: #5DC98F;
+    color: #7DD4A5;
     font-weight: bold;
     width: 35px;
     display: inline-block;
@@ -194,6 +207,10 @@ p + p {
   }
 }
 
+ul {
+  list-style-type: none;
+}
+
 .hide {
   display: none;
 }
@@ -211,6 +228,12 @@ p + p {
   font-size: 120%;
 }
 
+.blockquote {
+  background: #f9f9f9;
+  border-left: 7px solid #ccc;
+  padding: 0.5em 10px;
+}
+
 #footnote {
   border-top: 1px solid #CCC;
   padding-top: 35px;
@@ -226,8 +249,8 @@ footer {
 }
 
 #navigation {
-  background-color: #6A7D79;
-  padding-top: 30px;
+  background-color: #92a3a0;
+  padding-top: 25px;
   padding-bottom: 15px;
   width: 100%;
   margin: auto;
@@ -255,7 +278,7 @@ footer {
 }
 
 #navigation li a {
-  color: #5DC98F;
+  color: #7DD4A5;
   margin: 25px;
   display: inline-block;
 }
@@ -281,7 +304,7 @@ footer {
 #copyright {
   padding: 20px 0;
   text-align: center;
-  background-color: #30413D;
+  background-color: #455d58;
   margin: 0;
 }
 
