@@ -42,7 +42,7 @@ p + p {
     width: 300px;
   }
   .npad-right {
-    padding-left: 82px;
+    padding-left: 54px;
   }
 }
 
@@ -51,7 +51,7 @@ p + p {
     width: 400px;
   }
   .npad-right {
-    padding-left: 200px;
+    padding-left: 174px;
   }
 }
 
@@ -60,7 +60,7 @@ p + p {
     width: 500px;
   }
   .npad-right {
-    padding-left: 300px;
+    padding-left: 274px;
   }
 }
 
