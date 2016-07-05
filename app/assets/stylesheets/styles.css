@@ -15,6 +15,10 @@ body {
   }
 }
 
+.entry-color {
+  color: #70be94;
+}
+
 .font {
   font-size: 120%;
 }
@@ -226,6 +230,8 @@ ul {
   border-left: 1px solid #DDD;
   border-right: 1px solid #DDD;
   font-size: 120%;
+  box-shadow: 3px 6px 5px 1px #888;
+  /*box-shadow: 5px 5px 5px #888;*/
 }
 
 .blockquote {
