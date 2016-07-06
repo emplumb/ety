@@ -16,7 +16,7 @@ body {
 }
 
 .entry-color {
-  color: #70be94;
+  color:  #44C17D;
 }
 
 .font {
@@ -75,7 +75,7 @@ p + p {
 }
 
 .jumbotron {
-  background-color: #455d58!important;
+  background-color: #455D58!important;
   text-align: center;
   padding-bottom: 15px!important;
   margin-bottom: 40px!important;
@@ -90,7 +90,7 @@ p + p {
   font-family: 'Poiret One', cursive!important;
   /*font-family: 'Dancing Script', cursive!important;*/
   color: white;
-  font-size: 250%;
+  font-size: 275%;
   font-weight: bold;
   /*font-style: italic;*/
 }
@@ -104,11 +104,14 @@ p + p {
 }
 
 @media (max-width: 400px) {
+  .jumbotron {
+    margin-bottom: 20px!important;
+  }
   #banner-title {
     font-size: 175%;
   }
-  .jumbotron {
-    margin-bottom: 20px!important;
+  #slogan {
+    font-size: 90%;
   }
 }
 
@@ -117,7 +120,7 @@ p + p {
     font-size: 212%;
   }
   #slogan {
-    font-size: 80%;
+    font-size: 90%;
   }
 }
 
@@ -230,12 +233,11 @@ ul {
   border-left: 1px solid #DDD;
   border-right: 1px solid #DDD;
   font-size: 120%;
-  box-shadow: 3px 6px 5px 1px #888;
-  /*box-shadow: 5px 5px 5px #888;*/
+  box-shadow: 3px 3px 5px 1px #888;
 }
 
 .blockquote {
-  background: #f9f9f9;
+  background: #F9F9F9;
   border-left: 7px solid #ccc;
   padding: 0.5em 10px;
 }
@@ -251,7 +253,6 @@ footer {
   width: 100%;
   margin: 0 auto -195px;
   color: white;
-  box-shadow: 0px -2px 2px #CCC;
 }
 
 #navigation {
