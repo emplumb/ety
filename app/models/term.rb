@@ -25,12 +25,15 @@ class Term < ActiveRecord::Base
     slug
   end
 
-  MULTI_TERM_PREFIX = ['ch', 'll']
+  MULTI_PREFIX = ['ch', 'll']
+  ENYE_PREFIX = ['ñ']
 
   private
     def update_prefix
-      self.prefix = MULTI_TERM_PREFIX.detect do |prefix|
-        self.slug.start_with?(prefix)
+      self.prefix = MULTI_PREFIX.detect do |multi|
+        self.slug.start_with?(multi)
+      end || self.prefix = ENYE_PREFIX.detect do |enye|
+        self.name.start_with?(enye)
       end || self.slug[0]
     end
 
@@ -96,9 +99,25 @@ class Term < ActiveRecord::Base
             operator: 'and'
           }
         }
+        # '_source': ['name', 'definition', 'etymology1', 'etymology2', 'uses', 'notes1', 'notes2']
       }
     )
   end
+
+  # def self.search(query)
+  #   __elasticsearch__.search(
+  #     {
+  #       query: {
+  #         multi_match: {
+  #           query: query,
+  #           fields: ['name^7', 'definition^6', 'etymology1^5', 'etymology2^4', 'uses^3', 'notes1^2', 'notes2^1'],
+  #           operator: 'and'
+  #         }
+  #       },
+  #       fields: ['name', 'definition', 'etymology1', 'etymology2', 'uses', 'notes1', 'notes2']
+  #     }
+  #   )
+  # end
 end
 
 # Delete the previous term index in Elasticsearch
@@ -110,7 +129,7 @@ Term.__elasticsearch__.client.indices.create \
   body: { settings: Term.settings.to_hash, mappings: Term.mappings.to_hash }
 
 # Index all term records from the DB to Elasticsearch
-Term.import(force: true)
+# Term.import(force: true)
 
 
 
