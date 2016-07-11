@@ -85,7 +85,7 @@ class Term < ActiveRecord::Base
       indexes :uses, analyzer: :combined_analyzer
       indexes :notes1, analyzer: :combined_analyzer
       indexes :notes2, analyzer: :combined_analyzer
-      indexes :slug, index: :no
+      indexes :slug, analyzer: :spanish_analyzer
     end
   end
 
@@ -129,7 +129,7 @@ Term.__elasticsearch__.client.indices.create \
   body: { settings: Term.settings.to_hash, mappings: Term.mappings.to_hash }
 
 # Index all term records from the DB to Elasticsearch
-# Term.import(force: true)
+Term.import(force: true)
 
 
 
