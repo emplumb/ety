@@ -1,28 +1,17 @@
-== README
+== Purpose
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The app's purpose is to provide an easily searchable educational resource for the etymology of Spanish words, prefixes, and suffixes.
 
-Things you may want to cover:
+== Dependencies
 
-* Ruby version
+gem 'rails', '4.2.5'
 
-* System dependencies
+gem 'roo'
 
-* Configuration
+gem 'kaminari'
 
-* Database creation
+gem 'elasticsearch-model'
 
-* Database initialization
+gem 'elasticsearch-rails'
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+gem 'mailgun-ruby', '~>1.1'
