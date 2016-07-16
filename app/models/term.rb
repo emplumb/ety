@@ -45,7 +45,7 @@ class Term < ActiveRecord::Base
       filter: {
         english_stop: {
           type: 'stop',
-          stopwords: ['and', 'the', 'in', 'on', 'or', 'to', 'a', 'an', 'of', 'that', 'have', 'it', 'is', 'for', 'not', 'with', 'as', 'do', 'not', 'at', 'this', 'but', 'by', 'from', 'will', 'would', 'there', 'what', 'so', 'if', 'when', 'can', 'no', 'into', 'some', 'than', 'then', 'only', 'its', 'also', 'back', 'after', 'use', 'two', 'how', 'where', 'first', 'because', 'any', 'these', 'most', 'all', 'why', 'who', 'see', 'dates', 'same', 'meaning', 'indicate', 'indicating']
+          stopwords: ['and', 'the', 'in', 'on', 'or', 'to', 'a', 'an', 'of', 'that', 'have', 'it', 'is', 'for', 'not', 'with', 'as', 'do', 'not', 'at', 'this', 'but', 'by', 'from', 'will', 'would', 'there', 'what', 'so', 'if', 'when', 'can', 'no', 'into', 'some', 'than', 'then', 'only', 'its', 'also', 'back', 'after', 'use', 'two', 'how', 'where', 'first', 'because', 'any', 'these', 'most', 'all', 'why', 'who', 'see', 'dates', 'same', 'meaning', 'indicate', 'indicating', 'f', 'm', 'suffix', 'prefix', 'noun', 'verb', 'adjective', 'adverb', 'pronoun', 'interjection', 'preposition']
         },
         english_stemmer: {
           type: 'stemmer',
@@ -99,25 +99,9 @@ class Term < ActiveRecord::Base
             operator: 'and'
           }
         }
-        # '_source': ['name', 'definition', 'etymology1', 'etymology2', 'uses', 'notes1', 'notes2']
       }
     )
   end
-
-  # def self.search(query)
-  #   __elasticsearch__.search(
-  #     {
-  #       query: {
-  #         multi_match: {
-  #           query: query,
-  #           fields: ['name^7', 'definition^6', 'etymology1^5', 'etymology2^4', 'uses^3', 'notes1^2', 'notes2^1'],
-  #           operator: 'and'
-  #         }
-  #       },
-  #       fields: ['name', 'definition', 'etymology1', 'etymology2', 'uses', 'notes1', 'notes2']
-  #     }
-  #   )
-  # end
 end
 
 # Delete the previous term index in Elasticsearch
