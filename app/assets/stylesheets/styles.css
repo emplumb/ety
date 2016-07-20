@@ -31,6 +31,10 @@ p + p {
     text-indent: 40px;
 }
 
+.btn {
+  background-color: #C6C6C6;
+}
+
 @media (min-width: 768px) {
   .input-group-btn {
     width: 5px!important;
@@ -80,20 +84,14 @@ p + p {
 }
 
 #banner-title {
-  /*font-family: 'Tangerine', serif!important;*/
-  /*font-family: 'Cormorant Garamond', serif!important;*/
-  /*font-family: 'Libre Baskerville', serif!important;*/
   font-family: 'Poiret One', cursive!important;
-  /*font-family: 'Dancing Script', cursive!important;*/
   color: white;
   font-size: 275%;
   font-weight: bold;
-  /*font-style: italic;*/
 }
 
 #slogan {
   font-family: 'Georgia', serif!important;
-  /*font-family: 'Poiret One', cursive!important;*/
   font-style: italic;
   color: white;
   font-size: 115%;
@@ -121,15 +119,14 @@ p + p {
 }
 
 .navlogo {
-  width: 35px;
+  width: 30px;
   height: 30px;
-  margin-left: -5px;
 }
 
 #banner-logo {
-  padding: 20px 0;
-  width: 15%;
-  height: 15%;
+  padding: 10px 0;
+  /*width: 15%;*/
+  /*height: 15%;*/
 }
 
 #alphabet ul {
