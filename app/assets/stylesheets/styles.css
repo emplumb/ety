@@ -6,7 +6,6 @@ html {
 body {
   padding-top: 10px;
   font-family: Georgia, Times, 'Times New Roman', serif!important;
-  /*font-family: 'Tangerine', serif!important;*/
 }
 
 @media (max-width: 767px) {
@@ -123,10 +122,10 @@ p + p {
   height: 30px;
 }
 
-#banner-logo {
+.banner-logo {
   padding: 10px 0;
-  /*width: 15%;*/
-  /*height: 15%;*/
+  width: 10%;
+  height: 10%;
 }
 
 #alphabet ul {
@@ -159,7 +158,7 @@ p + p {
 }
 
 @media (max-width: 450px) {
-  #banner-logo {
+  .banner-logo {
     display: none;
   }
   #alphabet {
@@ -193,9 +192,9 @@ p + p {
   .footer {
     margin: 0 auto -185px;
   }
-  .row {
-    font-size: 120%;
-  }
+/*  .row {
+    font-size: 100%;
+  }*/
 }
 
 @media (min-width: 451px) {
