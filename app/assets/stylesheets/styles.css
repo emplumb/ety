@@ -77,9 +77,15 @@ p + p {
   background-color: #455D58!important;
   text-align: center;
   padding-bottom: 15px!important;
-  margin-bottom: 40px!important;
+  margin-bottom: 20px!important;
   letter-spacing: 1px;
   box-shadow: 0px 2px 2px #AAA;
+}
+
+.header-box {
+  width: 50%;
+  margin: 25px auto 25px;
+  border: 2px solid white;
 }
 
 #banner-title {
@@ -94,6 +100,12 @@ p + p {
   font-style: italic;
   color: white;
   font-size: 115%;
+}
+
+.banner-logo {
+  padding: 10px 0;
+  width: 20%;
+  height: 20%;
 }
 
 @media (max-width: 400px) {
@@ -120,12 +132,6 @@ p + p {
 .navlogo {
   width: 30px;
   height: 30px;
-}
-
-.banner-logo {
-  padding: 10px 0;
-  width: 10%;
-  height: 10%;
 }
 
 #alphabet ul {
@@ -158,6 +164,9 @@ p + p {
 }
 
 @media (max-width: 450px) {
+  #slogan {
+    padding: 10px 0;
+  }
   .banner-logo {
     display: none;
   }
@@ -192,9 +201,6 @@ p + p {
   .footer {
     margin: 0 auto -185px;
   }
-/*  .row {
-    font-size: 100%;
-  }*/
 }
 
 @media (min-width: 451px) {
@@ -202,7 +208,7 @@ p + p {
     display: none;
   }
   .end-pad {
-    padding-bottom: 70px;
+    padding-bottom: 50px;
   }
 }
 
