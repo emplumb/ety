@@ -74,7 +74,7 @@ p + p {
 }
 
 .jumbotron {
-  background-color: #455D58!important;
+  background-color: #8a9c99!important;
   text-align: center;
   padding-bottom: 15px!important;
   margin-bottom: 20px!important;
@@ -86,6 +86,8 @@ p + p {
   width: 50%;
   margin: 25px auto 25px;
   border: 2px solid white;
+  box-shadow: 0px 0px 0px 1px white;
+  background-color: #455D58;
 }
 
 #banner-title {
