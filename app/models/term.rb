@@ -75,16 +75,16 @@ class Term < ActiveRecord::Base
 
     mappings dynamic: 'false' do
       indexes :id, index: :no
-      indexes :name, analyzer: :spanish_analyzer
+      indexes :name, analyzer: :spanish_analyzer, index_options: :offsets, store: true
       indexes :p_s, index: :no
       indexes :gender, index: :no
       indexes :part_of_speech, index: :no
-      indexes :definition, analyzer: :combined_analyzer
-      indexes :etymology1, analyzer: :combined_analyzer
-      indexes :etymology2, analyzer: :combined_analyzer
-      indexes :uses, analyzer: :combined_analyzer
-      indexes :notes1, analyzer: :combined_analyzer
-      indexes :notes2, analyzer: :combined_analyzer
+      indexes :definition, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :etymology1, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :etymology2, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :uses, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :notes1, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :notes2, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :slug, analyzer: :spanish_analyzer
     end
   end
@@ -97,6 +97,19 @@ class Term < ActiveRecord::Base
             query: query,
             fields: ['name^7', 'definition^6', 'etymology1^5', 'etymology2^4', 'uses^3', 'notes1^2', 'notes2^1'],
             operator: 'and'
+          }
+        },
+        highlight: {
+          pre_tags: ['<em>'],
+          post_tags: ['</em>'],
+          number_of_fragments: 0,
+          fields: {
+            definition: {},
+            etymology1: {},
+            etymology2: {},
+            uses: {},
+            notes1: {},
+            notes2: {}
           }
         }
       }

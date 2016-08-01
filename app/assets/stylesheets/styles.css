@@ -27,7 +27,12 @@ p + p {
 }
 
 .line-indent {
-    text-indent: 40px;
+  text-indent: 40px;
+}
+
+em {
+  background-color: yellow;
+  font-style: normal;
 }
 
 .btn {
