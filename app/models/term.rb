@@ -79,7 +79,7 @@ class Term < ActiveRecord::Base
       indexes :p_s, index: :no
       indexes :gender, index: :no
       indexes :part_of_speech, index: :no
-      indexes :definition, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :definition, index_options: :offsets, store: true
       indexes :etymology1, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :etymology2, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :uses, analyzer: :combined_analyzer, index_options: :offsets, store: true
