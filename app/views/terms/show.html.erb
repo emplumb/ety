@@ -8,16 +8,16 @@
               <b><%= @term.name %></b>
               <%= @term.gender %>
               <%= @term.p_s %>
-              <%= @term.part_of_speech.try(:html_safe) %>
-              <%= @term.definition.try(:html_safe) %>
+              <%= @term.part_of_speech %>
+              <%= sanitize @term.definition %>
               <p></p>
-              <%= @term.etymology1.try(:html_safe) %>
-              <%= @term.etymology2.try(:html_safe) %>
-              <%= @term.uses.try(:html_safe) %>
+              <%= sanitize @term.etymology1 %>
+              <%= sanitize @term.etymology2 %>
+              <%= sanitize @term.uses %>
               <p></p>
-              <%= @term.notes1.try(:html_safe) %>
+              <%= sanitize @term.notes1, tags: %w(u) %>
               <p></p>
-              <%= @term.notes2.try(:html_safe) %>
+              <%= sanitize @term.notes2, tags: %w(u) %>
             </td>
           </tr>
         </dl>

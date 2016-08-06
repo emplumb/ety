@@ -21,9 +21,9 @@
               <%= sanitize term.try(:highlight).try(:etymology2) ? term.highlight.etymology2[0] : term.etymology2%>
               <%= sanitize term.try(:highlight).try(:uses) ? term.highlight.uses[0] : term.uses %>
               <p></p>
-              <%= sanitize term.try(:highlight).try(:notes1) ? term.highlight.notes1[0] : term.notes1 %>
+              <%= sanitize term.try(:highlight).try(:notes1) ? term.highlight.notes1[0] : term.notes1, tags: %w(u)%>
               <p></p>
-              <%= sanitize term.try(:highlight).try(:notes2) ? term.highlight.notes2[0] : term.notes2 %>
+              <%= sanitize term.try(:highlight).try(:notes2) ? term.highlight.notes2[0] : term.notes2, tags: %w(u) %>
             </td>
           </tr>
         </dl>
