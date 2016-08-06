@@ -104,6 +104,7 @@ class Term < ActiveRecord::Base
           post_tags: ['</em>'],
           number_of_fragments: 0,
           fields: {
+            name: {},
             definition: {},
             etymology1: {},
             etymology2: {},

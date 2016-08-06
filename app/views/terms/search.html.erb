@@ -11,7 +11,7 @@
         <dl>
           <tr>
             <td>
-              <b><a href="/term/<%=term.slug %>"><%= term.name %></a></b>
+              <b><a href="/term/<%=term.slug %>"><%= sanitize term.try(:highlight).try(:name) ? term.highlight.name[0] : term.name %></a></b>
               <%= term.gender %>
               <%= term.p_s %>
               <%= term.part_of_speech %>
