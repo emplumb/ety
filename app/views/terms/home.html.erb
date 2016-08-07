@@ -12,15 +12,15 @@
               <%= @term.gender %>
               <%= @term.p_s %>
               <%= @term.part_of_speech %>
-              <%= sanitize @term.definition %>
+              <%= sanitize @term.definition, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
               <p></p>
-              <%= sanitize @term.etymology1 %>
-              <%= sanitize @term.etymology2 %>
-              <%= sanitize @term.uses %>
+              <%= sanitize @term.etymology1, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+              <%= sanitize @term.etymology2, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+              <%= sanitize @term.uses, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
               <p></p>
-              <%= sanitize @term.notes1 %>
+              <%= sanitize @term.notes1, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
               <p></p>
-              <%= sanitize @term.notes2 %>
+              <%= sanitize @term.notes2, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
             </td>
           </tr>
         </dl>

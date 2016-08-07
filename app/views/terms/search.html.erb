@@ -11,19 +11,19 @@
         <dl>
           <tr>
             <td>
-              <b><a href="/term/<%= term.slug %>"><%= sanitize term.try(:highlight).try(:name) ? term.highlight.name[0] : term.name %></a></b>
+              <b><a href="/term/<%= term.slug %>"><%= sanitize term.try(:highlight).try(:name) ? term.highlight.name[0] : term.name, tags: %w(b em a u i sup sub p), attributes: %w(href) %></a></b>
               <%= term.gender %>
               <%= term.p_s %>
               <%= term.part_of_speech %>
-              <%= sanitize term.try(:highlight).try(:definition) ? term.highlight.definition[0] : term.definition %>
+              <%= sanitize term.try(:highlight).try(:definition) ? term.highlight.definition[0] : term.definition, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
               <p></p>
-              <%= sanitize term.try(:highlight).try(:etymology1) ? term.highlight.etymology1[0] : term.etymology1 %>
-              <%= sanitize term.try(:highlight).try(:etymology2) ? term.highlight.etymology2[0] : term.etymology2%>
-              <%= sanitize term.try(:highlight).try(:uses) ? term.highlight.uses[0] : term.uses %>
+              <%= sanitize term.try(:highlight).try(:etymology1) ? term.highlight.etymology1[0] : term.etymology1, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+              <%= sanitize term.try(:highlight).try(:etymology2) ? term.highlight.etymology2[0] : term.etymology2, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+              <%= sanitize term.try(:highlight).try(:uses) ? term.highlight.uses[0] : term.uses, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
               <p></p>
-              <%= sanitize term.try(:highlight).try(:notes1) ? term.highlight.notes1[0] : term.notes1 %>
+              <%= sanitize term.try(:highlight).try(:notes1) ? term.highlight.notes1[0] : term.notes1, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
               <p></p>
-              <%= sanitize term.try(:highlight).try(:notes2) ? term.highlight.notes2[0] : term.notes2 %>
+              <%= sanitize term.try(:highlight).try(:notes2) ? term.highlight.notes2[0] : term.notes2, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
             </td>
           </tr>
         </dl>
