@@ -10,7 +10,19 @@ class CreateTerms < ActiveRecord::Migration
       t.text :etymology1
       t.text :etymology2
       t.text :uses
+      t.text :variants
       t.text :romance_cognates
+      t.text :italic_cognates
+      t.text :etruscan
+      t.text :celtic_cognates
+      t.text :germanic_cognates
+      t.text :baltoslavic_cognates
+      t.text :albanian_cognates
+      t.text :hellenic_cognates
+      t.text :armenian_cognates
+      t.text :indoiranian_cognates
+      t.text :semitic
+      t.text :ie_cognates
       t.text :notes1
       t.text :notes2
       t.text :quote
