@@ -199,9 +199,6 @@ em {
     width: 35px;
     display: inline-block;
   }
-  .end-pad {
-    padding-bottom: 80px;
-  }
   #m-alpha-pad {
     padding-top: 15px;
   }
@@ -214,9 +211,6 @@ em {
   .mobile-hidden {
     display: none;
   }
-  .end-pad {
-    padding-bottom: 50px;
-  }
 }
 
 ul {
@@ -225,6 +219,22 @@ ul {
 
 .hide {
   display: none;
+}
+
+.end-pad {
+  padding-bottom: 50px;
+}
+
+@media (min-width: 766px) and (max-width: 829px) {
+  .end-pad {
+    padding-bottom: 120px;
+  }
+}
+
+@media (max-width: 346px) {
+  .end-pad {
+    padding-bottom: 95px;
+  }
 }
 
 @media (min-width: 620px) and (max-width: 765px) {
