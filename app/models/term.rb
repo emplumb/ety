@@ -82,6 +82,19 @@ class Term < ActiveRecord::Base
       indexes :definition, index_options: :offsets, store: true
       indexes :etymology1, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :etymology2, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :variants, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :romance_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :italic_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :etruscan, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :celtic_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :germanic_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :baltoslavic_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :albanian_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :hellenic_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :armenian_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :indoiranian_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :semitic, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :ie_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :uses, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :notes1, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :notes2, analyzer: :combined_analyzer, index_options: :offsets, store: true
@@ -95,7 +108,7 @@ class Term < ActiveRecord::Base
         query: {
           multi_match: {
             query: query,
-            fields: ['name^7', 'definition^6', 'etymology1^5', 'etymology2^4', 'uses^3', 'notes1^2', 'notes2^1'],
+            fields: ['name^8', 'definition^7', 'etymology1^6', 'etymology2^5', 'uses^4', 'variants^3', 'romance_cognates^3', 'italic_cognates^3', 'etruscan^3', 'celtic_cognates^3', 'germanic_cognates^3', 'baltoslavic_cognates^3', 'albanian_cognates^3', 'hellenic_cognates^3', 'armenian_cognates^3', 'indoiranian_cognates^3', 'semitic^3', 'ie_cognates^3', 'notes1^2', 'notes2^1'],
             operator: 'and'
           }
         },
@@ -108,7 +121,20 @@ class Term < ActiveRecord::Base
             definition: {},
             etymology1: {},
             etymology2: {},
+            variants: {},
             uses: {},
+            romance_cognates: {},
+            italic_cognates: {},
+            etruscan: {},
+            celtic_cognates: {},
+            germanic_cognates: {},
+            baltoslavic_cognates: {},
+            albanian_cognates: {},
+            hellenic_cognates: {},
+            armenian_cognates: {},
+            indoiranian_cognates: {},
+            semitic: {},
+            ie_cognates: {},
             notes1: {},
             notes2: {}
           }
