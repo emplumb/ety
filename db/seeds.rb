@@ -1,4 +1,4 @@
-ss = Roo::Excelx.new("#{Rails.root}/public/assets/data/ctest.xlsx")
+ss = Roo::Excelx.new("#{Rails.root}/public/assets/data/oedos.xlsx")
 
 header = ss.row(1)
 (2..ss.last_row).each do |row|
