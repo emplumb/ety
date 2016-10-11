@@ -125,6 +125,9 @@ em {
   #slogan {
     font-size: 90%;
   }
+  .row {
+    font-size: 140%;
+  }
 }
 
 @media (min-width: 401px) and (max-width: 600px) {
