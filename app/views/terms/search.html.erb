@@ -152,10 +152,10 @@
     </div>
   </div>
   <div class="row" id="tab-pad">
-    <div class="text-center kaminari-font">
+    <div class="text-center">
       <%= paginate @terms %>
     </div>
-    <div class="text-center end-pad">
+    <div class="text-center end-pad" id="pagination-results">
       <p><%= page_entries_info(@terms, :entry_name => 'results') %></div>
     </div>
   </div>
