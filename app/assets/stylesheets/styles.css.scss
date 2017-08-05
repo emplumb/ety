@@ -81,6 +81,8 @@ em {
 .jumbotron {
   background-color: #8a9c99!important;
   text-align: center;
+  padding-top: 0!important;
+  margin-top: 41px;
   padding-bottom: 15px!important;
   margin-bottom: 20px!important;
   letter-spacing: 1px;
@@ -228,6 +230,10 @@ ul {
   padding-bottom: 50px;
 }
 
+.bottom-margin {
+  margin-bottom: 10%;
+}
+
 @media (min-width: 766px) and (max-width: 829px) {
   .end-pad {
     padding-bottom: 120px;
@@ -247,7 +253,6 @@ ul {
 }
 
 .table {
-  border-bottom: 1px solid #DDD;
   border-left: 1px solid #DDD;
   border-right: 1px solid #DDD;
   font-size: 120%;
