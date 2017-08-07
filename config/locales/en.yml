@@ -32,8 +32,10 @@ en:
       one_page:
         display_entries:
           zero: "<div class='col-md-offset-3 col-md-6 bottom-margin'>
-                    <div class='well'>
-                      <div class='font'><h3>No results found. Please try again.</h3></div>
-                      <p><i>Searches are not case-sensitive</i></p>
+                  <div class='well'>
+                    <div class='font'>
+                      <h3>Sorry, no results found. Please try a new search.</h3>
                     </div>
-                  </div>"
+                    <p><i>Searches are not case-sensitive</i></p>
+                  </div>
+                </div>"
