@@ -31,9 +31,9 @@ en:
     page_entries_info:
       one_page:
         display_entries:
-          zero: "<div class='col-md-offset-3 col-md-6 bottom-margin' id='pagination-results'>
-                  <div class='well' id='pagination-results'>
-                    <h3 id='pagination-results'>Sorry, no results found. Please try a new search.</h3>
+          zero: "<div class='col-md-offset-3 col-md-6 bottom-margin'>
+                  <div class='well'>
+                    <h3>Sorry, no results found. Please try a new search.</h3>
                     <p class='italic'>Searches are not case-sensitive</p>
                   </div>
                 </div>"
