@@ -1,165 +1,162 @@
 <div class="container-fluid">
-  <div class="text-center">
-    <%= paginate @terms %>
-  </div>
+  <% if @terms.response.hits[:hits][0] %>
+    <div class="text-center ">
+      <%= paginate @terms %>
+    </div>
 
-  <% if @terms %>
-    <div class="row">
+    <div class="row entries-top-margin">
       <div class="col-md-6 col-md-offset-3">
-            <table class="table table-striped table-hover">
-              <% @terms.each do |term| %>
-                    <tr>
-                      <td>
-                        <b><a href="/term/<%= term.slug %>"><%= sanitize term.try(:highlight).try(:name) ? term.highlight.name[0] : term.name, tags: %w(b em a u i sup sub p), attributes: %w(href) %></a></b>
-                        <%= term.gender %>
-                        <%= term.p_s %>
-                        <%= term.part_of_speech %>
+        <table class="table table-striped table-hover">
+          <% @terms.each do |term| %>
+            <tr>
+              <td>
+                <b><a href="/term/<%= term.slug %>"><%= sanitize term.try(:highlight).try(:name) ? term.highlight.name[0] : term.name, tags: %w(b em a u i sup sub p), attributes: %w(href) %></a></b>
+                <%= term.gender %>
+                <%= term.p_s %>
+                <%= term.part_of_speech %>
 
-                        <%= sanitize term.try(:highlight).try(:definition) ? term.highlight.definition[0] : term.definition, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                <%= sanitize term.try(:highlight).try(:definition) ? term.highlight.definition[0] : term.definition, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
 
-                        <% if term.etymology1.present? %>
-                          <p></p>
-                          <%= sanitize term.try(:highlight).try(:etymology1) ? term.highlight.etymology1[0] : term.etymology1, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                        <% end %>
+                <% if term.etymology1.present? %>
+                  <p></p>
+                  <%= sanitize term.try(:highlight).try(:etymology1) ? term.highlight.etymology1[0] : term.etymology1, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                <% end %>
 
-                        <%= sanitize term.try(:highlight).try(:etymology2) ? term.highlight.etymology2[0] : term.etymology2, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                <%= sanitize term.try(:highlight).try(:etymology2) ? term.highlight.etymology2[0] : term.etymology2, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
 
-                        <% if term.uses.present? %>
-                          <p></p>
-                          <%= sanitize term.try(:highlight).try(:uses) ? term.highlight.uses[0] : term.uses, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                        <% end %>
+                <% if term.uses.present? %>
+                  <p></p>
+                  <%= sanitize term.try(:highlight).try(:uses) ? term.highlight.uses[0] : term.uses, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                <% end %>
 
-                        <% if term.variants.present? %>
-                          <p></p>
-                          <div class="p-indent">
-                            <b><u>Dialect Variants:</u></b>
-                            <%= sanitize term.try(:highlight).try(:variants) ? term.highlight.variants[0] : term.variants, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                          </div>
-                        <% end %>
+                <% if term.variants.present? %>
+                  <p></p>
+                  <div class="p-indent">
+                    <b><u>Dialect Variants:</u></b>
+                    <%= sanitize term.try(:highlight).try(:variants) ? term.highlight.variants[0] : term.variants, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                  </div>
+                <% end %>
 
-                        <% if term.romance_cognates.present? %>
-                          <p></p>
-                          <div class="p-indent">
-                            <b><u>Romance:</u></b>
-                            <%= sanitize term.try(:highlight).try(:romance_cognates) ? term.highlight.romance_cognates[0] : term.romance_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                          </div>
-                        <% end %>
+                <% if term.romance_cognates.present? %>
+                  <p></p>
+                  <div class="p-indent">
+                    <b><u>Romance:</u></b>
+                    <%= sanitize term.try(:highlight).try(:romance_cognates) ? term.highlight.romance_cognates[0] : term.romance_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                  </div>
+                <% end %>
 
-                        <% if term.italic_cognates.present? %>
-                          <p></p>
-                          <div class="p-indent">
-                            <b><u>Italic:</u></b>
-                            <%= sanitize term.try(:highlight).try(:italic_cognates) ? term.highlight.italic_cognates[0] : term.italic_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                          </div>
-                        <% end %>
+                <% if term.italic_cognates.present? %>
+                  <p></p>
+                  <div class="p-indent">
+                    <b><u>Italic:</u></b>
+                    <%= sanitize term.try(:highlight).try(:italic_cognates) ? term.highlight.italic_cognates[0] : term.italic_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                  </div>
+                <% end %>
 
-                        <% if term.etruscan.present? %>
-                          <p></p>
-                          <div class="p-indent">
-                            <b><u>Etruscan:</u></b>
-                            <%= sanitize term.try(:highlight).try(:etruscan) ? term.highlight.etruscan[0] : term.etruscan, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                          </div>
-                        <% end %>
+                <% if term.etruscan.present? %>
+                  <p></p>
+                  <div class="p-indent">
+                    <b><u>Etruscan:</u></b>
+                    <%= sanitize term.try(:highlight).try(:etruscan) ? term.highlight.etruscan[0] : term.etruscan, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                  </div>
+                <% end %>
 
-                        <% if term.celtic_cognates.present? %>
-                          <p></p>
-                          <div class="p-indent">
-                            <b><u>Celtic:</u></b>
-                            <%= sanitize term.try(:highlight).try(:celtic_cognates) ? term.highlight.celtic_cognates[0] : term.celtic_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                          </div>
-                        <% end %>
+                <% if term.celtic_cognates.present? %>
+                  <p></p>
+                  <div class="p-indent">
+                    <b><u>Celtic:</u></b>
+                    <%= sanitize term.try(:highlight).try(:celtic_cognates) ? term.highlight.celtic_cognates[0] : term.celtic_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                  </div>
+                <% end %>
 
-                        <% if term.germanic_cognates.present? %>
-                          <p></p>
-                          <div class="p-indent">
-                            <b><u>Germanic:</u></b>
-                            <%= sanitize term.try(:highlight).try(:germanic_cognates) ? term.highlight.germanic_cognates[0] : term.germanic_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                          </div>
-                        <% end %>
+                <% if term.germanic_cognates.present? %>
+                  <p></p>
+                  <div class="p-indent">
+                    <b><u>Germanic:</u></b>
+                    <%= sanitize term.try(:highlight).try(:germanic_cognates) ? term.highlight.germanic_cognates[0] : term.germanic_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                  </div>
+                <% end %>
 
-                        <% if term.baltoslavic_cognates.present? %>
-                          <p></p>
-                          <div class="p-indent">
-                            <b><u>Balto-Slavic:</u></b>
-                            <%= sanitize term.try(:highlight).try(:baltoslavic_cognates) ? term.highlight.baltoslavic_cognates[0] : term.baltoslavic_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                          </div>
-                        <% end %>
+                <% if term.baltoslavic_cognates.present? %>
+                  <p></p>
+                  <div class="p-indent">
+                    <b><u>Balto-Slavic:</u></b>
+                    <%= sanitize term.try(:highlight).try(:baltoslavic_cognates) ? term.highlight.baltoslavic_cognates[0] : term.baltoslavic_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                  </div>
+                <% end %>
 
-                        <% if term.albanian_cognates.present? %>
-                          <p></p>
-                          <div class="p-indent">
-                            <b><u>Albanian:</u></b>
-                            <%= sanitize term.try(:highlight).try(:albanian_cognates) ? term.highlight.albanian_cognates[0] : term.albanian_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                          </div>
-                        <% end %>
+                <% if term.albanian_cognates.present? %>
+                  <p></p>
+                  <div class="p-indent">
+                    <b><u>Albanian:</u></b>
+                    <%= sanitize term.try(:highlight).try(:albanian_cognates) ? term.highlight.albanian_cognates[0] : term.albanian_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                  </div>
+                <% end %>
 
-                        <% if term.hellenic_cognates.present? %>
-                          <p></p>
-                          <div class="p-indent">
-                            <b><u>Hellenic:</u></b>
-                            <%= sanitize term.try(:highlight).try(:hellenic_cognates) ? term.highlight.hellenic_cognates[0] : term.hellenic_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                          </div>
-                        <% end %>
+                <% if term.hellenic_cognates.present? %>
+                  <p></p>
+                  <div class="p-indent">
+                    <b><u>Hellenic:</u></b>
+                    <%= sanitize term.try(:highlight).try(:hellenic_cognates) ? term.highlight.hellenic_cognates[0] : term.hellenic_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                  </div>
+                <% end %>
 
-                        <% if term.armenian_cognates.present? %>
-                          <p></p>
-                          <div class="p-indent">
-                            <b><u>Armenian:</u></b>
-                            <%= sanitize term.try(:highlight).try(:armenian_cognates) ? term.highlight.armenian_cognates[0] : term.armenian_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                          </div>
-                        <% end %>
+                <% if term.armenian_cognates.present? %>
+                  <p></p>
+                  <div class="p-indent">
+                    <b><u>Armenian:</u></b>
+                    <%= sanitize term.try(:highlight).try(:armenian_cognates) ? term.highlight.armenian_cognates[0] : term.armenian_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                  </div>
+                <% end %>
 
-                        <% if term.indoiranian_cognates.present? %>
-                          <p></p>
-                          <div class="p-indent">
-                            <b><u>Indo-Iranian:</u></b>
-                            <%= sanitize term.try(:highlight).try(:indoiranian_cognates) ? term.highlight.indoiranian_cognates[0] : term.indoiranian_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                          </div>
-                        <% end %>
+                <% if term.indoiranian_cognates.present? %>
+                  <p></p>
+                  <div class="p-indent">
+                    <b><u>Indo-Iranian:</u></b>
+                    <%= sanitize term.try(:highlight).try(:indoiranian_cognates) ? term.highlight.indoiranian_cognates[0] : term.indoiranian_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                  </div>
+                <% end %>
 
-                        <% if term.semitic.present? %>
-                          <p></p>
-                          <div class="p-indent">
-                            <b><u>Semitic:</u></b>
-                            <%= sanitize term.try(:highlight).try(:semitic) ? term.highlight.semitic[0] : term.semitic, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                          </div>
-                        <% end %>
+                <% if term.semitic.present? %>
+                  <p></p>
+                  <div class="p-indent">
+                    <b><u>Semitic:</u></b>
+                    <%= sanitize term.try(:highlight).try(:semitic) ? term.highlight.semitic[0] : term.semitic, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                  </div>
+                <% end %>
 
-                        <% if term.ie_cognates.present? %>
-                          <p></p>
-                          <div class="p-indent">
-                            <b><u>Indo-European:</u></b>
-                          <%= sanitize term.try(:highlight).try(:ie_cognates) ? term.highlight.ie_cognates[0] : term.ie_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                          </div>
-                        <% end %>
+                <% if term.ie_cognates.present? %>
+                  <p></p>
+                  <div class="p-indent">
+                    <b><u>Indo-European:</u></b>
+                  <%= sanitize term.try(:highlight).try(:ie_cognates) ? term.highlight.ie_cognates[0] : term.ie_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                  </div>
+                <% end %>
 
-                        <% if term.notes1.present? %>
-                          <p></p>
-                          <%= sanitize term.try(:highlight).try(:notes1) ? term.highlight.notes1[0] : term.notes1, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                        <% end %>
+                <% if term.notes1.present? %>
+                  <p></p>
+                  <%= sanitize term.try(:highlight).try(:notes1) ? term.highlight.notes1[0] : term.notes1, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                <% end %>
 
-                        <% if term.notes2.present? %>
-                          <p></p>
-                          <%= sanitize term.try(:highlight).try(:notes2) ? term.highlight.notes2[0] : term.notes2, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                        <% end %>
+                <% if term.notes2.present? %>
+                  <p></p>
+                  <%= sanitize term.try(:highlight).try(:notes2) ? term.highlight.notes2[0] : term.notes2, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                <% end %>
 
-                      </td>
-                    </tr>
-              <% end %>
-            </table>
+              </td>
+            </tr>
+          <% end %>
+        </table>
       </div>
     </div>
+
     <div class="text-center">
       <%= paginate @terms %>
     </div>
   <% end %>
 
-  <div class="text-center end-pad">
+  <div class="text-center entries-bottom-margin" id="<%= !@terms.response.hits[:hits][0] ? 'no-results' : 'results' %>">
     <%= page_entries_info(@terms, :entry_name => 'results') %>
-  </div>
-
-  <div style="visibility: hidden;" id="pagination-results">
-    Sorry
   </div>
 
 </div>
