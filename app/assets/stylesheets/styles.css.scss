@@ -81,8 +81,6 @@ em {
 .jumbotron {
   background-color: #8a9c99!important;
   text-align: center;
-  padding-top: 0!important;
-  margin-top: 41px;
   padding-bottom: 15px!important;
   margin-bottom: 20px!important;
   letter-spacing: 1px;
@@ -117,12 +115,9 @@ em {
   height: 20%;
 }
 
-@media (max-width: 400px) {
-  .jumbotron {
-    margin-bottom: 20px!important;
-  }
+@media (max-width: 430px) {
   #banner-title {
-    font-size: 175%;
+    font-size: 170%;
   }
   #slogan {
     font-size: 90%;
