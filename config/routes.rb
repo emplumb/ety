@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'errors/not_found'
+
+  get 'errors/unacceptable'
+
+  get 'errors/internal_server_error'
+
   root "terms#home"
 
   get "/about", :controller => "terms", :action => "about"
