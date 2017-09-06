@@ -8,6 +8,11 @@ body {
   font-family: Georgia, Times, 'Times New Roman', serif!important;
 }
 
+@font-face {
+  font-family: 'Averia Serif Libre';
+  src: font-url('AveriaSerifLibre-Light');
+}
+
 @media (max-width: 767px) {
   body {
     padding-top: 100px;
@@ -88,25 +93,29 @@ em {
 }
 
 .header-box {
-  width: 50%;
   margin: 25px auto 25px;
   border: 2px solid white;
   box-shadow: 0px 0px 0px 1px white;
   background-color: #455D58;
+  @media (min-width: 650px) {
+    width: 600px;
+  }
 }
 
 #banner-title {
-  font-family: 'Poiret One', cursive!important;
+  font-family: 'Averia Serif Libre';
   color: white;
   font-size: 275%;
-  font-weight: bold;
+  margin: 7px 5px 0 5px;
+  font-weight: 100;
 }
 
 #slogan {
-  font-family: 'Georgia', serif!important;
+  font-family: 'Georgia', serif;
   font-style: italic;
   color: white;
   font-size: 115%;
+  margin: 0 10% 7px 10%;
 }
 
 .banner-logo {
