@@ -1,31 +1,34 @@
 Rails.application.routes.draw do
 
-  get 'errors/not_found'
-
-  get 'errors/unacceptable'
-
-  get 'errors/internal_server_error'
-
+  #Terms routes
   root "terms#home"
 
-  get "/about", :controller => "terms", :action => "about"
+  get "/about", to: "terms#about"
 
-  get "/appendix", :controller => "terms", :action => "appendix"
+  get "/appendix", to: "terms#appendix"
 
-  get "/phonology", :controller => "terms", :action => "phonology"
+  get "/phonology", to: "terms#phonology"
 
-  get "/sources", :controller => "terms", :action => "sources"
+  get "/sources", to: "terms#sources"
 
-  get "/contact", :controller => "terms", :action => "contact"
+  get "/contact", to: "terms#contact"
 
-  get "/directory", :controller => "terms", :action => "directory"
+  get "/directory", to: "terms#directory"
 
-  get "/directory/:letter", :controller => "terms", :action => "directory"
+  get "/directory/:letter", to: "terms#directory"
 
-  get "/term/:id", :controller => "terms", :action => "show"
+  get "/term/:id", to: "terms#show"
 
-  get "search" => "terms#search"
+  get "/search", to: "terms#search"
 
-  post "/submit_message", :controller => "contact", :action => "submit_message"
+  #Contact route
+  post "/submit_message" => "contact#submit_message"
+
+  #Errors routes
+  match "/404", to: "errors#not_found", :via => :all
+
+  match "/422", to: "errors#unacceptable", :via => :all
+
+  match "/500", to: "errors#internal_server_error", :via => :all
 
 end
