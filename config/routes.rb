@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get "/search", to: "terms#search"
 
   #Contact route
-  post "/submit_message" => "contact#submit_message"
+  post "/submit_message", to: "contact#submit_message"
 
   #Errors routes
   match "/404", to: "errors#not_found", :via => :all
