@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623011134) do
+ActiveRecord::Schema.define(version: 20170908050056) do
 
   create_table "terms", force: :cascade do |t|
     t.string   "prefix"
@@ -42,6 +42,14 @@ ActiveRecord::Schema.define(version: 20160623011134) do
     t.datetime "updated_at"
     t.string   "slug"
     t.index ["slug"], name: "index_terms_on_slug", unique: true
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.boolean  "admin",           default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
 end
