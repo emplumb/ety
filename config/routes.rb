@@ -10,8 +10,11 @@ Rails.application.routes.draw do
   get "/contact", to: "terms#contact"
   get "/directory", to: "terms#directory"
   get "/directory/:letter", to: "terms#directory"
-  get "/term/:id", to: "terms#show"
   get "/search", to: "terms#search"
+
+  get "/term/:id", to: "terms#show"
+  get "/term/:id/edit", to: "terms#edit"
+  patch "/term/:id", to: "terms#update"
 
   #Contact route
   post "/submit_message", to: "contact#submit_message"
