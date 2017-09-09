@@ -23,6 +23,10 @@ body {
   font-size: 120%;
 }
 
+.navbar-default .navbar-nav>li>a.red {
+  color: red;
+}
+
 p + p {
   margin-top: 35px;
 }
@@ -54,8 +58,8 @@ em {
   .input-group {
     width: 300px;
   }
-  .npad-right {
-    padding-left: 50px;
+  .margin-left {
+    margin-left: 50px;
   }
 }
 
@@ -63,8 +67,8 @@ em {
   .input-group {
     width: 400px;
   }
-  .npad-right {
-    padding-left: 260px;
+  .margin-left {
+    margin-left: 260px;
   }
 }
 
@@ -72,8 +76,8 @@ em {
   .input-group {
     width: 500px;
   }
-  .npad-right {
-    padding-left: 360px;
+  .margin-left {
+    margin-left: 360px;
   }
 }
 
@@ -354,10 +358,6 @@ footer {
   color: red;
   font-size: 90%;
   margin-left: 20px;
-}
-
-.alert {
-  height: 100px;
 }
 
 #notice {
