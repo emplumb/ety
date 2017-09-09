@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170908050056) do
+ActiveRecord::Schema.define(version: 20170908234649) do
 
   create_table "terms", force: :cascade do |t|
     t.string   "prefix"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20170908050056) do
     t.boolean  "admin",           default: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.string   "username"
   end
 
 end
