@@ -2,6 +2,9 @@ require 'elasticsearch/model'
 
 class Term < ActiveRecord::Base
   validates :name, presence: true
+  validates :etymology1, presence: true
+
+  belongs_to :user
 
   before_save :update_slug, :update_prefix
 
