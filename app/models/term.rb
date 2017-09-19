@@ -7,22 +7,11 @@ class Term < ActiveRecord::Base
   belongs_to :user
 
   before_save :update_slug, :update_prefix
+  validates :slug, presence: true
 
   def update_slug
-    pname = name.parameterize
-    self.slug = get_valid_slug(pname, 1)
+    self.slug = name.parameterize
   end
-
-  private
-    def get_valid_slug(name, index)
-      index_name = index > 1 ? name + "-" + index.to_s : name
-
-      if Term.exists?(slug: index_name)
-        return get_valid_slug(name, index + 1)
-      end
-
-      return index_name
-    end
 
   def to_param
     slug
