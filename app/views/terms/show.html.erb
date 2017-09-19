@@ -1,7 +1,7 @@
 <div class="container-fluid" id="show">
   <div class="row end-pad">
     <div class="col-md-6 col-md-offset-3">
-      <table class="table table-striped">
+      <table class="table table-striped entries-top-margin">
           <tr>
             <td>
               <b><%= @term.name %></b>
@@ -139,6 +139,7 @@
             </td>
           </tr>
       </table>
+      <a class="btn btn-default" href="/term/<%= @term.slug %>/edit">Edit Entry</a>
     </div>
   </div>
 </div>

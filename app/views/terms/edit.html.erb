@@ -1,0 +1,65 @@
+<div class="container-fluid entries-top-margin end-pad">
+  <div class="col-lg-offset-1 col-lg-6">
+    <div class="row">
+      <%= link_to "Back to entry", "/term/#{@term.slug}" %>
+      <h1>Edit Entry</h1>
+      <hr />
+    </div>
+
+    <div class="row">
+      <%= form_tag "/term/#{@term.slug}", method: :patch do %>
+        <p><%= submit_tag "Save Term", class: "btn btn-success" %></p>
+        <%= hidden_field_tag :id, @term.id %>
+
+        <div class="form-group col-lg-6">
+          <%= label_tag "Slug (part of url route)" %>
+          <%= text_field_tag :slug, @term.slug, disabled: true, class: 'form-control'  %>
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div class="form-group col-lg-6">
+          <%= label_tag :name %>
+          <%= text_field_tag :name, @term.name, class: 'form-control' %>
+        </div>
+        <div class="form-group col-lg-6">
+          <%= label_tag :gender %>
+          <%= text_field_tag :gender, @term.gender, class: 'form-control' %>
+        </div>
+        <div class="form-group col-lg-6">
+          <%= label_tag "prefix/suffix" %>
+          <%= text_field_tag :p_s, @term.p_s, class: 'form-control' %>
+        </div>
+        <div class="form-group col-lg-6">
+          <%= label_tag :part_of_speech %>
+          <%= text_field_tag :part_of_speech, @term.part_of_speech, class: 'form-control' %>
+        </div>
+        <div class="form-group col-lg-12">
+          <%= label_tag :definition %>
+          <%= text_area_tag :definition, @term.definition, class: 'form-control', rows: "5" %>
+        </div>
+        <div class="form-group col-lg-12">
+          <%= label_tag "Primary Etymology" %>
+          <%= text_area_tag :etymology1, @term.etymology1, class: 'form-control', rows: "5" %>
+        </div>
+        <div class="form-group col-lg-12">
+          <%= label_tag "Secondary Etymology" %>
+          <%= text_area_tag :etymology2, @term.etymology2, class: 'form-control' %>
+        </div>
+        <div class="form-group col-lg-12">
+          <%= label_tag :uses %>
+          <%= text_area_tag :uses, @term.uses, class: 'form-control' %>
+        </div>
+        <div class="form-group col-lg-12">
+          <%= label_tag :variants %>
+          <%= text_area_tag :variants, @term.variants, class: 'form-control' %>
+        </div>
+        <p><%= submit_tag "Save Term", class: "btn btn-success" %></p>
+      <% end %>
+      <p><%= link_to "Back to entry", "/term/#{@term.slug}"%></p>
+    </div>
+  </div>
+</div>
