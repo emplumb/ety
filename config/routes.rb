@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/sources", to: "terms#sources"
   get "/contact", to: "terms#contact"
   get "/directory", to: "terms#directory"
+  get "/term", to: "terms#directory"
   get "/directory/:letter", to: "terms#directory"
   get "/search", to: "terms#search"
 
