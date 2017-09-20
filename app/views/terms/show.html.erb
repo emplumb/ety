@@ -139,7 +139,11 @@
             </td>
           </tr>
       </table>
-      <a class="btn btn-default no-radius" href="/term/<%= @term.slug %>/edit">Edit Entry</a>
+
+      <% if admin_signed_in? %>
+        <a class="btn btn-default no-radius" href="/term/<%= @term.slug %>/edit">Edit Entry</a>
+      <% end %>
+
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 class TermsController < ApplicationController
+  before_action :authenticate_admin!, only: [:edit, :update]
 
   def daystamp
     Time.now.strftime("%y%m%d").to_i
@@ -72,7 +73,6 @@ class TermsController < ApplicationController
     else
       flash[:danger] = "Error: #{@term.errors.full_messages.to_sentence}"
       redirect_to "/term/#{@term.slug}/edit"
-
     end
   end
 
