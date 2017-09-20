@@ -32,13 +32,13 @@
         </div>
         <div class="form-group col-lg-12">
           <%= label_tag "Etymology1" %>
-          <%= text_area_tag :etymology1, @term.etymology1, class: 'form-control', rows: "5" %>
+          <%= text_area_tag :etymology1, @term.etymology1, class: 'form-control', rows: "4" %>
         </div>
 
         <% @term.attributes.to_a[8..14].each do |name, value| %>
           <div class="form-group col-lg-12">
-            <%= label_tag name.downcase %>
-            <%= text_area_tag name, value, class: 'form-control' %>
+            <%= label_tag name %>
+            <%= text_area_tag name, value, class: 'form-control', rows: "1" %>
           </div>
         <% end %>
     </div>
@@ -47,8 +47,8 @@
     <div class="row">
         <% @term.attributes.to_a[15..25].each do |name, value| %>
           <div class="form-group col-lg-12">
-            <%= label_tag name.downcase %>
-            <%= text_area_tag name, value, class: 'form-control' %>
+            <%= label_tag name %>
+            <%= text_area_tag name, value, class: 'form-control', rows: "1" %>
           </div>
         <% end %>
     </div>
