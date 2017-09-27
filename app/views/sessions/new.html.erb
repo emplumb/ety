@@ -1,17 +1,17 @@
 <div class="container bottom-margin entries-top-margin">
   <div class="row">
     <div class="col-lg-offset-3 col-lg-3">
-      <%= form_tag '/login', method: 'post', :class => 'form panel panel-primary' do  %>
-        <div class="panel-body">
+      <%= form_tag '/login', method: 'post', :class => 'form panel panel-primary grey-background' do  %>
+        <div class="panel-heading bottom-margin"><h3 class="text-center">Account Login</h3></div>
+
+        <div class="panel-body lr-margin">
           <div class="form-group">
-            <%= label_tag 'username', 'Username'%>
-            <%= text_field_tag :username, params[:username], class: 'form-control', autofocus: true %>
+            <%= text_field_tag :username, params[:username], :placeholder => "Username", class: 'form-control no-radius', autofocus: true %>
           </div>
           <div class="form-group">
-            <%=label_tag 'password', "Password" %>
-            <%= password_field_tag :password, nil, class: 'form-control'  %>
+            <%= password_field_tag :password, nil, :placeholder => "Password", class: 'form-control no-radius'  %>
           </div>
-          <%= submit_tag "Login", class: 'btn btn-success btn-submit' %>
+          <%= submit_tag "Login", class: 'btn btn-success btn-submit no-radius full-width entries-bottom-margin' %>
         </div>
       <%end%>
     </div>
