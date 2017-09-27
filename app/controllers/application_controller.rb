@@ -33,7 +33,8 @@ class ApplicationController < ActionController::Base
     end
 
     def session_expired?
-      if !session[:expiry_time].nil? and session[:expiry_time] < Time.now
+      if !session[:expiry_time].nil? && session[:expiry_time] < Time.now
+        session[:user_id] = nil
         reset_session
         redirect_to :controller => 'sessions', :action => 'new'
         flash[:warning] = 'The session has timed out due to inactivity'
