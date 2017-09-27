@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :session_expired?
+
   rescue_from ActiveRecord::RecordNotUnique, with: :record_not_unique
 
   def current_user
@@ -28,5 +30,14 @@ class ApplicationController < ActionController::Base
 
         Note: punctuation, spaces, parentheses, and other special characters are removed from the url when saving"
       redirect_back(fallback_location: root_path)
+    end
+
+    def session_expired?
+      if !session[:expiry_time].nil? and session[:expiry_time] < Time.now
+        reset_session
+        redirect_to :controller => 'sessions', :action => 'new'
+        flash[:warning] = 'The session has timed out due to inactivity'
+      end
+      session[:expiry_time] = 30.minutes.from_now
     end
 end
