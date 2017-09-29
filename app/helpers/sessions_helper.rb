@@ -42,4 +42,19 @@ module SessionsHelper
     current_user && current_user.admin
   end
 
+  private
+    def authenticate_admin!
+      redirect_to :controller => 'terms', :action => 'show' unless current_user && current_user.admin
+    end
+
+    def session_expired?
+      if !session[:expiry_time].nil? && session[:expiry_time] < Time.now
+        session[:user_id] = nil
+        reset_session
+        redirect_to :controller => 'sessions', :action => 'new'
+        flash[:warning] = 'The session has timed out due to inactivity'
+      end
+      session[:expiry_time] = 30.minutes.from_now
+    end
+
 end
