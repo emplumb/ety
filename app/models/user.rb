@@ -8,12 +8,19 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX }
 
   has_many :terms
-
   has_secure_password
   validates :password, presence: true, length: { minimum: 12 }
 
-  def User.new_token
-    SecureRandom.urlsafe_base64
+  class << self
+    def digest(string)
+      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                    BCrypt::Engine.cost
+      BCrypt::Password.create(string, cost: cost)
+    end
+
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
   end
 
   def remember
@@ -25,4 +32,7 @@ class User < ApplicationRecord
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
+  def forget
+    update_attribute(:remember_digest, nil)
+  end
 end

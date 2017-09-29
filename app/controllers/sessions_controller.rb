@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       reset_session
-      session[:user_id] = user.id
+      log_in user
       remember user
       flash[:success] = 'Successfully logged in'
       redirect_to '/'
@@ -17,9 +17,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    reset_session
-    flash[:success] = 'Successfully logged out'
+    log_out if logged_in?
+    flash[:warning] = 'Successfully logged out'
     redirect_to '/login'
   end
 end
