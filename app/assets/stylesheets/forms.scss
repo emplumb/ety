@@ -1,0 +1,27 @@
+/* FORM STYLES */
+
+.no-radius {
+  border-radius: 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.grey-background {
+  background-color: #F7F7F7;
+}
+
+.lr-margin {
+  margin: 0 20px;
+}
+
+.form-submit {
+  @extend .no-radius;
+  @extend .full-width;
+  @extend .lr-margin;
+}
+
+input[type=checkbox] {
+  margin-right: 4px;
+}
