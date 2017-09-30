@@ -48,13 +48,16 @@ module SessionsHelper
     end
 
     def session_expired?
-      if !session[:expiry_time].nil? && session[:expiry_time] < Time.now
-        session[:user_id] = nil
-        reset_session
-        redirect_to :controller => 'sessions', :action => 'new'
-        flash[:warning] = 'The session has timed out due to inactivity'
+      if logged_in?
+        current_time = Time.now
+
+        if !session[:expiry_time].nil? && session[:expiry_time] < current_time.to_i
+          log_out
+          redirect_to :controller => 'sessions', :action => 'new'
+          flash[:warning] = 'The session has timed out due to inactivity'
+        end
       end
-      session[:expiry_time] = 30.minutes.from_now
+      session[:expiry_time] = current_time.to_i + 30.minutes.to_i
     end
 
 end
