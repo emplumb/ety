@@ -15,6 +15,8 @@ gem 'mailgun-ruby', '~>1.1'
 
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 
+gem 'rack-attack'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
