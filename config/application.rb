@@ -25,5 +25,7 @@ module Ety
     config.active_record.raise_in_transactional_callbacks = true
 
     config.exceptions_app = self.routes
+
+    config.middleware.use Rack::Attack
   end
 end
