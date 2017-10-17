@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   #Terms routes
   root "terms#home"
 
-  get "/about", to: "terms#about"
   get "/appendix", to: "terms#appendix"
-  get "/phonology", to: "terms#phonology"
   get "/sources", to: "terms#sources"
   get "/contact", to: "terms#contact"
   get "/directory", to: "terms#directory"
@@ -16,6 +14,10 @@ Rails.application.routes.draw do
   get "/term/:id", to: "terms#show"
   get "/term/:id/edit", to: "terms#edit"
   patch "/term/:id", to: "terms#update"
+
+  #Static Pages routes
+  get "/about", to: "static_pages#about"
+  get "/phonology", to: "static_pages#phonology"
 
   #Contact route
   post "/submit_message", to: "contact#submit_message"
