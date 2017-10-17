@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  about: MyText
+  phonology: MyText
+
+two:
+  about: MyText
+  phonology: MyText
