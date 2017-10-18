@@ -57,7 +57,13 @@
   </div>
   <div class="col-lg-5">
     <div class="row">
-        <% @term.attributes.to_a[15..27].each do |name, value| %>
+        <% @term.attributes.to_a[29..30].each do |name, value| %>
+          <div class="form-group col-lg-12">
+            <%= label_tag name %>
+            <%= text_area_tag name, value, class: 'form-control', rows: "1" %>
+          </div>
+        <% end %>
+        <% @term.attributes.to_a[15..24].each do |name, value| %>
           <div class="form-group col-lg-12">
             <%= label_tag name %>
             <%= text_area_tag name, value, class: 'form-control', rows: "1" %>
