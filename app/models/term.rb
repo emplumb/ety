@@ -8,8 +8,7 @@ class Term < ActiveRecord::Base
   before_save :update_slug, :update_prefix
 
   def update_slug
-    parameterized_name = name.parameterize
-    self.slug = get_valid_slug(parameterized_name, 1)
+    self.slug = name.parameterize
   end
 
   def to_param
@@ -20,16 +19,6 @@ class Term < ActiveRecord::Base
   ENYE_PREFIX = ['ñ']
 
   private
-    def get_valid_slug(name, index)
-      index_name = index > 1 ? name + "-" + index.to_s : name
-
-      if Term.exists?(slug: index_name)
-        return get_valid_slug(name, index + 1)
-      end
-
-      return index_name
-    end
-
     def update_prefix
       self.prefix = MULTI_PREFIX.detect do |multi|
         self.slug.start_with?(multi)
