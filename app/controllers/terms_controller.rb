@@ -63,7 +63,7 @@ class TermsController < ApplicationController
     @term.indoiranian_cognates = params[:indoiranian_cognates]
     @term.semitic = params[:semitic]
     @term.uralic = params[:uralic]
-    @term.ne_cauc = params[:ne_cauc]
+    @term.ne_caucasian = params[:ne_caucasian]
     @term.ie_cognates = params[:ie_cognates]
     @term.notes1 = params[:notes1]
     @term.notes2 = params[:notes2]

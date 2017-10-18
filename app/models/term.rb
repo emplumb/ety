@@ -86,6 +86,8 @@ class Term < ActiveRecord::Base
       indexes :armenian_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :indoiranian_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :semitic, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :uralic, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :ne_caucasian, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :ie_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :uses, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :notes1, analyzer: :combined_analyzer, index_options: :offsets, store: true
@@ -100,7 +102,7 @@ class Term < ActiveRecord::Base
         query: {
           multi_match: {
             query: query,
-            fields: ['name^8', 'definition^7', 'etymology1^6', 'etymology2^5', 'uses^4', 'variants^3', 'romance_cognates^3', 'italic_cognates^3', 'etruscan^3', 'celtic_cognates^3', 'germanic_cognates^3', 'baltoslavic_cognates^3', 'albanian_cognates^3', 'hellenic_cognates^3', 'armenian_cognates^3', 'indoiranian_cognates^3', 'semitic^3', 'ie_cognates^3', 'notes1^2', 'notes2^1'],
+            fields: ['name^8', 'definition^7', 'etymology1^6', 'etymology2^5', 'uses^4', 'variants^3', 'romance_cognates^3', 'italic_cognates^3', 'etruscan^3', 'celtic_cognates^3', 'germanic_cognates^3', 'baltoslavic_cognates^3', 'albanian_cognates^3', 'hellenic_cognates^3', 'armenian_cognates^3', 'indoiranian_cognates^3', 'semitic^3', 'uralic^3', 'ne_caucasian^3', 'ie_cognates^3', 'notes1^2', 'notes2^1'],
             operator: 'and'
           }
         },

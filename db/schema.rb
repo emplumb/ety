@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171017235313) do
+ActiveRecord::Schema.define(version: 20171018004121) do
 
   create_table "static_pages", force: :cascade do |t|
     t.text     "about"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20171017235313) do
     t.datetime "updated_at"
     t.string   "slug"
     t.text     "uralic"
-    t.text     "ne_cauc"
+    t.text     "ne_caucasian"
     t.index ["slug"], name: "index_terms_on_slug", unique: true
   end
 
