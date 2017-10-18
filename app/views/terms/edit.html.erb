@@ -47,7 +47,7 @@
         <%= text_area_tag :romance_cognates, @term.romance_cognates, class: 'form-control', rows: "4" %>
       </div>
 
-      <% @term.attributes.to_a[12..13].each do |name, value| %>
+      <% @term.attributes.to_a[12..14].each do |name, value| %>
         <div class="form-group col-lg-12">
           <%= label_tag name %>
           <%= text_area_tag name, value, class: 'form-control', rows: "1" %>
@@ -57,7 +57,7 @@
   </div>
   <div class="col-lg-5">
     <div class="row">
-        <% @term.attributes.to_a[14..25].each do |name, value| %>
+        <% @term.attributes.to_a[15..27].each do |name, value| %>
           <div class="form-group col-lg-12">
             <%= label_tag name %>
             <%= text_area_tag name, value, class: 'form-control', rows: "1" %>

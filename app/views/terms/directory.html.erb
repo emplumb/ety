@@ -124,6 +124,22 @@
                 </div>
               <% end %>
 
+              <% if @term.uralic.present? %>
+                <p></p>
+                <div class="p-indent">
+                  <b><u>Uralic:</u></b>
+                  <%= sanitize @term.semitic, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                </div>
+              <% end %>
+
+              <% if @term.ne_caucasian.present? %>
+                <p></p>
+                <div class="p-indent">
+                  <b><u>Northeast Caucasian:</u></b>
+                  <%= sanitize @term.ne_caucasian, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                </div>
+              <% end %>
+
               <% if term.ie_cognates.present? %>
                 <p></p>
                 <div class="p-indent">
