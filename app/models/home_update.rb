@@ -1,0 +1,2 @@
+class HomeUpdate < ApplicationRecord
+end

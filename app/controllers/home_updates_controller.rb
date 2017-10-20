@@ -1,0 +1,2 @@
+class HomeUpdatesController < ApplicationController
+end

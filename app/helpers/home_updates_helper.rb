@@ -1,0 +1,2 @@
+module HomeUpdatesHelper
+end
