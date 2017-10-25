@@ -2,7 +2,7 @@
   <div class="row end-pad">
     <div class="col-md-6 col-md-offset-3">
       <div class="page-header">
-        <h3 class="text-center">Word of the Day</h3>
+        <h2 class="text-center">Word of the Day</h2>
       </div>
       <table class="table table-striped">
         <tr>
@@ -183,19 +183,25 @@
 
       <div class="font">
         <div class="page-header">
-          <h3><%= sanitize @welcome.heading, attributes: %w(href) %></h3>
+          <h3>
+            <%= link_to_if(admin_signed_in?, @welcome_post.heading, "/post/#{@welcome_post.id}/edit" ) do
+                @welcome_post.heading
+              end
+            %>
+          </h3>
         </div>
-        <div>
-          <%= sanitize @welcome.body, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-        </div>
+        <div class="post-content"><%= @welcome_post.body.html_safe %></div>
 
         <% @posts.each do |post| %>
           <div class="page-header">
-            <h3><%= sanitize post.heading, attributes: %w(href) %></h3>
+            <h3>
+              <%= link_to_if(admin_signed_in?, post.heading, "/post/#{post.id}/edit" ) do
+                post.heading
+                end
+              %>
+            </h3>
           </div>
-          <div>
-            <%= sanitize post.body, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-          </div>
+          <div class="post-content"><%= sanitize post.body, tags: %w(b em a u i sup sub p), attributes: %w(href) %></div>
         <% end %>
       </div>
 

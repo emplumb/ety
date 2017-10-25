@@ -1,5 +1,5 @@
 class HomeUpdatesController < ApplicationController
-  before_action :authenticate_admin!, only: [:new, :edit, :update, :destroy]
+  before_action :authenticate_admin!, only: [:edit, :update]
 
   def daystamp
     Time.now.strftime("%y%m%d").to_i
@@ -17,13 +17,10 @@ class HomeUpdatesController < ApplicationController
   end
 
   def index
-    @welcome = HomeUpdate.first
+    @welcome_post = HomeUpdate.first
     @posts = HomeUpdate.limit(2).order(created_at: :desc)
 
     return word_of_day
-  end
-
-  def new
   end
 
   def edit
@@ -32,11 +29,15 @@ class HomeUpdatesController < ApplicationController
 
   def update
     post = HomeUpdate.find(params[:id])
-    post.title = params[:title]
+    post.heading = params[:heading]
     post.body = params[:body]
+
+    if post.save
+      flash[:success] = "Post successfully updated"
+      redirect_to "/"
+    else
+      render 'edit.html.erb'
+    end
   end
 
-  def destroy
-    @post = HomeUpdate.find(params[:id])
-  end
 end
