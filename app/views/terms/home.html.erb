@@ -183,22 +183,55 @@
 
       <div class="font">
         <div class="page-header">
-          <h3><%= sanitize @welcome.heading, attributes: %w(href) %></h3>
+          <h4 class="text-center"><b>10/17/17 - Update</b></h4>
         </div>
-        <div>
-          <%= sanitize @welcome.body, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-        </div>
-
-        <% @posts.each do |post| %>
-          <div class="page-header">
-            <h3><%= sanitize post.heading, attributes: %w(href) %></h3>
-          </div>
-          <div>
-            <%= sanitize post.body, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-          </div>
-        <% end %>
+        <p>
+          Over 200 lemmata added and 22 new sources consulted. While those numbers reflect a great deal of work, the majority of our labors was spent on the already-existing material. Every entry received a much-needed re-formatting, erroneous cognates were corrected, and writing was edited for grammar and tone.
+        </p>
       </div>
 
+      <div class="font">
+        <div class="page-header">
+          <h4 class="text-center"><b>1/10/17 - Update</b></h4>
+        </div>
+        <p>
+          Big update today! We've been quite busy these last few months, but we want to wish you all a happy New Year. Today we are excited to announce that the etymologies of surnames, first names, towns, and other toponyms will be added to the Dictionary. Already-existing entries have been edited to include this information.
+        </p>
+      </div>
+
+      <div class="font">
+        <div class="page-header">
+          <h4 class="text-center"><b>8/11/16 - Update</b></h4>
+        </div>
+        <p>
+          Huge update today. We have added dialect variants and Romance, Italic, Celtic, Germanic, Balto-Slavic, Albanian, Hellenic, Armenian, and Indo-Iranian Cognates as well as lexical material in Tyrrhenian and Afro-Asiatic languages when relevant to thousands of entries.
+        </p>
+        <p>
+          We've also created a new <%= link_to "Facebook", "https://www.facebook.com/SpanishEtym-OEDoS-1721537891443952/", :target => "_blank" %> page, so follow us to receive updates, news, and other notifications.
+        </p>
+      </div>
+
+      <div class="font" id="tab-pad">
+        <div class="page-header">
+          <h3 class="text-center">Welcome</h3>
+        </div>
+        <p>
+          Welcome to the Online Etymological Dictionary of Spanish (OEDoS), a free etymological dictionary of the Spanish language launched on August 6, 2016. An etymology is not a definition but a history of a word over time. This site provides an account of the development of the Spanish language as best as historical linguists are able to ascertain in a way that is accessible both by laymen and academics.
+        </p>
+        <p>
+          If you enjoy using this dictionary, please consider donating to help keep this site alive.
+        </p>
+        <p>
+          <div class="text-center">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="SR4N8SASKHHBY">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+          </div>
+        </p>
+      </div>
     </div>
   </div>
 </div>
