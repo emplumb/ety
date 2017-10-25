@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
 
-  #Home Updates routes
-  root "home_updates#index"
-  post "/post", to: "home_updates#create"
-  get "/post/:id", to: "home_updates#show"
-  get "/post/:id/edit", to: "home_updates#edit"
-  patch "/post/:id", to: "home_updates#update"
-  delete "/post/:id", to: "home_updates#destroy"
-
   #Terms routes
+  root "terms#home"
+
   get "/appendix", to: "terms#appendix"
   get "/sources", to: "terms#sources"
   get "/contact", to: "terms#contact"
