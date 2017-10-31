@@ -10,6 +10,13 @@
         <% @terms.each do |term| %>
           <tr>
             <td class="table-spacing">
+
+              <% if admin_signed_in? %>
+                <p>
+                  <a class="btn btn-default no-radius" href="/term/<%= term.slug %>/edit">Edit</a>
+                </p>
+              <% end %>
+
               <b><a href="/term/<%= term.slug %>"><%= term.name %></a></b>
               <%= term.gender %>
               <%= term.p_s %>
