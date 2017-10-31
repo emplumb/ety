@@ -3,16 +3,15 @@ require 'elasticsearch/model'
 class Term < ActiveRecord::Base
   validates :name, presence: true
   belongs_to :user
-  before_update :update_slug, unless: :name_not_changed?
-  before_save :update_prefix
+  before_save :get_valid_slug, if: ->{ name_updated? }
+  before_save :update_prefix, if: ->{ slug_updated? }
 
-  def name_not_changed?
-    !self.name_changed?
+  def slug_updated?
+    self.slug_changed? || self.new_record?
   end
 
-  def update_slug
-    param_name = name.parameterize
-    self.slug = get_valid_slug(param_name, index)
+  def name_updated?
+    self.name_changed? || self.new_record?
   end
 
   def to_param
@@ -23,14 +22,21 @@ class Term < ActiveRecord::Base
   ENYE_PREFIX = ['ñ']
 
   private
-    def get_valid_slug(name, index)
-      index_name = index > 1 ? name + "-" + index.to_s : name
+    def get_valid_slug
+      param_name = name.parameterize
+      count = 1
 
-      if Term.exists?(slug: index_name)
-        return get_valid_slug(name, index + 1)
+      if Term.exists?(['slug LIKE ?', "#{param_name}"])
+        count += 1
+        self.slug = "#{param_name}-#{count}"
+
+        while Term.exists?(['slug LIKE ?', "#{param_name}-#{count}"])
+          count += 1
+          self.slug = "#{param_name}-#{count}"
+        end
+      else
+        self.slug = param_name
       end
-
-      return index_name
     end
 
     def update_prefix
