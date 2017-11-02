@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171102005611) do
+ActiveRecord::Schema.define(version: 20171102193006) do
 
   create_table "home_updates", force: :cascade do |t|
     t.text     "heading"
@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 20171102005611) do
   end
 
   create_table "sources", force: :cascade do |t|
-    t.text     "title"
+    t.string   "author"
+    t.text     "reference"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
