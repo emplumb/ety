@@ -55,5 +55,14 @@ header = ss.row(1)
     :notes1 => notes1,
     :notes2 => notes2
   )
+end
+
+sources_list = Roo::Excelx.new("#{Rails.root}/public/assets/data/sources.xlsx")
+
+header = sources_list.row(1)
+(2..sources_list.last_row).each do |row|
+  title = sources_list.cell(row, 'A')
+
+  Source.create!(:title => title)
 
 end
