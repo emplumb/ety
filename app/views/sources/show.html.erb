@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row end-pad">
+    <div class="font col-md-7 col-md-offset-2">
+      <h2 class="page-header">Source</h2>
+        <%= sanitize @source.title, tags: %w(b a u i sup sub p div), attributes: %w(href) %>
+      </div>
+    </div>
+  </div>
+</div>

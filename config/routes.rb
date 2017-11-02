@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   root "terms#home"
 
   get "/appendix", to: "terms#appendix"
-  get "/sources", to: "terms#sources"
   get "/contact", to: "terms#contact"
   get "/directory", to: "terms#directory"
   get "/term", to: "terms#directory"
@@ -31,5 +30,12 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
+
+  #Sources routes
+  get "/sources", to: "sources#index"
+  get "/source/:id", to: "sources#show"
+  get "/source/:id/edit", to: "sources#edit"
+  patch "/source/:id", to: "sources#update"
+
 
 end

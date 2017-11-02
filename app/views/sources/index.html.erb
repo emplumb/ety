@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row end-pad">
+    <div class="font col-md-7 col-md-offset-2">
+      <h2 class="page-header">Bibliography</h2>
+        <% @sources.each do |source| %>
+          <p>
+            <%= link_to_if(admin_signed_in?, sanitize(source.title, tags: %w(b a u i sup sub p div), attributes: %w(href)), "/source/#{source.id}/edit") do
+            sanitize source.title, tags: %w(b a u i sup sub p div), attributes: %w(href) end %>
+          </p>
+        <% end %>
+    </div>
+  </div>
+</div>
+
