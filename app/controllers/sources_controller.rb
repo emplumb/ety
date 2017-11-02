@@ -1,4 +1,5 @@
 class SourcesController < ApplicationController
+  before_action :authenticate_admin!, only: [:edit, :update]
 
   def index
     @sources = Source.all
@@ -14,7 +15,8 @@ class SourcesController < ApplicationController
 
   def update
     @source = Source.find(params[:id])
-    @source.title = params[:title]
+    @source.author = params[:author]
+    @source.reference = params[:reference]
 
     if @source.save
       flash[:success] = "Source successfully updated"

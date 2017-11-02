@@ -1,11 +1,13 @@
 <div class="container">
   <div class="row end-pad">
     <div class="font col-md-7 col-md-offset-2">
-      <h2 class="page-header">Edit</h2>
-        <!%= sanitize @source.title, tags: %w(b a u i sup sub p div), attributes: %w(href) %>
-        <!-- <div class="form-group col-lg-12"> -->
+      <div class="entries-top-margin"><%= link_to "Go to sources", "/sources" %></div>
+      <h2>Edit</h2>
+      <hr />
+
         <%= form_tag "/source/#{@source.id}", method: :patch do %>
-          <p><%= text_area_tag :title, @source.title, class: 'form-control', rows: "7" %></p>
+          <p><%= text_field_tag :author, @source.author, class: 'form-control' %></p>
+          <p><%= text_area_tag :reference, @source.reference, class: 'form-control', rows: "7" %></p>
           <p><%= submit_tag "Save Source", class: "btn btn-success no-radius" %></p>
         <% end %>
       </div>
