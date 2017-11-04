@@ -78,7 +78,8 @@ class Term < ActiveRecord::Base
         },
         spanish_analyzer: {
           tokenizer: 'standard',
-          filter: ['lowercase', 'spanish_stemmer']
+          filter: ['lowercase', 'spanish_stemmer'],
+          char_filter: 'html_strip'
         }
       }
     } do
@@ -89,7 +90,7 @@ class Term < ActiveRecord::Base
       indexes :p_s, index: :no
       indexes :gender, index: :no
       indexes :part_of_speech, index: :no
-      indexes :definition, index_options: :offsets, store: true
+      indexes :definition, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :etymology1, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :etymology2, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :variants, analyzer: :combined_analyzer, index_options: :offsets, store: true
@@ -110,7 +111,7 @@ class Term < ActiveRecord::Base
       indexes :uses, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :notes1, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :notes2, analyzer: :combined_analyzer, index_options: :offsets, store: true
-      indexes :slug, analyzer: :spanish_analyzer
+      indexes :slug, index: :no
     end
   end
 
