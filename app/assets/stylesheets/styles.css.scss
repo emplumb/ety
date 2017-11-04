@@ -87,7 +87,7 @@ em {
   background-color: #8a9c99!important;
   text-align: center;
   padding-bottom: 15px!important;
-  margin-bottom: 20px!important;
+  margin-bottom: 0px!important;
   letter-spacing: 1px;
   box-shadow: 0px 2px 2px #AAA;
 }
@@ -232,7 +232,7 @@ ul {
 }
 
 .entries-top-margin {
-  margin-top: 2%;
+  margin-top: 5%;
 }
 
 .entries-bottom-margin {
@@ -240,7 +240,7 @@ ul {
 }
 
 .bottom-margin {
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 .bottom-margin-sm {
@@ -262,6 +262,9 @@ ul {
 @media (min-width: 620px) and (max-width: 765px) {
   #tab-pad {
     padding-bottom: 70px;
+  }
+  .end-pad {
+    margin-bottom: 80px;
   }
 }
 

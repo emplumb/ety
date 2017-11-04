@@ -1,6 +1,29 @@
 <div class="container-fluid">
   <div class="row end-pad">
     <div class="col-md-6 col-md-offset-3">
+      <div class="dropdown mobile-hidden" id="m-alpha-pad">
+        <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Browse by letter
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" id="mobile-alphabet" aria-labelledby="dropdownMenu1">
+          <% ('A' .. 'C').each do |alphabet| %>
+          <li id="mobile-alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
+          <% end %>
+          <li id="mobile-alphabet"><a href="/directory/ch">CH</a></li>
+          <% ('D' .. 'L').each do |alphabet| %>
+          <li id="mobile-alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
+          <% end %>
+          <li id="mobile-alphabet"><a href="/directory/ll">LL</a></li>
+          <li id="mobile-alphabet"><a href="/directory/m">M</a></li>
+          <li id="mobile-alphabet"><a href="/directory/n">N</a></li>
+          <li id="mobile-alphabet"><a href="/directory/ñ">Ñ</a></li>
+          <% ('O' .. 'Z').each do |alphabet| %>
+          <li id="mobile-alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
+          <% end %>
+        </ul>
+      </div>
+
       <div class="page-header">
         <h3 class="text-center">Word of the Day</h3>
       </div>
@@ -164,29 +187,6 @@
           </td>
         </tr>
       </table>
-
-      <div class="dropdown mobile-hidden" id="m-alpha-pad">
-        <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Browse by letter
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" id="mobile-alphabet" aria-labelledby="dropdownMenu1">
-          <% ('A' .. 'C').each do |alphabet| %>
-          <li id="mobile-alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
-          <% end %>
-          <li id="mobile-alphabet"><a href="/directory/ch">CH</a></li>
-          <% ('D' .. 'L').each do |alphabet| %>
-          <li id="mobile-alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
-          <% end %>
-          <li id="mobile-alphabet"><a href="/directory/ll">LL</a></li>
-          <li id="mobile-alphabet"><a href="/directory/m">M</a></li>
-          <li id="mobile-alphabet"><a href="/directory/n">N</a></li>
-          <li id="mobile-alphabet"><a href="/directory/ñ">Ñ</a></li>
-          <% ('O' .. 'Z').each do |alphabet| %>
-          <li id="mobile-alphabet"><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
-          <% end %>
-        </ul>
-      </div>
 
       <div class="font">
         <div class="page-header">
