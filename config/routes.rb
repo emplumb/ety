@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   #Terms routes
   root "terms#home"
 
+  get "/sources", to: "terms#sources"
   get "/appendix", to: "terms#appendix"
   get "/contact", to: "terms#contact"
   get "/directory", to: "terms#directory"
@@ -31,11 +32,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
 
-  #Sources routes
-  get "/sources", to: "sources#index"
-  get "/source/:id", to: "sources#show"
-  get "/source/:id/edit", to: "sources#edit"
-  patch "/source/:id", to: "sources#update"
+
 
 
 end
