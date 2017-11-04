@@ -55,7 +55,7 @@ class Term < ActiveRecord::Base
       filter: {
         english_stop: {
           type: 'stop',
-          stopwords: ['and', 'the', 'in', 'on', 'or', 'to', 'a', 'an', 'of', 'that', 'have', 'it', 'is', 'are', 'for', 'not', 'with', 'as', 'do', 'not', 'at', 'this', 'but', 'by', 'from', 'will', 'would', 'there', 'what', 'so', 'if', 'when', 'can', 'no', 'into', 'some', 'than', 'then', 'only', 'its', 'also', 'back', 'after', 'use', 'two', 'how', 'where', 'first', 'because', 'any', 'these', 'most', 'all', 'why', 'who', 'see', 'dates', 'same', 'meaning', 'indicate', 'indicating', 'f', 'm', 'suffix', 'prefix', 'noun', 'verb', 'adjective', 'adverb', 'pronoun', 'interjection', 'preposition']
+          stopwords: ['i', 'u', 'and', 'the', 'in', 'on', 'or', 'to', 'a', 'an', 'of', 'that', 'have', 'it', 'is', 'are', 'for', 'not', 'with', 'as', 'do', 'not', 'at', 'this', 'but', 'by', 'from', 'will', 'would', 'there', 'what', 'so', 'if', 'when', 'can', 'no', 'into', 'some', 'than', 'then', 'only', 'its', 'also', 'back', 'after', 'use', 'two', 'how', 'where', 'first', 'because', 'any', 'these', 'most', 'all', 'why', 'who', 'see', 'dates', 'same', 'meaning', 'indicate', 'indicating', 'f', 'm', 'suffix', 'prefix', 'noun', 'verb', 'adjective', 'adverb', 'pronoun', 'interjection', 'preposition']
         },
         english_stemmer: {
           type: 'stemmer',
@@ -68,6 +68,10 @@ class Term < ActiveRecord::Base
         spanish_stemmer: {
           type: 'stemmer',
           name: 'light_spanish'
+        },
+        definition_stop: {
+          type: 'stop',
+          stopwords: ['and', 'or', 'a', 'to', 'an']
         }
       },
       analyzer: {
@@ -80,6 +84,11 @@ class Term < ActiveRecord::Base
           tokenizer: 'standard',
           filter: ['lowercase', 'spanish_stemmer'],
           char_filter: 'html_strip'
+        },
+        definition_analyzer: {
+          tokenizer: 'standard',
+          filter: ['lowercase', 'english_stemmer', 'spanish_stemmer', 'definition_stop'],
+          char_filter: 'html_strip'
         }
       }
     } do
@@ -90,7 +99,7 @@ class Term < ActiveRecord::Base
       indexes :p_s, index: :no
       indexes :gender, index: :no
       indexes :part_of_speech, index: :no
-      indexes :definition, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :definition, analyzer: :definition_analyzer, index_options: :offsets, store: true
       indexes :etymology1, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :etymology2, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :variants, analyzer: :combined_analyzer, index_options: :offsets, store: true
@@ -121,7 +130,7 @@ class Term < ActiveRecord::Base
         query: {
           multi_match: {
             query: query,
-            fields: ['name^8', 'definition^7', 'etymology1^6', 'etymology2^5', 'uses^4', 'variants^3', 'romance_cognates^3', 'italic_cognates^3', 'etruscan^3', 'celtic_cognates^3', 'germanic_cognates^3', 'baltoslavic_cognates^3', 'albanian_cognates^3', 'hellenic_cognates^3', 'armenian_cognates^3', 'indoiranian_cognates^3', 'semitic^3', 'uralic^3', 'ne_caucasian^3', 'ie_cognates^3', 'notes1^2', 'notes2^1'],
+            fields: ['name^9', 'definition^8', 'etymology1^7', 'etymology2^6', 'uses^4', 'variants^4', 'romance_cognates^5', 'italic_cognates^3', 'etruscan^3', 'celtic_cognates^3', 'germanic_cognates^3', 'baltoslavic_cognates^3', 'albanian_cognates^3', 'hellenic_cognates^3', 'armenian_cognates^3', 'indoiranian_cognates^3', 'semitic^3', 'uralic^3', 'ne_caucasian^3', 'ie_cognates^3', 'notes1^2', 'notes2^1'],
             operator: 'and'
           }
         },
@@ -147,6 +156,8 @@ class Term < ActiveRecord::Base
             armenian_cognates: {},
             indoiranian_cognates: {},
             semitic: {},
+            uralic: {},
+            ne_caucasian: {},
             ie_cognates: {},
             notes1: {},
             notes2: {}
