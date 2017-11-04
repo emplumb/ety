@@ -1,15 +1,17 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <div class="well italic entries-top-margin">
-        Note: results are returned based on order of importance. The top 2 are <strong>name</strong> then <strong>definition</strong>
-        <br />
-        <br />
-        i.e. if your search matches the name of any entries, those results will appear first; any matches in the definition will appear subsequently.
+
+  <% if @terms.response.hits[:hits][0] %>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="well italic entries-top-margin">
+          Note: results are returned based on order of importance. The top 2 are <strong>name</strong> then <strong>definition</strong>
+          <br />
+          <br />
+          i.e. if your search matches the name of any entries, those results will appear first; any matches in the definition will appear subsequently.
+        </div>
       </div>
     </div>
-  </div>
-  <% if @terms.response.hits[:hits][0] %>
+
     <div class="text-center">
       <%= paginate @terms %>
     </div>
@@ -188,7 +190,7 @@
     </div>
   <% end %>
 
-  <div class="text-center end-pad" id="<%= !@terms.response.hits[:hits][0] ? 'no-results' : 'results' %>">
+  <div class="text-center end-pad entries-top-margin" id="<%= !@terms.response.hits[:hits][0] ? 'no-results' : 'results' %>">
     <%= page_entries_info(@terms, :entry_name => 'results') %>
   </div>
 
