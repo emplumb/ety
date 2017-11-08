@@ -74,21 +74,35 @@ class Term < ActiveRecord::Base
           stopwords: ['and', 'or', 'a', 'to', 'an']
         }
       },
+      char_filter: {
+        accents_char_filter: {
+          type: 'mapping',
+          mappings: [
+            'ñ => n',
+            'á => a',
+            'é => e',
+            'í => i',
+            'ó => o',
+            'ú => u',
+            'ü => u',
+          ]
+        }
+      },
       analyzer: {
         combined_analyzer: {
           tokenizer: 'standard',
           filter: ['lowercase', 'english_stop', 'english_stemmer', 'spanish_stop', 'spanish_stemmer'],
-          char_filter: 'html_strip'
+          char_filter: ['html_strip', 'accents_char_filter']
         },
         spanish_analyzer: {
           tokenizer: 'classic',
           filter: ['lowercase', 'spanish_stemmer'],
-          char_filter: 'html_strip'
+          char_filter: ['html_strip', 'accents_char_filter']
         },
         definition_analyzer: {
           tokenizer: 'standard',
           filter: ['lowercase', 'english_stemmer', 'spanish_stemmer', 'definition_stop'],
-          char_filter: 'html_strip'
+          char_filter: ['html_strip', 'accents_char_filter']
         }
       }
     } do
