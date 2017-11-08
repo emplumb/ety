@@ -50,7 +50,7 @@ class Term < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
-  settings index: { number_of_shards: 1, number_of_replicas: 0 },
+  settings index: { number_of_shards: 5, number_of_replicas: 1 },
     analysis: {
       filter: {
         english_stop: {
@@ -67,7 +67,7 @@ class Term < ActiveRecord::Base
         },
         spanish_stemmer: {
           type: 'stemmer',
-          name: 'light_spanish'
+          name: 'spanish'
         },
         definition_stop: {
           type: 'stop',
@@ -81,7 +81,7 @@ class Term < ActiveRecord::Base
           char_filter: 'html_strip'
         },
         spanish_analyzer: {
-          tokenizer: 'standard',
+          tokenizer: 'classic',
           filter: ['lowercase', 'spanish_stemmer'],
           char_filter: 'html_strip'
         },
@@ -130,8 +130,8 @@ class Term < ActiveRecord::Base
         query: {
           multi_match: {
             query: query,
-            fields: ['name^9', 'definition^8', 'etymology1^7', 'etymology2^6', 'uses^4', 'variants^4', 'romance_cognates^5', 'italic_cognates^3', 'etruscan^3', 'celtic_cognates^3', 'germanic_cognates^3', 'baltoslavic_cognates^3', 'albanian_cognates^3', 'hellenic_cognates^3', 'armenian_cognates^3', 'indoiranian_cognates^3', 'semitic^3', 'uralic^3', 'ne_caucasian^3', 'ie_cognates^3', 'notes1^2', 'notes2^1'],
-            operator: 'and'
+            fields: ['name^15', 'definition^8', 'etymology1^7', 'etymology2^6', 'uses^4', 'variants^4', 'romance_cognates^5', 'italic_cognates^3', 'etruscan^3', 'celtic_cognates^3', 'germanic_cognates^3', 'baltoslavic_cognates^3', 'albanian_cognates^3', 'hellenic_cognates^3', 'armenian_cognates^3', 'indoiranian_cognates^3', 'semitic^3', 'uralic^3', 'ne_caucasian^3', 'ie_cognates^3', 'notes1^2', 'notes2^1'],
+            operator: 'AND'
           }
         },
         highlight: {
