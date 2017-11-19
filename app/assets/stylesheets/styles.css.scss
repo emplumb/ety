@@ -247,6 +247,10 @@ ul {
   margin-bottom: 10px;
 }
 
+td.content-margin > div {
+  @extend .bottom-margin-sm
+}
+
 @media (min-width: 766px) and (max-width: 829px) {
   .end-pad {
     padding-bottom: 120px;
@@ -379,4 +383,8 @@ footer {
 
 .alert {
   margin-top: 20px;
+}
+
+.line-wrap {
+  white-space: pre-wrap;
 }
