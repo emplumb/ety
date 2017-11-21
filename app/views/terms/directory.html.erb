@@ -34,7 +34,7 @@
       <table class="table table-striped table-hover">
         <% @terms.each do |term| %>
           <tr>
-            <td class="table-spacing">
+            <td class="content-margin">
 
               <% if admin_signed_in? %>
                 <p>
@@ -42,153 +42,52 @@
                 </p>
               <% end %>
 
-              <b><a href="/term/<%= term.slug %>"><%= term.name %></a></b>
-              <%= term.gender %>
-              <%= term.p_s %>
-              <%= term.part_of_speech %>
-              <%= sanitize term.definition, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+            <!-- Name, Gender, Prefix/suffix, Part of speech, Definition -->
+            <div>
+              <strong><a href="/term/<%= term.slug %>"><%= term.name %></a></strong>
 
-              <% if term.etymology1.present? %>
-                <p></p>
-                <%= sanitize term.etymology1, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                <% term.ordered_attributes[1..3].each do |attr| %>
+                  <%= attr %>
+                <% end %>
+
+              <%= sanitize term.definition, tags: %w(b em a u i sup sub p div br, span), attributes: %w(href) %>
+            </div>
+
+            <!-- Etymology1 & 2 and Uses -->
+            <div>
+              <% term.ordered_attributes[5..6].each do |attr| %>
+                <% if attr.present? %>
+                  <%= sanitize(attr, tags: %w(b em a u i sup sub p div br span), attributes: %w(href)) %>
+                <% end %>
               <% end %>
+            </div>
 
-              <%= sanitize term.etymology2, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+            <% if term.uses.present? %>
+              <div class="bottom-margin-sm">
+                <%= sanitize term.uses, tags: %w(b em a u i sup sub p div br span), attributes: %w(href) %>
+              </div>
+            <% end %>
 
-              <% if term.uses.present? %>
-                <p></p>
-                <%= sanitize term.uses, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-              <% end %>
-
-              <% if term.variants.present? %>
-                <p></p>
+            <!-- Variants, Romance, Italic, Etruscan, Celtic, Germanic, Balto-Slavic, Albanian, Hellenic, Armenian, Indo-Iranian, Semitic, Uralic, Northeast Caucasian Cognates -->
+            <% term.labels_and_cognates.each do | label, cognate | %>
+              <% if cognate.present? %>
+                
                 <div class="p-indent">
-                  <b><u>Dialect Variants:</u></b>
-                  <%= sanitize term.variants, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
+                  <strong class="underline"><%= label %>:</strong>
+                  <span><%= sanitize(cognate, tags: %w(b em a u i sup sub p div br, span), attributes: %w(href)) %></span>
+                </div>
+
+              <% end %>
+            <% end %>
+
+            <!-- Notes 1 & 2 -->
+            <% term.ordered_attributes[23..24].each do |attr| %>
+              <% if attr.present? %>
+                <div>
+                  <%= sanitize(attr, tags: %w(b em a u i sup sub p div br, span), attributes: %w(href)) %>
                 </div>
               <% end %>
-
-              <% if term.romance_cognates.present? %>
-                <p></p>
-                <div class="p-indent">
-                  <b><u>Romance:</u></b>
-                  <%= sanitize term.romance_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                </div>
-              <% end %>
-
-              <% if term.italic_cognates.present? %>
-                <p></p>
-                <div class="p-indent">
-                  <b><u>Italic:</u></b>
-                  <%= sanitize term.italic_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                </div>
-              <% end %>
-
-              <% if term.etruscan.present? %>
-                <p></p>
-                <div class="p-indent">
-                  <b><u>Etruscan:</u></b>
-                  <%= sanitize term.etruscan, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                </div>
-              <% end %>
-
-              <% if term.celtic_cognates.present? %>
-                <p></p>
-                <div class="p-indent">
-                  <b><u>Celtic:</u></b>
-                  <%= sanitize term.celtic_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                </div>
-              <% end %>
-
-              <% if term.germanic_cognates.present? %>
-                <p></p>
-                <div class="p-indent">
-                  <b><u>Germanic:</u></b>
-                  <%= sanitize term.germanic_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                </div>
-              <% end %>
-
-              <% if term.baltoslavic_cognates.present? %>
-                <p></p>
-                <div class="p-indent">
-                  <b><u>Balto-Slavic:</u></b>
-                  <%= sanitize term.baltoslavic_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                </div>
-              <% end %>
-
-              <% if term.albanian_cognates.present? %>
-                <p></p>
-                <div class="p-indent">
-                  <b><u>Albanian:</u></b>
-                  <%= sanitize term.albanian_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                </div>
-              <% end %>
-
-              <% if term.hellenic_cognates.present? %>
-                <p></p>
-                <div class="p-indent">
-                  <b><u>Hellenic:</u></b>
-                  <%= sanitize term.hellenic_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                </div>
-              <% end %>
-
-              <% if term.armenian_cognates.present? %>
-                <p></p>
-                <div class="p-indent">
-                  <b><u>Armenian:</u></b>
-                  <%= sanitize term.armenian_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                </div>
-              <% end %>
-
-              <% if term.indoiranian_cognates.present? %>
-                <p></p>
-                <div class="p-indent">
-                  <b><u>Indo-Iranian:</u></b>
-                  <%= sanitize term.indoiranian_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                </div>
-              <% end %>
-
-              <% if term.semitic.present? %>
-                <p></p>
-                <div class="p-indent">
-                  <b><u>Semitic:</u></b>
-                  <%= sanitize term.semitic, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                </div>
-              <% end %>
-
-              <% if term.uralic.present? %>
-                <p></p>
-                <div class="p-indent">
-                  <b><u>Uralic:</u></b>
-                  <%= sanitize term.uralic, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                </div>
-              <% end %>
-
-              <% if term.ne_caucasian.present? %>
-                <p></p>
-                <div class="p-indent">
-                  <b><u>Northeast Caucasian:</u></b>
-                  <%= sanitize term.ne_caucasian, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                </div>
-              <% end %>
-
-              <% if term.ie_cognates.present? %>
-                <p></p>
-                <div class="p-indent">
-                  <b><u>Indo-European:</u></b>
-                <%= sanitize term.ie_cognates, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-                </div>
-              <% end %>
-
-              <% if term.notes1.present? %>
-                <p></p>
-                <%= sanitize term.notes1, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-              <% end %>
-
-              <% if term.notes2.present? %>
-                <p></p>
-                <%= sanitize term.notes2, tags: %w(b em a u i sup sub p), attributes: %w(href) %>
-              <% end %>
+            <% end %>
 
             </td>
           </tr>
