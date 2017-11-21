@@ -14,9 +14,9 @@
             <div>
               <strong><%= @term.name %></strong>
 
-                <% @term.ordered_attributes[1..3].each do |attr| %>
-                  <%= attr %>
-                <% end %>
+              <% @term.ordered_attributes[1..3].each do |attr| %>
+                <%= attr %>
+              <% end %>
 
               <%= sanitize @term.definition, tags: %w(b em a u i sup sub p div br, span), attributes: %w(href) %>
             </div>

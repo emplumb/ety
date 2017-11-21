@@ -23,7 +23,7 @@
 
       <% @term.attributes.to_a[2..5].each do |name, value| %>
         <div class="form-group col-lg-6">
-          <%= label_tag t(name) %>
+          <%= label_tag name, t(name)  %>
           <%= text_field_tag name, value, class: 'form-control' %>
         </div>
       <% end %>
@@ -39,7 +39,7 @@
 
       <% @term.attributes.to_a[8..10].each do |name, value| %>
         <div class="form-group col-lg-12">
-          <%= label_tag t(name) %>
+          <%= label_tag name, t(name) %>
           <%= text_area_tag name, value, class: 'form-control', rows: "1" %>
         </div>
       <% end %>
@@ -51,7 +51,7 @@
 
       <% @term.attributes.to_a[12..14].each do |name, value| %>
         <div class="form-group col-lg-12">
-          <%= label_tag t(name) %>
+          <%= label_tag name, t(name) %>
           <%= text_area_tag name, value, class: 'form-control', rows: "1" %>
         </div>
       <% end %>
@@ -61,19 +61,19 @@
     <div class="row">
         <% @term.attributes.to_a[15..21].each do |name, value| %>
           <div class="form-group col-lg-12">
-            <%= label_tag t(name) %>
+            <%= label_tag name, t(name) %>
             <%= text_area_tag name, value, class: 'form-control line-height', rows: "1" %>
           </div>
         <% end %>
         <% @term.attributes.to_a[29..30].each do |name, value| %>
           <div class="form-group col-lg-12">
-            <%= label_tag t(name) %>
+            <%= label_tag name, t(name) %>
             <%= text_area_tag name, value, class: 'form-control', rows: "1" %>
           </div>
         <% end %>
         <% @term.attributes.to_a[22..24].each do |name, value| %>
           <div class="form-group col-lg-12">
-            <%= label_tag t(name) %>
+            <%= label_tag name, t(name) %>
             <%= text_area_tag name, value, class: 'form-control', rows: "1" %>
           </div>
         <% end %>
