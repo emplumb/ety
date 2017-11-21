@@ -41,8 +41,8 @@ class TermsController < ApplicationController
 
   def update
     @term = Term.find_by_slug(params[:id])
-    @term.name = params[:name]
     @term.slug = params[:id]
+    @term.name = params[:name]
     @term.gender = params[:gender]
     @term.p_s = params[:p_s]
     @term.part_of_speech = params[:part_of_speech]

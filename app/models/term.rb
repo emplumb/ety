@@ -18,6 +18,26 @@ class Term < ActiveRecord::Base
     slug
   end
 
+  def ordered_attributes
+    [name, gender, p_s, part_of_speech, definition, etymology1, etymology2, uses, variants, romance_cognates, italic_cognates, etruscan, celtic_cognates, germanic_cognates, baltoslavic_cognates, albanian_cognates, hellenic_cognates, armenian_cognates, indoiranian_cognates, semitic, uralic, ne_caucasian, ie_cognates, notes1, notes2]
+  end
+
+  def ordered_cognates
+    ordered_attributes.select.with_index { |x, i| i > 7 && i < 23 }
+  end
+
+  def labels_and_attributes
+    ATTRIBUTE_CONSTANTS.zip(ordered_attributes)
+  end
+
+  def labels_and_cognates
+    COGNATE_CONSTANTS.zip(ordered_cognates)
+  end
+
+  ATTRIBUTE_CONSTANTS = %w(Name Gender Prefix/Suffix Part\ of\ Speech Definition Etymology\ 1 Etymology\ 2 Uses Variants Romance Italic Etruscan Celtic Germanic Balto-Slavic Albanian Hellenic Armenian Indo-Iranian Semitic Uralic Northeast\ Caucasian Indo-European Notes\ 1 Notes\ 2)
+
+  COGNATE_CONSTANTS = ATTRIBUTE_CONSTANTS[8..22]
+  
   MULTI_PREFIX = ['ch', 'll']
   ENYE_PREFIX = ['ñ']
 

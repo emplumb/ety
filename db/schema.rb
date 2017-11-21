@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20171102193006) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "home_updates", force: :cascade do |t|
     t.text     "heading"
     t.text     "body"
@@ -64,6 +67,7 @@ ActiveRecord::Schema.define(version: 20171102193006) do
     t.string   "slug"
     t.text     "uralic"
     t.text     "ne_caucasian"
+    t.index ["slug"], name: "index_terms_on_slug", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade do |t|
