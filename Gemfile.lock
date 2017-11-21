@@ -56,17 +56,17 @@ GEM
     debug_inspector (0.0.3)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
-    elasticsearch (5.0.4)
-      elasticsearch-api (= 5.0.4)
-      elasticsearch-transport (= 5.0.4)
-    elasticsearch-api (5.0.4)
+    elasticsearch (5.0.0)
+      elasticsearch-api (= 5.0.0)
+      elasticsearch-transport (= 5.0.0)
+    elasticsearch-api (5.0.0)
       multi_json
-    elasticsearch-model (5.0.1)
+    elasticsearch-model (0.1.9)
       activesupport (> 3)
-      elasticsearch (~> 5)
+      elasticsearch (> 0.4)
       hashie
-    elasticsearch-rails (5.0.1)
-    elasticsearch-transport (5.0.4)
+    elasticsearch-rails (0.1.9)
+    elasticsearch-transport (5.0.0)
       faraday
       multi_json
     erubis (2.7.0)
