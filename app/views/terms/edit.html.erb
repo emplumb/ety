@@ -29,11 +29,11 @@
       <% end %>
 
       <div class="form-group col-lg-12">
-        <%= label_tag :definition %>
+        <%= label_tag :definition, t(:definition) %>
         <%= text_area_tag :definition, @term.definition, class: 'form-control', rows: "2" %>
       </div>
       <div class="form-group col-lg-12">
-        <%= label_tag "Etymology 1" %>
+        <%= label_tag :etymology1, t(:etymology1) %>
         <%= text_area_tag :etymology1, @term.etymology1, class: 'form-control', rows: "4" %>
       </div>
 
@@ -45,7 +45,7 @@
       <% end %>
 
       <div class="form-group col-lg-12">
-        <%= label_tag "Romance Cognates" %>
+        <%= label_tag :romance_cognates, t(:romance_cognates) %>
         <%= text_area_tag :romance_cognates, @term.romance_cognates, class: 'form-control', rows: "4" %>
       </div>
 
