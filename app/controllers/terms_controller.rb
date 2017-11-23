@@ -87,7 +87,7 @@ class TermsController < ApplicationController
   end
 
   def search
-    @terms = Term.search(params[:query]).page(params[:page])
+    @results = Term.search(params[:query]).page(params[:page])
   end
 
 end

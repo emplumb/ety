@@ -81,19 +81,10 @@
       </div>
       <div id="alphabet">
         <ul>
-          <% ('A' .. 'C').each do |alphabet| %>
-            <li><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
-          <% end %>
-            <li><a href="/directory/ch">CH</a></li>
-          <% ('D' .. 'L').each do |alphabet| %>
-            <li><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
-          <% end %>
-            <li><a href="/directory/ll">LL</a></li>
-            <li><a href="/directory/m">M</a></li>
-            <li><a href="/directory/n">N</a></li>
-            <li><a href="/directory/ñ">Ñ</a></li>
-          <% ('O' .. 'Z').each do |alphabet| %>
-            <li><a href="/directory/<%= alphabet.downcase %>"><%= alphabet %></a></li>
+          <% Term::ALPHABET_CONSTANTS.each do |letter| %>
+            <li>
+              <a href="/directory/<%= letter.downcase %>"><%= letter %></a>
+            </li>
           <% end %>
         </ul>
       </div>

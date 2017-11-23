@@ -196,7 +196,7 @@ em {
   #mobile-alphabet li {
     display: inline-block;
     float: none;
-    margin: 7px 0 7px 3px;
+    margin: 7px 1.5px;
     font-size: 130%;
   }
   #mobile-alphabet li a {
@@ -213,9 +213,16 @@ em {
   }
 }
 
+.entries-top-margin {
+  margin-top: 5%;
+}
+
 @media (min-width: 451px) {
   .mobile-hidden {
     display: none;
+  }
+  .mobile-margin-top {
+    margin-top: 5%;
   }
 }
 
@@ -229,10 +236,6 @@ ul {
 
 .end-pad {
   padding-bottom: 50px;
-}
-
-.entries-top-margin {
-  margin-top: 5%;
 }
 
 .entries-bottom-margin {
