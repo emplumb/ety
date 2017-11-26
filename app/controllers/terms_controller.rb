@@ -88,6 +88,7 @@ class TermsController < ApplicationController
 
   def search
     @results = Term.search(params[:query]).page(params[:page])
+    @hit = @results.response.hits.hits.first
   end
 
 end
