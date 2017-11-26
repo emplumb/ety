@@ -57,13 +57,13 @@ header = ss.row(1)
   )
 end
 
-sources_list = Roo::Excelx.new("#{Rails.root}/public/assets/data/sources.xlsx")
+# sources_list = Roo::Excelx.new("#{Rails.root}/public/assets/data/sources.xlsx")
 
-sources_header = sources_list.row(1)
-(2..sources_list.last_row).each do |row|
-  author = sources_list.cell(row, 'A')
-  reference = sources_list.cell(row, 'B')
+# sources_header = sources_list.row(1)
+# (2..sources_list.last_row).each do |row|
+#   author = sources_list.cell(row, 'A')
+#   reference = sources_list.cell(row, 'B')
 
-  Source.create!(:author => author, :reference => reference)
+#   Source.create!(:author => author, :reference => reference)
 
-end
+# end

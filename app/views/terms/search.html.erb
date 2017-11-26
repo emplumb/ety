@@ -190,7 +190,7 @@
     </div>
   <% end %>
 
-  <div class="text-center end-pad entries-top-margin" id="<%= !@results.response.hits[:hits][0] ? 'no-results' : 'results' %>">
+  <div class="text-center end-pad" id="<%= !@results.response.hits[:hits][0] ? 'no-results' : 'results' %>">
     <%= page_entries_info(@results, :entry_name => 'results') %>
   </div>
 
