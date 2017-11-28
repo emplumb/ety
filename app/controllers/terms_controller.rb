@@ -1,5 +1,5 @@
 class TermsController < ApplicationController
-  before_action :authenticate_admin!, only: [:edit, :update]
+  before_action :authenticate_admin!, only: [:new, :create, :edit, :update]
 
   def daystamp
     Time.now.strftime("%y%m%d").to_i
@@ -33,6 +33,53 @@ class TermsController < ApplicationController
 
   def show
     @term = Term.find_by_slug(params[:id])
+  end
+
+  def new
+    @term = Term.new
+  end
+
+  def create
+    @term = Term.new(
+      slug: params[:id],
+      name: params[:name],
+      gender: params[:gender],
+      p_s: params[:p_s],
+      part_of_speech: params[:part_of_speech],
+      definition: params[:definition],
+      etymology1: params[:etymology1],
+      etymology2: params[:etymology2],
+      uses: params[:uses],
+      variants: params[:variants],
+      romance_cognates: params[:romance_cognates],
+      italic_cognates: params[:italic_cognates],
+      etruscan: params[:etruscan],
+      celtic_cognates: params[:celtic_cognates],
+      germanic_cognates: params[:germanic_cognates],
+      baltoslavic_cognates: params[:baltoslavic_cognates],
+      albanian_cognates: params[:albanian_cognates],
+      hellenic_cognates: params[:hellenic_cognates],
+      armenian_cognates: params[:armenian_cognates],
+      indoiranian_cognates: params[:indoiranian_cognates],
+      semitic: params[:semitic],
+      uralic: params[:uralic],
+      ne_caucasian: params[:ne_caucasian],
+      ie_cognates: params[:ie_cognates],
+      notes1: params[:notes1],
+      notes2: params[:notes2],
+      quote: params[:quote]
+    )
+
+    if @term.save
+      flash[:success] = "New entry successfully created!"
+      redirect_to "/term/#{@term.slug}"
+    elsif @term.errors.any?
+      flash[:danger] = "Error: #{@term.errors.full_messages.join(", ")}"
+      render "new.html.erb"
+    else
+      flash[:danger] = "Sorry, your entry did not save."
+      render "new.html.erb"
+    end
   end
 
   def edit

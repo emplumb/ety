@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get "/directory/:letter", to: "terms#directory"
   get "/search", to: "terms#search"
 
+  get "/term/new", to: "terms#new"
+  post "/term", to: "terms#create"
   get "/term/:id", to: "terms#show"
   get "/term/:id/edit", to: "terms#edit"
   patch "/term/:id", to: "terms#update"

@@ -131,9 +131,9 @@ class Term < ActiveRecord::Base
 
     mappings dynamic: 'false' do
       indexes :id, index: :no
+      indexes :slug, analyzer: :spanish_analyzer, index_options: :offsets, store: true
       indexes :name, analyzer: :spanish_analyzer, index_options: :offsets, store: true
       indexes :p_s, index: :no
-      indexes :gender, index: :no
       indexes :part_of_speech, index: :no
       indexes :definition, analyzer: :definition_analyzer, index_options: :offsets, store: true
       indexes :etymology1, analyzer: :combined_analyzer, index_options: :offsets, store: true
@@ -156,7 +156,6 @@ class Term < ActiveRecord::Base
       indexes :uses, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :notes1, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :notes2, analyzer: :combined_analyzer, index_options: :offsets, store: true
-      indexes :slug, index: :no
     end
   end
 
@@ -166,7 +165,7 @@ class Term < ActiveRecord::Base
         query: {
           multi_match: {
             query: query,
-            fields: ['name^15', 'definition^8', 'etymology1^7', 'etymology2^6', 'uses^4', 'variants^4', 'romance_cognates^5', 'italic_cognates^3', 'etruscan^3', 'celtic_cognates^3', 'germanic_cognates^3', 'baltoslavic_cognates^3', 'albanian_cognates^3', 'hellenic_cognates^3', 'armenian_cognates^3', 'indoiranian_cognates^3', 'semitic^3', 'uralic^3', 'ne_caucasian^3', 'ie_cognates^3', 'notes1^2', 'notes2^1'],
+            fields: ['slug^20','name^15', 'definition^8', 'etymology1^7', 'etymology2^6', 'uses^4', 'variants^4', 'romance_cognates^5', 'italic_cognates^3', 'etruscan^3', 'celtic_cognates^3', 'germanic_cognates^3', 'baltoslavic_cognates^3', 'albanian_cognates^3', 'hellenic_cognates^3', 'armenian_cognates^3', 'indoiranian_cognates^3', 'semitic^3', 'uralic^3', 'ne_caucasian^3', 'ie_cognates^3', 'notes1^2', 'notes2^1'],
             operator: 'AND'
           }
         },
