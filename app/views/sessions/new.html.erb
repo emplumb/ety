@@ -10,12 +10,12 @@
           </div>
           
           <div class="form-group">
-            <%= password_field_tag :password, nil, :placeholder => "Password", class: 'form-control no-radius'  %>
+            <%= password_field_tag :password, nil, :placeholder => "Password", class: 'form-control no-radius' %>
           </div>
           
-          <div class="fax">
+          <div class="form-group fax">
             <%= label_tag :fax %>      
-            <%= text_field_tag :fax, value = "", :tabindex => '-1', :autocomplete => 'nope' %>
+            <%= text_field_tag :fax, value = "", :tabindex => '-1', :autocomplete => 'nope', class: 'form-control no-radius' %>
           </div>
           
           <div class="form-group">
