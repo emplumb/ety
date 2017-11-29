@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   get "/sources", to: "terms#sources"
   get "/appendix", to: "terms#appendix"
-  get "/contact", to: "terms#contact"
   get "/directory", to: "terms#directory"
   get "/term", to: "terms#directory"
   get "/directory/:letter", to: "terms#directory"
@@ -21,8 +20,9 @@ Rails.application.routes.draw do
   get "/about", to: "static_pages#about"
   get "/phonology", to: "static_pages#phonology"
 
-  #Contact route
-  post "/submit_message", to: "contact#submit_message"
+  #Contact Forms route
+  get "/contact", to: "contact_requests#new"
+  post "/submit_message", to: "contact_requests#submit_message"
 
   #Errors routes
   match "/404", to: "errors#not_found", :via => :all
