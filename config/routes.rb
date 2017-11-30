@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
-  #Terms routes
-  root "terms#home"
+  #Home Updates routes
+  root "home_updates#home"
+  get "/home/update/:id/edit", to: "home_updates#edit"
+  patch "/home/update/:id", to: "home_updates#update"
 
+  #Terms routes
   get "/sources", to: "terms#sources"
   get "/appendix", to: "terms#appendix"
   get "/directory", to: "terms#directory"
@@ -20,7 +23,7 @@ Rails.application.routes.draw do
   get "/about", to: "static_pages#about"
   get "/phonology", to: "static_pages#phonology"
 
-  #Contact Forms route
+  #Contact Forms routes
   get "/contact", to: "contact_requests#new"
   post "/submit_message", to: "contact_requests#submit_message"
 

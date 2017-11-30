@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row end-pad">
+    <div class="col-md-6 col-md-offset-3">
+      
+      <%= render "/shared/general/mobile_alphabet" %>
+
+      <div class="page-header">
+        <h3 class="text-center">Word of the Day</h3>
+      </div>
+      
+      <%= render partial: "/shared/terms/linked_term", layout: "shared/terms/single_term_entry" %>
+      
+      <div class="font">
+
+        <% @posts.each do |post| %>
+          <div class="page-header">
+            <h3>
+              <%= link_to_if(admin_signed_in?, post.title, "/home/update/#{post.id}/edit") do
+                post.title end %>    
+            </h3>
+          </div>
+          <div>
+            <%= sanitize(post.body, tags: %w(b em a u i sup sub p b), attributes: %w(href)) %>
+          </div>
+        <% end %>
+
+        <div class="page-header">
+          <h3>
+            <%= link_to_if(admin_signed_in?, @welcome_post.title, "/home/update/#{@welcome_post.id}/edit") do
+              @welcome_post.title end %>
+          </h3>
+        </div>
+        <div>
+          <%= sanitize(@welcome_post.body, tags: %w(b em a u i sup sub p b div form input img), attributes: %w(href)) %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
