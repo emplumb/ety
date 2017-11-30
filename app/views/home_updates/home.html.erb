@@ -10,8 +10,11 @@
       
       <%= render partial: "/shared/terms/linked_term", layout: "shared/terms/single_term_entry" %>
       
-      <div class="font">
+      <div>
+        <%= link_to_if(admin_signed_in?, "Add Post", "/home/update/new", class: "btn btn-success no-radius entries-top-margin") do end %>   
+      </div>
 
+      <div class="font">
         <% @posts.each do |post| %>
           <div class="page-header">
             <h4><strong>
