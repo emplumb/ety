@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row end-pad">
+    <div class="col-md-6 col-md-offset-3">
+      
+      <%= render "/shared/general/mobile_alphabet" %>
+
+      <div class="page-header">
+        <h3 class="text-center">Word of the Day</h3>
+      </div>
+      
+      <%= render partial: "/shared/terms/linked_term", layout: "shared/terms/single_term_entry" %>
+      
+      <div>
+        <%= link_to_if(admin_signed_in?, "Add Post", "/home/update/new", class: "btn btn-success no-radius entries-top-margin") do end %>   
+      </div>
+
+      <div class="font">
+        <% @posts.each do |post| %>
+          <div class="page-header">
+            <h4><strong>
+              <%= link_to_if(admin_signed_in?, sanitize(post.title, 
+                tags: %w(b em u i sup sub span), 
+                attributes: %w(class)),
+                "/home/update/#{post.id}/edit") do 
+                
+                sanitize(post.title, 
+                tags: %w(b em u i sup sub span), 
+                attributes: %w(class))
+              end %>    
+            </strong></h4>
+          </div>
+          <div class="line-wrap"><%= sanitize(post.body, 
+              tags: %w(b em a u i sup sub p b div img span), 
+              attributes: %w(href src alt class width height)) %></div>
+        <% end %>
+
+        <div class="page-header">
+          <h4><strong>
+            <%= link_to_if(admin_signed_in?, sanitize(@welcome_post.title, 
+                tags: %w(b em u i sup sub span), 
+                attributes: %w(class)),
+                "/home/update/#{@welcome_post.id}/edit") do
+
+                sanitize(@welcome_post.title, 
+                tags: %w(b em u i sup sub span), 
+                attributes: %w(class))
+            end %>
+          </strong></h4>
+        </div>
+        <div class="line-wrap"><%= sanitize(@welcome_post.body, 
+            tags: %w(b em a u i sup sub p b div img span), 
+            attributes: %w(href src alt class width height)) %></div>
+
+      </div>
+    </div>
+  </div>
+</div>
