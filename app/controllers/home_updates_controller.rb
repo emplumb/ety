@@ -1,5 +1,5 @@
 class HomeUpdatesController < ApplicationController
-  before_action :authenticate_admin!, only: [:new, :edit, :update, :destroy]
+  before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
 
   def daystamp
     Time.now.strftime("%y%m%d").to_i
@@ -24,6 +24,9 @@ class HomeUpdatesController < ApplicationController
   end
 
   def new
+  end
+
+  def create
   end
 
   def edit

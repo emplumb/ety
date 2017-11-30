@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row end-pad">
     <div class="col-md-6 col-md-offset-3">
       
@@ -14,25 +14,29 @@
 
         <% @posts.each do |post| %>
           <div class="page-header">
-            <h3>
+            <h4><strong>
               <%= link_to_if(admin_signed_in?, post.title, "/home/update/#{post.id}/edit") do
-                post.title end %>    
-            </h3>
+                post.title end 
+              %>    
+            </strong></h4>
           </div>
-          <div>
-            <%= sanitize(post.body, tags: %w(b em a u i sup sub p b), attributes: %w(href)) %>
-          </div>
+          <div class="line-wrap"><%= sanitize(post.body, 
+              tags: %w(b em a u i sup sub p b div img), 
+              attributes: %w(href src alt class width height)) 
+            %></div>
         <% end %>
 
         <div class="page-header">
-          <h3>
+          <h4><strong>
             <%= link_to_if(admin_signed_in?, @welcome_post.title, "/home/update/#{@welcome_post.id}/edit") do
-              @welcome_post.title end %>
-          </h3>
+              @welcome_post.title end 
+            %>
+          </strong></h4>
         </div>
-        <div>
-          <%= sanitize(@welcome_post.body, tags: %w(b em a u i sup sub p b div form input img), attributes: %w(href)) %>
-        </div>
+        <div class="line-wrap"><%= sanitize(@welcome_post.body, 
+            tags: %w(b em a u i sup sub p b div img), 
+            attributes: %w(href src alt class width height)) 
+          %></div>
 
       </div>
     </div>
