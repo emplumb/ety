@@ -24,9 +24,25 @@ class HomeUpdatesController < ApplicationController
   end
 
   def new
+  	@post = HomeUpdate.new
   end
 
   def create
+  	@post = HomeUpdate.new(
+      title: params[:title],
+      body: params[:body],
+    )
+
+    if @post.save
+      flash[:success] = "New entry successfully created!"
+      redirect_to root_path
+    elsif @post.errors.any?
+      flash[:danger] = "Error: #{@post.errors.full_messages.join(", ")}"
+      render "new.html.erb"
+    else
+      flash[:danger] = "Sorry, your entry did not save."
+      render "new.html.erb"
+    end
   end
 
   def edit

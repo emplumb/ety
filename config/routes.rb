@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   #Home Updates routes
   root "home_updates#home"
+  get "/home/update/new", to: "home_updates#new"
+  post "/home/update", to: "home_updates#create"
   get "/home/update/:id/edit", to: "home_updates#edit"
   patch "/home/update/:id", to: "home_updates#update"
 
