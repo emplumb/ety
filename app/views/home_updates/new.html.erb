@@ -16,9 +16,7 @@
           <%= text_area_tag :body, @post.body, class: 'form-control', rows: "8" %>
         </div>
 
-        <p><!%= submit_tag "Create Post", data: { :confirm => "Are you sure you'd like to create this entry?" }, class: "btn btn-success no-radius" %></p>
-        
-<p><%= submit_tag "Create Post", class: "btn btn-success no-radius" %></p>
+        <p><%= submit_tag "Create Post", data: { :confirm => "Are you sure you'd like to create this post?" }, class: "btn btn-success no-radius" %></p>
 
         <%= link_to "Cancel", root_path %>
       </div>

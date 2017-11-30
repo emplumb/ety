@@ -18,8 +18,7 @@
           <%= text_area_tag :body, @post.body, class: 'form-control', rows: "8" %>
         </div>
 
-        <p><%= submit_tag "Save Post", class: "btn btn-success no-radius" %></p>
-        <!-- <p><!%= submit_tag "Save Post", data: { :confirm => "Are you sure you'd like to update?" }, class: "btn btn-success no-radius" %></p> -->
+        <p><%= submit_tag "Save Post", data: { :confirm => "Are you sure you'd like to update?" }, class: "btn btn-success no-radius" %></p>
 
       </div>
     </div>
