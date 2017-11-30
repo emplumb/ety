@@ -17,7 +17,7 @@ class HomeUpdatesController < ApplicationController
   end
 
   def home
-    @posts = HomeUpdate.limit(2).order(created_at: :desc)
+    @posts = HomeUpdate.limit(3).order(created_at: :desc)
     @welcome_post = HomeUpdate.first
 
     return word_of_day
