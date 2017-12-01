@@ -48,9 +48,8 @@
           </strong></h4>
         </div>
         <div class="line-wrap"><%= sanitize(@welcome_post.body, 
-            tags: %w(b em a u i sup sub p b div img span), 
-            attributes: %w(href src alt class width height)) %></div>
-
+            tags: %w(b em a u i sup sub p b div img span input), 
+            attributes: %w(href src alt class width height type)) %></div>
       </div>
     </div>
   </div>
