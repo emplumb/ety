@@ -65,5 +65,14 @@ class HomeUpdatesController < ApplicationController
 
   def destroy
     @post = HomeUpdate.find(params[:id])
+    
+    if @post.destroy
+      flash[:warning] = "Post has been successfully deleted."
+      redirect_to "/"
+    else
+      flash[:danger] = "Error: post cannot be deleted. Please contact administrator if problem persists."
+      render 'edit.html.erb'
+    end
   end
+
 end

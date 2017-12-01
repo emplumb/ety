@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post "/home/update", to: "home_updates#create"
   get "/home/update/:id/edit", to: "home_updates#edit"
   patch "/home/update/:id", to: "home_updates#update"
+  delete "/home/update/:id", to: "home_updates#destroy"
 
   #Terms routes
   get "/sources", to: "terms#sources"

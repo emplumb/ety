@@ -8,7 +8,7 @@
         <hr />
 
           <%= hidden_field_tag :id, @term.id %>
-          <p><%= submit_tag "Save Term", data: { :confirm => "Are you sure you'd like to update?" }, class: "btn btn-success no-radius" %></p>
+          <p><%= submit_tag "Save Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %></p>
 
           <br />
 
@@ -83,7 +83,7 @@
     </div>
     <div class="col-lg-offset-1 col-lg-10">
       <div class="row">
-        <p><%= submit_tag "Save Term", data: { :confirm => "Are you sure?" }, class: "btn btn-success no-radius" %>
+        <p><%= submit_tag "Save Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %>
         </p>
         <p><%= link_to "Back to entry", "/term/#{@term.slug}"%></p>
       </div>
