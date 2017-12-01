@@ -119,6 +119,18 @@ class TermsController < ApplicationController
     end
   end
 
+  def destroy
+    @term = Term.find_by_slug(params[:id])
+    
+    if @term.destroy
+      flash[:warning] = "Term has been successfully deleted."
+      redirect_to root_path
+    else
+      flash[:danger] = "Error: term cannot be deleted. Please contact administrator if problem persists."
+      render 'edit.html.erb'
+    end
+  end
+
   def directory
     if params[:letter].present?
       @terms = Term.where(prefix: params[:letter]).order(:slug).page(params[:page])

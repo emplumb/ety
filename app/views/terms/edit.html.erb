@@ -3,12 +3,16 @@
     <div class="col-lg-offset-1 col-lg-10">
       <div class="row">
         <%= link_to "Back to entry", "/term/#{@term.slug}" %>
-        <h1>Edit Entry</h1>
+        <h2>Edit Entry</h2>
 
         <hr />
 
           <%= hidden_field_tag :id, @term.id %>
-          <p><%= submit_tag "Save Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %></p>
+          <p>
+            <%= submit_tag "Save Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %>
+
+            <span class="pull-right"><%= link_to "Delete Term", "/term/#{@term.slug}", method: :delete, data: { :confirm => "Do you wish to permanently delete this entry?" }, class: "btn btn-danger no-radius" %></span>
+          </p>
 
           <br />
 
@@ -83,9 +87,9 @@
     </div>
     <div class="col-lg-offset-1 col-lg-10">
       <div class="row">
-        <p><%= submit_tag "Save Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %>
-        </p>
-        <p><%= link_to "Back to entry", "/term/#{@term.slug}"%></p>
+        <p><%= submit_tag "Save Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %></p>
+
+        <div><%= link_to "Back to entry", "/term/#{@term.slug}"%></div>
       </div>
     </div>
   </div>

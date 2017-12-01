@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get "/term/:id", to: "terms#show"
   get "/term/:id/edit", to: "terms#edit"
   patch "/term/:id", to: "terms#update"
+  delete "/term/:id", to: "terms#destroy"
 
   #Static Pages routes
   get "/about", to: "static_pages#about"

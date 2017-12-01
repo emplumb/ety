@@ -3,7 +3,7 @@
     <div class="col-lg-offset-1 col-lg-10">
       <div class="row">
         <div><%= link_to "Cancel", root_path %></div>
-        <h1>New Entry</h1>
+        <h2>New Entry</h2>
 
         <hr />
 
@@ -122,7 +122,8 @@
     <div class="col-lg-offset-1 col-lg-10">
       <div class="row">
         <p><%= submit_tag "Create Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %></p>
-        <p><%= link_to "Cancel", root_path %></p>
+        
+        <div><%= link_to "Cancel", root_path %></div>
       </div>
     </div>
   </div>
