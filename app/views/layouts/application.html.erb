@@ -82,9 +82,9 @@
       </div>
       <div id="alphabet">
         <ul>
-          <% Term::ALPHABET_CONSTANTS.each do |letter| %>
+          <% Term::LOWERCASE_ALPHABET_CONSTANTS.zip(Term::UPPERCASE_ALPHABET_CONSTANTS).each do |lower, upper| %>
             <li>
-              <a href="/directory/<%= letter.downcase %>"><%= letter %></a>
+              <a href="/directory/<%= lower %>"><%= upper %></a>
             </li>
           <% end %>
         </ul>

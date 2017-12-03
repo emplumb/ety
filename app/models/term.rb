@@ -41,7 +41,9 @@ class Term < ActiveRecord::Base
   MULTI_PREFIX = ['ch', 'll']
   ENYE_PREFIX = ['ñ']
 
-  ALPHABET_CONSTANTS = %w(A B C CH D E F G H I J K L LL M N Ñ O P Q R S T U V W X Y Z)
+  LOWERCASE_ALPHABET_CONSTANTS = %w(a b c ch d e f g h i j k l ll m n ñ o p q r s t u v w x y z)
+  UPPERCASE_ALPHABET_CONSTANTS = %w(A B C CH D E F G H I J K L LL M N Ñ O P Q R S T U V W X Y Z)
+
 
   private
     def get_valid_slug

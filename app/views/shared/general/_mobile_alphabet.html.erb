@@ -5,9 +5,9 @@
   </button>
   
   <ul class="dropdown-menu" id="mobile-alphabet" aria-labelledby="dropdownMenu1">
-    <% Term::ALPHABET_CONSTANTS.each do |letter| %>
+    <% Term::LOWERCASE_ALPHABET_CONSTANTS.zip(Term::UPPERCASE_ALPHABET_CONSTANTS).each do |lower, upper| %>
       <li id="mobile-alphabet">
-        <a href="/directory/<%= letter.downcase %>"><%= letter %></a>
+        <a href="/directory/<%= lower %>"><%= upper %></a>
       </li>
     <% end %>
   </ul>
