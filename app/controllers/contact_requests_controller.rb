@@ -7,7 +7,7 @@ class ContactRequestsController < ApplicationController
 	def submit_message
 		current_time = Time.now.to_i
 
-    if current_time < session[:antispam_time] + 20.seconds.to_i
+    if current_time < session[:antispam_time] + 15.seconds.to_i
       logger.warn("Potential spam detected for IP #{request.env['REMOTE_ADDR']}. Contact form submitted in #{current_time - session[:antispam_time]}s.")
 			
 			flash[:danger] = 'Sorry, your message cannot be sent at this time. Please try again.'
