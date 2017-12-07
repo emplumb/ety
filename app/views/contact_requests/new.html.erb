@@ -8,56 +8,48 @@
       <br />
 
       <p>Please reach out to us for any questions, comments, or suggestions. We appreciate all feedback.</p>
-      
-      <br />
-
       <p>&#42; required field</p>
       
       <br />
 
-      <form action="/submit_message" method="POST">
-        <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
-
+      <%= form_tag "/submit_message", method: :post do %>
         <div class="form-group">
-          <label for="name" class="control-label">
-            Name &#42;
-          </label>
-          <input required type="text" id="firstname" name="firstname" placeholder="First Name" class="form-control" maxlength="50" pattern="[a-zA-ZáéíñóúüÁÉÍÑÓÚÜ\- ]+" title="Name should only contain letters">
+          <%= label_tag :first_name, t(:first_name)  %>
+          <%= text_field_tag :first_name, @request ? @request.first_name : "", class: 'form-control', :required => true %>
         </div>
 
         <div class="form-group">
-          <input required type="text" id="lastname" name="lastname" placeholder="Last Name" class="form-control" maxlength="50" pattern="[a-zA-ZáéíñóúüÁÉÍÑÓÚÜ\- ]+" title="Name should only contain letters">
+          <%= label_tag :last_name, t(:last_name) %>
+          <%= text_field_tag :last_name, @request ? @request.last_name : "", class: 'form-control', :required => true %>
         </div>
 
         <div class="form-group">
-          <label for="email" class="control-label">
-            Email &#42;
-          </label>
-          <input required type="text" id="email" name="email" class="form-control" maxlength="75" pattern="[/\A([\w+\-](\.[\w+\-])?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i]">
+          <%= label_tag :email, t(:email) %>
+          <%= text_field_tag :email, @request ? @request.email : "", class: 'form-control', :required => true %>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag :subject, t(:subject) %>
+          <%= text_field_tag :subject, @request ? @request.subject : "", class: 'form-control', :required => true %>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag :body, t(:body) %>
+          <%= text_area_tag :body, @request ? @request.body : "", class: 'form-control', :required => true, rows: "8" %>
         </div>
 
         <div class="form-group fax">
-          <%= label_tag :fax, "Fax *", class: "control-label" %> 
+          <%= label_tag :fax, "Fax *" %> 
           <input type="text" id="fax" name="fax" value="" class="form-control", tabindex="-1", autocomplete="nope">
         </div>
 
-        <div class="form-group">
-          <label for="subject" class="control-label">
-            Subject &#42;
-          </label>
-          <input required type="text" id="subject" name="subject" class="form-control">
-        </div>
+        <p>
+          <%= submit_tag "Submit", class: "btn btn-primary no-radius" %>
+          <%= link_to "Cancel", root_path, id: "cancel" %>
+        </p>
 
-        <div class="form-group">
-          <label for="body" class="control-label">
-            Body &#42;
-          </label>
-          <textarea required name="body" class="form-control" rows="5" id="body"></textarea>
-        </div>
+      <% end %>      
 
-        <button class="btn btn-primary" id="submit">Submit</button>
-        <%= link_to "Cancel", root_path, id: "cancel" %>
-      </form>
     </div>
   </div>
 </div>
