@@ -14,39 +14,39 @@
     <div class="col-lg-offset-1 col-lg-5">
       <div class="row">
         <div class="form-group col-lg-6">
-          <%= label_tag :name %>
+          <%= label_tag :name, t(:name) %>
           <%= text_field_tag :name, @term.name, class: 'form-control' %>
         </div>
         <div class="form-group col-lg-6">
-          <%= label_tag :gender %>
+          <%= label_tag :gender, t(:gender) %>
           <%= text_field_tag :gender, @term.gender, class: 'form-control' %>
         </div>
         <div class="form-group col-lg-6">
-          <%= label_tag :p_s %>
+          <%= label_tag :p_s, t(:p_s) %>
           <%= text_field_tag :p_s, @term.p_s, class: 'form-control' %>
         </div>
         <div class="form-group col-lg-6">
-          <%= label_tag :part_of_speech %>
+          <%= label_tag :part_of_speech, t(:part_of_speech) %>
           <%= text_field_tag :part_of_speech, @term.part_of_speech, class: 'form-control' %>
         </div>
         <div class="form-group col-lg-12">
-          <%= label_tag :definition %>
+          <%= label_tag :definition, t(:definition) %>
           <%= text_area_tag :definition, @term.definition, class: 'form-control', rows: "5" %>
         </div>
         <div class="form-group col-lg-12">
-          <%= label_tag "Primary Etymology" %>
+          <%= label_tag :etymology1, t(:etymology1) %>
           <%= text_area_tag :etymology1, @term.etymology1, class: 'form-control', rows: "5" %>
         </div>
         <div class="form-group col-lg-12">
-          <%= label_tag "Secondary Etymology" %>
+          <%= label_tag :etymology2, t(:etymology2) %>
           <%= text_area_tag :etymology2, @term.etymology2, class: 'form-control' %>
         </div>
         <div class="form-group col-lg-12">
-          <%= label_tag :uses %>
+          <%= label_tag :uses, t(:uses) %>
           <%= text_area_tag :uses, @term.uses, class: 'form-control' %>
         </div>
         <div class="form-group col-lg-12">
-          <%= label_tag :variants %>
+          <%= label_tag :variants, t(:variants) %>
           <%= text_area_tag :variants, @term.variants, class: 'form-control' %>
         </div>
         <div class="form-group col-lg-12">
