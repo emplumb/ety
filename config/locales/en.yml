@@ -62,3 +62,9 @@ en:
   ie_cognates: "Indo-European Cognates"
   notes1: "Notes 1"
   notes2: "Notes 2"
+
+  first_name: "First Name *"
+  last_name: "Last Name *"
+  email: "Email *"
+  subject: "Subject *"
+  body: "Body *"
