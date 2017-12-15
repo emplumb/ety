@@ -3,7 +3,7 @@ class CreateSources < ActiveRecord::Migration[5.0]
     create_table :sources do |t|
       t.string :author
       t.string :article
-      t.string :editorial_in
+      t.string :other
       t.string :book
       t.string :journal
       t.string :printing

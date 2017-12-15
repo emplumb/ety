@@ -63,7 +63,7 @@ sources_header = sources_list.row(1)
 (2..sources_list.last_row).each do |row|
   author = sources_list.cell(row, 'A')
   article = sources_list.cell(row, 'B')
-  editorial_in = sources_list.cell(row, 'C')
+  other = sources_list.cell(row, 'C')
   book = sources_list.cell(row, 'D')
   journal = sources_list.cell(row, 'E')
   printing = sources_list.cell(row, 'F')
@@ -73,7 +73,7 @@ sources_header = sources_list.row(1)
   Source.create!(
   	:author => author,
   	:article => article,
-	  :editorial_in => editorial_in,
+	  :other => other,
 	  :book => book,
 	  :journal => journal,
 	  :printing => printing,

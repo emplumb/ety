@@ -3,7 +3,7 @@
 one:
   author: MyString
   article: MyString
-  editorial_in: MyString
+  other: MyString
   book: MyString
   journal: MyString
   printing: MyString
@@ -13,7 +13,7 @@ one:
 two:
   author: MyString
   article: MyString
-  editorial_in: MyString
+  other: MyString
   book: MyString
   journal: MyString
   printing: MyString
