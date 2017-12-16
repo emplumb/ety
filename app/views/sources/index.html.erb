@@ -41,11 +41,7 @@
                 <%= sanitize(source.website, tags: %w(b u i sup sub)) %>.
               <% end %>
             </div>
-
-
-            <!-- <!%= sanitize(source.author, tags: %w(b a u i sup sub p div), attributes: %w(href)) %>
-            <!%= link_to_if(admin_signed_in?, sanitize(source.reference, tags: %w(b a u i sup sub p div), attributes: %w(href)), "/source/#{source.id}/edit") do
-            sanitize source.reference, tags: %w(a u i sup sub p div), attributes: %w(href) end %> -->
+            
           </div>  
       <% end %>
     </div>
