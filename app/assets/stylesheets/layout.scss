@@ -1,0 +1,18 @@
+.flexbox {		
+  display: -webkit-flex;		
+  display: -ms-flexbox;		
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+}
+.flexbox .col {
+  padding: 10px;
+}
+
+.flexbox .col:nth-child(2) {
+	flex: 3;
+}
+
+.header-indent {
+	padding-left: 85px;
+}
