@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   #Sources routes
   get "/sources", to: "sources#index"
+  get "/source/new", to: "sources#new"
+  post "/sources", to: "sources#create"
   get "/source/:id/edit", to: "sources#edit"
   patch "/source/:id", to: "sources#update"
   delete "/source/:id", to: "sources#destroy"
