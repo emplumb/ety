@@ -1,16 +1,63 @@
-<div class="container">
-  <div class="row end-pad">
-    <div class="font col-md-7 col-md-offset-2">
-      <div class="entries-top-margin"><%= link_to "Go to sources", "/sources" %></div>
-      <h2>Edit</h2>
-      <hr />
+<%= form_tag "/source/#{@source.id}", method: :patch do %>
+  <div class="container-fluid entries-top-margin end-pad">
+    <div class="row">
+      <div class="col-md-9 col-md-offset-1">
+        <%= link_to "Back to sources", "/sources" %>
+        <h3>Edit Source</h3>
+        <hr />
+        <div class="well sm-font">
+          Sources are alphabetized as follows: Author > Article > Other > Book > Journal > Printing
+        </div>
 
-        <%= form_tag "/source/#{@source.id}", method: :patch do %>
-          <p><%= text_field_tag :author, @source.author, class: 'form-control' %></p>
-          <p><%= text_area_tag :reference, @source.reference, class: 'form-control', rows: "7" %></p>
-          <p><%= submit_tag "Save Source", class: "btn btn-success no-radius" %></p>
-        <% end %>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= label_tag "Author" %>
+          <%= text_area_tag :author, @source.author, class: 'form-control', rows: "1" %>
+        </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= label_tag "Article" %>
+          <%= text_area_tag :article, @source.article, class: 'form-control', rows: "1" %>
+        </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= label_tag "Other - non-formatted text (such as 'editorial in' or 'in')" %><%= text_area_tag :other, @source.other, class: 'form-control', rows: "1" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= label_tag "Book" %><%= text_area_tag :book, @source.book, class: 'form-control', rows: "1" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= label_tag "Journal" %><%= text_area_tag :journal, @source.journal, class: 'form-control', rows: "1" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= label_tag "Printing" %><%= text_area_tag :printing, @source.printing, class: 'form-control', rows: "1" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= label_tag "Year" %><%= text_area_tag :year, @source.year, class: 'form-control', rows: "1" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= label_tag "Website" %><%= text_area_tag :website, @source.website, class: 'form-control', rows: "1" %>
+          </div>
+        </div>
+        
+        <p>
+          <%= submit_tag "Save Source", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %>         
+        </p>
+        <div><%= link_to "Back to sources", "/sources" %></div>
+
       </div>
     </div>
   </div>
-</div>
+<% end %>
