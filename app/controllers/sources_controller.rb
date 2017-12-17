@@ -28,7 +28,7 @@ class SourcesController < ApplicationController
       flash[:danger] = "Error: #{@source.errors.full_messages.join(", ")}"
       render "new.html.erb"
     else
-      flash[:danger] = "Sorry, your source did not save."
+      flash[:danger] = "Sorry, your source did not save. Please try again."
       render "new.html.erb"
     end
   end
@@ -62,7 +62,7 @@ class SourcesController < ApplicationController
     
     if @source.destroy
       flash[:warning] = "Source has been successfully deleted."
-      redirect_to "/"
+      redirect_to "/sources"
     else
       flash[:danger] = "Error: source cannot be deleted. Please contact administrator if problem persists."
       render 'edit.html.erb'

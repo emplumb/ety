@@ -1,5 +1,5 @@
 class Source < ApplicationRecord
-	validate :any_field_present?, on: :create
+	validate :any_field_present?, on: [:create, :update]
 
 	def any_field_present?
 	  if %w(author article other book journal printing year website).all? { |attr| self[attr].blank? }
