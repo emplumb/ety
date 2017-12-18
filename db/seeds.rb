@@ -57,24 +57,39 @@
 #   )
 # end
 
-# sources_list = Roo::Excelx.new("#{Rails.root}/public/assets/data/sources.xlsx")
+sources_list = Roo::Excelx.new("#{Rails.root}/public/assets/data/sources.xlsx")
 
-# sources_header = sources_list.row(1)
-# (2..sources_list.last_row).each do |row|
-#   author = sources_list.cell(row, 'A')
-#   reference = sources_list.cell(row, 'B')
+sources_header = sources_list.row(1)
+(2..sources_list.last_row).each do |row|
+  author = sources_list.cell(row, 'A')
+  article = sources_list.cell(row, 'B')
+  other = sources_list.cell(row, 'C')
+  book = sources_list.cell(row, 'D')
+  journal = sources_list.cell(row, 'E')
+  printing = sources_list.cell(row, 'F')
+  year = sources_list.cell(row, 'G')
+  website = sources_list.cell(row, 'H')
 
-#   Source.create!(:author => author, :reference => reference)
-
-# end
-
-home_updates_list = Roo::Excelx.new("#{Rails.root}/public/assets/data/home_updates.xlsx")
-
-home_updates_header = home_updates_list.row(1)
-(2..home_updates_list.last_row).each do |row|
-  title = home_updates_list.cell(row, 'A')
-  body = home_updates_list.cell(row, 'B')
-
-  HomeUpdate.create!(:title => title, :body => body)
+  Source.create!(
+  	:author => author,
+  	:article => article,
+	  :other => other,
+	  :book => book,
+	  :journal => journal,
+	  :printing => printing,
+	  :year => year,
+	  :website => website
+	)
 
 end
+
+# home_updates_list = Roo::Excelx.new("#{Rails.root}/public/assets/data/home_updates.xlsx")
+
+# home_updates_header = home_updates_list.row(1)
+# (2..home_updates_list.last_row).each do |row|
+#   title = home_updates_list.cell(row, 'A')
+#   body = home_updates_list.cell(row, 'B')
+
+#   HomeUpdate.create!(:title => title, :body => body)
+
+# end

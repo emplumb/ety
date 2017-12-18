@@ -1,15 +1,50 @@
 <div class="container">
   <div class="row end-pad">
+    <div class="font col-md-7 col-md-offset-2 <%= 'header-indent' if admin_signed_in? %>">
+      <div><%= link_to_if(admin_signed_in?, "Add Source", "/source/new", class: "btn btn-success no-radius entries-top-margin") do end %></div>
+      <h2 class="page-header">Sources</h2>
+    </div>
+
     <div class="font col-md-7 col-md-offset-2">
-      <h2 class="page-header">Bibliography</h2>
-        <% @sources.each do |source| %>
-          <p>
-            <%= link_to_if(admin_signed_in?, sanitize(source.author, tags: %w(b a u i sup sub p div), attributes: %w(href)), "/source/#{source.id}/edit") do
-            sanitize source.author, tags: %w(a u i sup sub), attributes: %w(href) end %>
-            <%= sanitize(source.reference, tags: %w(u i sup sub p div)) %>
-          </p>
-        <% end %>
+      <% @sources.each do |source| %>
+        <div class="flexbox">
+          
+          <% if admin_signed_in? %>
+            <div class="col">
+              <%= link_to "Edit", "/source/#{source.id}/edit", class: "btn btn-default no-radius" %>
+            </div>
+          <% end %>
+
+          <div class="col">
+            <% if source.author.present? %> 
+                <%= sanitize(source.author, 
+                tags: %w(b u i sup sub)) %>.
+            <% end %>
+            <% if source.article.present? %>
+              "<%= sanitize(source.article, tags: %w(b u i sup sub)) %>".
+            <% end %> 
+            <% if source.other.present? %>
+              <%= sanitize(source.other, tags: %w(b u i sup sub)) %>.
+            <% end %> 
+            <% if source.book.present? %>
+              <span class="underline"><%= sanitize(source.book, tags: %w(b u i sup sub)) %></span>.
+            <% end %> 
+            <% if source.journal.present? %>
+              <span class="italics"><%= sanitize(source.journal, tags: %w(b u i sup sub)) %>.</span>
+            <% end %> 
+            <% if source.printing.present? %>
+              <%= sanitize(source.printing, tags: %w(b u i sup sub)) %>.
+            <% end %> 
+            <% if source.year.present? %>
+              <%= sanitize(source.year, tags: %w(b u i sup sub)) %>.
+            <% end %> 
+            <% if source.website.present? %>
+              <%= sanitize(source.website, tags: %w(b u i sup sub)) %>.
+            <% end %>
+          </div>
+          
+        </div>  
+      <% end %>
     </div>
   </div>
 </div>
-

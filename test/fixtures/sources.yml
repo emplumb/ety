@@ -2,8 +2,20 @@
 
 one:
   author: MyString
-  reference: MyText
+  article: MyString
+  other: MyString
+  book: MyString
+  journal: MyString
+  printing: MyString
+  year: MyString
+  website: MyString
 
 two:
   author: MyString
-  reference: MyText
+  article: MyString
+  other: MyString
+  book: MyString
+  journal: MyString
+  printing: MyString
+  year: MyString
+  website: MyString

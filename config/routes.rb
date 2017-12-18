@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   delete "/home/update/:id", to: "home_updates#destroy"
 
   #Terms routes
-  get "/sources", to: "terms#sources"
   get "/appendix", to: "terms#appendix"
   get "/directory", to: "terms#directory"
   get "/term", to: "terms#directory"
@@ -22,6 +21,14 @@ Rails.application.routes.draw do
   get "/term/:id/edit", to: "terms#edit"
   patch "/term/:id", to: "terms#update"
   delete "/term/:id", to: "terms#destroy"
+
+  #Sources routes
+  get "/sources", to: "sources#index"
+  get "/source/new", to: "sources#new"
+  post "/sources", to: "sources#create"
+  get "/source/:id/edit", to: "sources#edit"
+  patch "/source/:id", to: "sources#update"
+  delete "/source/:id", to: "sources#destroy"
 
   #Static Pages routes
   get "/about", to: "static_pages#about"

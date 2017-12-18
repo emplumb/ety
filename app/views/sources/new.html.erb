@@ -1,4 +1,4 @@
-<%= form_tag "/source/#{@source.id}", method: :patch do %>
+<%= form_tag "/sources", method: :post do %>
   <div class="container-fluid entries-top-margin end-pad">
     <div class="row">
       <div class="col-md-9 col-md-offset-1">
@@ -13,22 +13,22 @@
           <div class="row">          
             <div class="form-group">
               <%= label_tag "Author" %>
-              <%= text_area_tag :author, @source.author, class: 'form-control', rows: "1" %>
+              <%= text_area_tag :author, @source ? @source.author : '', class: 'form-control', rows: "1" %>
             </div>
           
             <div class="form-group">
               <%= label_tag "Article" %>
-              <%= text_area_tag :article, @source.article, class: 'form-control', rows: "1" %>
+              <%= text_area_tag :article, @source ? @source.article : '', class: 'form-control', rows: "1" %>
             </div>
           
             <div class="form-group">
               <%= label_tag "Other - non-formatted text (e.g. 'editorial in' or 'in')" %>
-              <%= text_area_tag :other, @source.other, class: 'form-control', rows: "1" %>
+              <%= text_area_tag :other, @source ? @source.other : '', class: 'form-control', rows: "1" %>
             </div>
           
             <div class="form-group">
               <%= label_tag "Book" %>
-              <%= text_area_tag :book, @source.book, class: 'form-control', rows: "1" %>
+              <%= text_area_tag :book, @source ? @source.book : '', class: 'form-control', rows: "1" %>
             </div>
           </div>
         </div>
@@ -37,29 +37,28 @@
           <div class="row">        
             <div class="form-group">
               <%= label_tag "Journal" %>
-              <%= text_area_tag :journal, @source.journal, class: 'form-control', rows: "1" %>
+              <%= text_area_tag :journal, @source ? @source.journal : '', class: 'form-control', rows: "1" %>
             </div>
           
             <div class="form-group">
               <%= label_tag "Printing" %>
-              <%= text_area_tag :printing, @source.printing, class: 'form-control', rows: "1" %>
+              <%= text_area_tag :printing, @source ? @source.printing : '', class: 'form-control', rows: "1" %>
             </div>
           
             <div class="form-group">
               <%= label_tag "Year" %>
-              <%= text_area_tag :year, @source.year, class: 'form-control', rows: "1" %>
+              <%= text_area_tag :year, @source ? @source.year : '', class: 'form-control', rows: "1" %>
             </div>
           
             <div class="form-group">
               <%= label_tag "Website" %>
-              <%= text_area_tag :website, @source.website, class: 'form-control', rows: "1" %>
+              <%= text_area_tag :website, @source ? @source.website : '', class: 'form-control', rows: "1" %>
             </div>
           </div>
         </div>
         
-        <p><%= submit_tag "Save Source", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %>
-          
-          <span class="pull-right"><%= link_to "Delete Source", "/source/#{@source.id}", method: :delete, data: { :confirm => "Do you wish to permanently delete this source?" }, class: "btn btn-danger no-radius" %></span>
+        <p>
+          <%= submit_tag "Create Source", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %>         
         </p>
         <div><%= link_to "Back to sources", "/sources" %></div>
 
