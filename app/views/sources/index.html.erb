@@ -2,7 +2,7 @@
   <div class="row end-pad">
     <div class="font col-md-7 col-md-offset-2 <%= 'header-indent' if admin_signed_in? %>">
       <div><%= link_to_if(admin_signed_in?, "Add Source", "/source/new", class: "btn btn-success no-radius entries-top-margin") do end %></div>
-      <h2>Sources</h2>
+      <h2 class="page-header">Sources</h2>
     </div>
 
     <div class="font col-md-7 col-md-offset-2">
