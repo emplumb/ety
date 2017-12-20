@@ -1,11 +1,5 @@
 class TermsController < ApplicationController
   before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
-
-  def sources
-  end
-
-  def appendix
-  end
   
   def show
     @term = Term.find_by_slug(params[:id])

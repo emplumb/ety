@@ -31,8 +31,12 @@ Rails.application.routes.draw do
   delete "/source/:id", to: "sources#destroy"
 
   #Static Pages routes
-  get "/about", to: "static_pages#about"
   get "/phonology", to: "static_pages#phonology"
+
+  #About Page routes
+  get "/about", to: "about_pages#show"
+  get "/about/:id/edit", to: "about_pages#edit"
+  patch "/about/:id", to: "about_pages#update"
 
   #Contact Forms routes
   get "/contact", to: "contact_requests#new"
