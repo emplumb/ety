@@ -1,0 +1,2 @@
+class PhonologyPagesController < ApplicationController
+end

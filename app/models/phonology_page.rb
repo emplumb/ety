@@ -1,0 +1,2 @@
+class PhonologyPage < ApplicationRecord
+end
