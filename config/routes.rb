@@ -30,13 +30,15 @@ Rails.application.routes.draw do
   patch "/source/:id", to: "sources#update"
   delete "/source/:id", to: "sources#destroy"
 
-  #Static Pages routes
-  get "/phonology", to: "static_pages#phonology"
-
   #About Page routes
   get "/about", to: "about_pages#show"
   get "/about/:id/edit", to: "about_pages#edit"
   patch "/about/:id", to: "about_pages#update"
+
+  #Phonology Page routes
+  get "/phonology", to: "phonology_pages#show"
+  get "/phonology/:id/edit", to: "phonology_pages#edit"
+  patch "/phonology/:id", to: "phonology_pages#update"
 
   #Contact Forms routes
   get "/contact", to: "contact_requests#new"

@@ -1,0 +1,23 @@
+<%= form_tag "/phonology/#{@phonology_page.id}", method: :patch do %>
+  <div class="container-fluid entries-top-margin end-pad">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10">
+        <%= link_to "Cancel", "/phonology" %>
+        <%= hidden_field_tag :id, @phonology_page.id %>
+        <h3>Edit Phonology Page</h3>
+
+        <hr />
+
+        <div class="form-group">
+          <%= label_tag :body, "Body" %>
+          <%= text_area_tag :body, @phonology_page.body, class: 'form-control', rows: "30" %>
+        </div>
+
+        <p><%= submit_tag "Save Changes", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %>
+        </p>
+        <div><%= link_to "Cancel", "/phonology" %></div>
+
+      </div>
+    </div>
+  </div>
+<% end %>

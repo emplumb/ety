@@ -1,10 +1,15 @@
 <div class="container">
   <div class="row end-pad">
     <div class="font col-md-7 col-md-offset-2">
-      <div class="page-header">
+      <%= link_to_if(admin_signed_in?, "Edit", "/phonology/#{@phonology_page.id}/edit", class: "btn btn-default no-radius entries-top-margin") do end %>
+			
+			<div class="page-header">
         <h2>Phonology</h2>
-       </div>
+      </div>
 
+			<div class="line-wrap">
+				<%= sanitize(@phonology_page.body, tags: %w(b em a u i sup sub p div br span ul li), attributes: %w(href)) %>
+			</div>
     </div>
   </div>
 </div>
