@@ -1,10 +1,10 @@
 require 'mailgun'
 
 class ContactMailer < ApplicationMailer
-  default from: 'oedosproject@gmail.com'
+  default from: ENV['DOMAIN_EMAIL']
 
   def submit(fullname, email, subject, body)
-    mg_client = Mailgun::Client.new("key-9daa213cdd6cec1de0e4a8e279e17696")
+    mg_client = Mailgun::Client.new(ENV['MAILGUN_API_KEY'])
     formatted_body = ActionController::Base.helpers.simple_format(body)
 
     message_params = 
@@ -15,6 +15,6 @@ class ContactMailer < ApplicationMailer
       :html => "#{formatted_body}"
     }
 
-    mg_client.send_message 'www.spanishetym.com', message_params
+    mg_client.send_message ENV['EMAIL_HOST'], message_params
   end
 end
