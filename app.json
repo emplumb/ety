@@ -1,0 +1,95 @@
+{
+  "name": "ety",
+  "scripts": {
+  },
+  "env": {
+    "BUILDPACK_URL": {
+      "required": true
+    },
+    "DBINSIGHTS_URL": {
+      "required": true
+    },
+    "DOMAIN_EMAIL": {
+      "required": true
+    },
+    "EMAIL_HOST": {
+      "required": true
+    },
+    "HEROKU_POSTGRESQL_PINK_URL": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "MAILGUN_API_KEY": {
+      "required": true
+    },
+    "MIN_THREADS": {
+      "required": true
+    },
+    "NEW_RELIC_LICENSE_KEY": {
+      "required": true
+    },
+    "NEW_RELIC_LOG": {
+      "required": true
+    },
+    "PAPERTRAIL_API_TOKEN": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_MAX_THREADS": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "SCOUT_KEY": {
+      "required": true
+    },
+    "SCOUT_LOG_LEVEL": {
+      "required": true
+    },
+    "SCOUT_MONITOR": {
+      "required": true
+    },
+    "SEARCHBOX_SSL_URL": {
+      "required": true
+    },
+    "SEARCHBOX_URL": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "required": true
+    },
+    "WEB_CONCURRENCY": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    },
+    "worker": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "dbinsights",
+    "newrelic",
+    "papertrail",
+    "heroku-postgresql",
+    "heroku-postgresql",
+    "scout",
+    "searchbox"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
