@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ContactRequest, type: :model do
+RSpec.describe HomeUpdate, type: :model do
 	before(:each) do
 		@post = HomeUpdate.new(title: "September Update", body: "We've added a bunch of words")
 	end
