@@ -21,6 +21,8 @@ gem 'newrelic_rpm'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
+gem 'simplecov', require: false, group: :test
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
