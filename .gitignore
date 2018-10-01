@@ -16,4 +16,11 @@
 !/log/.keep
 /tmp
 
-*.env
+# Ignore environment variables
+.env
+
+# Ignore coverage folder
+/coverage
+
+# Ignore byebug
+.byebug_history
