@@ -1,9 +1,11 @@
 class Source < ApplicationRecord
-	validate :any_field_present?, on: [:create, :update]
+	validate :required_field_present?, on: [:create, :update]
 
-	def any_field_present?
-	  if %w(author article other book journal printing year website).all? { |attr| self[attr].blank? }
-	    errors.add :base, "At least one field must be present"
+	def required_field_present?
+		required_field = %w(author article book journal printing).all? { |field| self[field].blank? }
+
+	  if required_field
+	    errors.add :base, "At least one of the following fields must be present: Author, Article, Book, Journal, or Printing"
 	  end
 	end
 
