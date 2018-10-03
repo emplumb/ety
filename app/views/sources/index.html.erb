@@ -21,10 +21,11 @@
                 tags: %w(b u i sup sub)) %>.
             <% end %>
             <% if source.article.present? %>
-              "<%= sanitize(source.article, tags: %w(b u i sup sub)) %>".
+              "<%= sanitize(source.article, tags: %w(b u i sup sub)) %>"
+              <% if source.other.blank? %>.<% end %>
             <% end %> 
             <% if source.other.present? %>
-              <%= sanitize(source.other, tags: %w(b u i sup sub)) %>.
+              <%= sanitize(source.other, tags: %w(b u i sup sub)) %>
             <% end %> 
             <% if source.book.present? %>
               <span class="underline"><%= sanitize(source.book, tags: %w(b u i sup sub)) %></span>.
