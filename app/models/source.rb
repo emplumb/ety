@@ -1,4 +1,6 @@
 class Source < ApplicationRecord
+	include SourcesViewHelper
+
   has_many :citations
   has_many :terms, through: :citations
 
@@ -26,6 +28,6 @@ class Source < ApplicationRecord
 		      LOWER(printing)
 	    SQL
 
-	     self.find_by_sql(query)
+	    self.find_by_sql(query)
 		end
 end
