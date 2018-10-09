@@ -1,6 +1,4 @@
 class Source < ApplicationRecord
-	include SourcesViewHelper
-
   has_many :citations
   has_many :terms, through: :citations
 

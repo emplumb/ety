@@ -1,46 +1,28 @@
 module SourcesViewHelper
   
-  def source_styles(attribute)
-		if attribute == book
+  def source_styles(field, attribute)
+  	if !attribute.present?
+  		""
+  	elsif field == "book" || field == "website"
 			"underline"
-		elsif attribute == journal
+		elsif field == "journal"
 			"italic"
 		end
 	end
 
-	def add_period(attribute)
+	def add_period?(attribute)
 		attribute.present? ? "." : nil
 	end
 
-	def author_formatted
-		if author.present?
-			author + "."
+	def article_period?(article, other)
+		if article.present? && other.blank? 
+			"."
 		end
 	end
 
-	def article_formatted
-		if article.present? && other.blank?
-			'"' + article + '."'
-		elsif article.present? && other.present?
-			'"' + article + '"'
-		end
-	end
-
-	def printing_formatted
-		if printing.present?
-			printing + "."
-		end
-	end
-
-	def year_formatted
-		if year.present?
-			year + "."
-		end
-	end
-
-	def website_formatted
-		if website.present?
-			website + "."
+	def formatted(attribute)
+		if attribute.present?
+			attribute + "."
 		end
 	end
 	
