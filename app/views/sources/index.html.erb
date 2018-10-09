@@ -7,6 +7,7 @@
       <h2 class="page-header">Sources</h2>
     </div>   
 
+
     <div class="font col-md-7 col-md-offset-2">
       <% @sources.each do |source| %>
         
@@ -19,18 +20,24 @@
 
           <div class="col">
             <%= formatted(sanitize source.author) %>
+
             <% if source.article.present? %>
               "<%= sanitize source.article %>"<%= article_period?(source.article, source.other) %>
             <% end %>
+
             <%= sanitize source.other %>
+
             <span class="<%= source_styles('book', source.book) %>"><%= sanitize source.book %></span><%= add_period?(source.book) %>
+
             <span class="<%= source_styles('journal', source.journal) %>"><%= sanitize source.journal %></span><%= add_period?(source.journal) %>
+
             <%= formatted(sanitize source.printing)%>
             <%= formatted(sanitize source.year) %>
+
             <span class="<%= source_styles('website', source.website) %>"><%= sanitize source.website %></span><%= add_period?(source.website) %>
           </div>
         </div> 
-        
+
       <% end %>
     </div>
   </div>
