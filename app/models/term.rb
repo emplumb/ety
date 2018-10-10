@@ -1,8 +1,12 @@
 require 'elasticsearch/model'
 
 class Term < ActiveRecord::Base
-  validates :name, presence: true
   belongs_to :user
+  has_many :citations
+  has_many :sources, through: :citations
+
+  validates :name, presence: true
+
   before_save :get_valid_slug, if: ->{ name_updated? }
   before_save :update_prefix, if: ->{ slug_updated? }
 
@@ -43,7 +47,6 @@ class Term < ActiveRecord::Base
 
   LOWERCASE_ALPHABET_CONSTANTS = %w(a b c ch d e f g h i j k l ll m n ñ o p q r s t u v w x y z)
   UPPERCASE_ALPHABET_CONSTANTS = %w(A B C CH D E F G H I J K L LL M N Ñ O P Q R S T U V W X Y Z)
-
 
   private
     def get_valid_slug

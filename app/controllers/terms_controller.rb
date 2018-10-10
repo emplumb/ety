@@ -1,8 +1,12 @@
 class TermsController < ApplicationController
+  include SourcesHelper
   before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
   
   def show
-    @term = Term.find_by_slug(params[:id])
+    @term = Term.includes(:sources)
+                .order(sorted_sources_sql)
+                .references(:citations)
+                .find_by_slug(params[:id])
   end
 
   def new
