@@ -2,11 +2,11 @@
   <tr>
     <td class="content-margin">
 
-      <div>
-        <% if admin_signed_in? %>
+      <% if admin_signed_in? %>
+        <div>
           <a class="btn btn-default no-radius" href="/term/<%= @term.slug %>/edit">Edit</a>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
       
       <!-- Name, Gender, Prefix/suffix, Part of speech, Definition -->
       <div>
@@ -16,17 +16,17 @@
           <%= attr %>
         <% end %>
 
-        <%= sanitize @term.definition, tags: %w(b em a u i sup sub p div br, span), attributes: %w(href) %>
+        <%= sanitize(@term.definition, tags: %w(b em a u i sup sub p div br, span), attributes: %w(href)) %>
       </div>
 
       <!-- Etymology1 & 2 and Uses -->
-      <div>
-        <% @term.ordered_attributes[5..6].each do |attr| %>
-          <% if attr.present? %>
+      <% @term.ordered_attributes[5..6].each do |attr| %>
+        <% if attr.present? %>
+          <div>
             <%= sanitize(attr, tags: %w(b em a u i sup sub p div br span), attributes: %w(href)) %>
-          <% end %>
+          </div>
         <% end %>
-      </div>
+      <% end %>
 
       <% if @term.uses.present? %>
         <div class="bottom-margin-sm">
@@ -35,14 +35,12 @@
       <% end %>
 
       <!-- Variants, Romance, Italic, Etruscan, Celtic, Germanic, Balto-Slavic, Albanian, Hellenic, Armenian, Indo-Iranian, Semitic, Uralic, Northeast Caucasian Cognates -->
-      <% @term.labels_and_cognates.each do | label, cognate | %>
-        <% if cognate.present? %>
-          
+      <% @term.labels_and_cognates.each do |label, cognate| %>
+        <% if cognate.present? %>  
           <div class="p-indent">
             <strong class="underline"><%= label %>:</strong>
             <span><%= sanitize(cognate, tags: %w(b em a u i sup sub p div br, span), attributes: %w(href)) %></span>
           </div>
-
         <% end %>
       <% end %>
 
@@ -55,6 +53,32 @@
         <% end %>
       <% end %>
       
+      <% if @term.sources.first.id %>
+        <div class="entry-footer">
+          <small class="text-muted">
+            <% @term.sources.each do |source| %>
+              <div class="footer-citation">
+                <%= formatted(sanitize source.author) %>
+
+                <% if source.article.present? %>
+                  "<%= sanitize source.article %>"<%= article_period?(source.article, source.other) %>
+                <% end %>
+
+                <%= sanitize source.other %>
+
+                <span class="<%= source_styles('book', source.book) %>"><%= sanitize source.book %></span><%= add_period?(source.book) %>
+
+                <span class="<%= source_styles('journal', source.journal) %>"><%= sanitize source.journal %></span><%= add_period?(source.journal) %>
+
+                <%= formatted(sanitize source.printing)%>
+                <%= formatted(sanitize source.year) %>
+
+                <span class="<%= source_styles('website', source.website) %>"><%= sanitize source.website %></span><%= add_period?(source.website) %>
+              </div>
+            <% end %>
+          </small>
+        </div>
+      <% end %>
     </td>
   </tr>
 </table>
