@@ -60,8 +60,6 @@
               <div class="footer-citation">
                 <%= formatted(sanitize source.author) %>
 
-                <%= formatted(sanitize source.author) %>
-
                 <% if source.article.present? %>
                   "<%= sanitize source.article %>"<%= article_period?(source.article, source.other) %>
                 <% end %>
