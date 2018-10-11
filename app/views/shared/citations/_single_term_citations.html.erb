@@ -1,0 +1,26 @@
+<% if @term && @term.sources && @term.sources.first %>
+  <div class="entry-footer text-muted">
+    <small>
+      <% @term.sources.each do |source| %>
+        <div class="footer-citation">
+          <%= formatted(sanitize source.author) %>
+
+          <% if source.article.present? %>
+            "<%= sanitize source.article %>"<%= article_period?(source.article, source.other) %>
+          <% end %>
+
+          <%= sanitize source.other %>
+
+          <span class="<%= source_styles('book', source.book) %>"><%= sanitize source.book %></span><%= add_period?(source.book) %>
+
+          <span class="<%= source_styles('journal', source.journal) %>"><%= sanitize source.journal %></span><%= add_period?(source.journal) %>
+
+          <%= formatted(sanitize source.printing)%>
+          <%= formatted(sanitize source.year) %>
+
+          <span class="<%= source_styles('website', source.website) %>"><%= sanitize source.website %></span><%= add_period?(source.website) %>
+        </div>
+      <% end %>
+    </small>
+  </div>
+<% end %>
