@@ -35,16 +35,22 @@
       <% end %>
 
       <!-- Variants, Romance, Italic, Etruscan, Celtic, Germanic, Balto-Slavic, Albanian, Hellenic, Armenian, Indo-Iranian, Semitic, Uralic, Northeast Caucasian Cognates -->
-      <% @term.labels_and_cognates.each do | label, cognate | %>
-        <% if cognate.present? %>
-          
-          <div class="p-indent">
-            <strong class="underline"><%= label %>:</strong>
-            <span><%= sanitize(cognate, tags: %w(b em a u i sup sub p div br, span), attributes: %w(href)) %></span>
-          </div>
+      <div class="p-indent" style="margin-bottom:0"><strong class="underline">Indo-European</strong></div>
+        <% @term.labels_and_cognates.each do | label, cognate | %>
+            <% if cognate.present? %>
+              <section>
+                
+                <!-- line indent = p-indent + 24 -->
+                <div style="margin-left:64px">
+                  <strong><%= label %></strong>
 
+                  <!-- line indent = above margin + 32 -->
+                  <div style="margin-left:32px"><%= sanitize(cognate, tags: %w(b em a u i sup sub p div br, span), attributes: %w(href)) %></div>
+                </div>
+              </section>
+            <% end %>
         <% end %>
-      <% end %>
+      </div>
 
       <!-- Notes 1 & 2 -->
       <% @term.ordered_attributes[23..24].each do |attr| %>
