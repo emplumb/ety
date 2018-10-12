@@ -1,4 +1,4 @@
-class AddFixedLatinAndGreekQuery < ActiveRecord::Migration[5.0]
+class AddFixedLatinAndGreekQueryAndOthers < ActiveRecord::Migration[5.0]
   def change
   	execute <<-SQL
   		INSERT INTO citations (term_id, source_id, created_at, updated_at)
