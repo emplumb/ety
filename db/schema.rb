@@ -48,14 +48,6 @@ ActiveRecord::Schema.define(version: 20181012001739) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "id_array", id: false, force: :cascade do |t|
-    t.integer "id"
-  end
-
-  create_table "ids_array", id: false, force: :cascade do |t|
-    t.integer "id"
-  end
-
   create_table "phonology_pages", force: :cascade do |t|
     t.text     "body"
     t.datetime "created_at", null: false
