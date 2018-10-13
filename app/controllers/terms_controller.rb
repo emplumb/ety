@@ -1,8 +1,12 @@
 class TermsController < ApplicationController
+  include SourcesHelper
   before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
   
   def show
-    @term = Term.find_by_slug(params[:id])
+    @term = Term.includes(:sources)
+                .order(sorted_sources_sql)
+                .references(:citations)
+                .find_by_slug(params[:id])
   end
 
   def new
@@ -109,9 +113,15 @@ class TermsController < ApplicationController
 
   def directory
     if params[:letter].present?
-      @terms = Term.where(prefix: params[:letter]).order(:slug).page(params[:page])
+      @terms = Term.includes(:sources)
+                   .where(prefix: params[:letter])
+                   .order(:slug)
+                   .page(params[:page])
     else
-      @terms = Term.all.order(:slug).page(params[:page])
+      @terms = Term.includes(:sources)
+                   .all
+                   .order(:slug)
+                   .page(params[:page])
     end
   end
 
