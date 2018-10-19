@@ -29,16 +29,10 @@
       <div class="col-lg-offset-1 col-lg-10">
         <div class="equal-height-flex">
           <% @term.attributes.to_a[7..46].each do |label, value| %>
-            <!-- <div class="form-group col-lg-6"> -->
               <div class="two-col">
                 <%= label_tag label, t(label)  %>
-                <% if value.present? %>
-                  <%= text_area_tag label, value, class: 'form-control aa', rows: "4" %>
-                <% else %>
-                  <%= text_area_tag label, value, class: 'form-control aa', rows: "1" %>
-                <% end %>
+                <%= text_area_tag label, value, class: 'form-control', rows: text_area_height(value) %>
               </div>
-            <!-- </div> -->
           <% end %>
         </div>
       </div>
