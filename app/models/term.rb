@@ -23,7 +23,7 @@ class Term < ActiveRecord::Base
   end
 
   def ordered_attributes
-    [name, gender, p_s, part_of_speech, definition, etymology1, etymology2, uses, variants, romance_cognates, italic_cognates, etruscan, celtic_cognates, germanic_cognates, baltoslavic_cognates, albanian_cognates, hellenic_cognates, armenian_cognates, indoiranian_cognates, semitic, uralic, ne_caucasian, ie_cognates, notes1, notes2]
+    [name, gender, prefix_suffix, part_of_speech, definition, etymology1, etymology2, uses, variants, romance_cognates, italic_cognates, tyrsenian_cognates, celtic_cognates, germanic_cognates, balto_slavic_cognates, albanian_cognates, hellenic_cognates, armenian_cognates, indo_iranian_cognates, semitic_cognates, uralic_cognates, northeast_caucasian_cognates, indo_european_cognates, notes1, notes2]
   end
 
   def ordered_cognates
@@ -38,7 +38,7 @@ class Term < ActiveRecord::Base
     COGNATE_CONSTANTS.zip(ordered_cognates)
   end
 
-  ATTRIBUTE_CONSTANTS = %w(Name Gender Prefix/Suffix Part\ of\ Speech Definition Etymology\ 1 Etymology\ 2 Uses Variants Romance Italic Etruscan Celtic Germanic Balto-Slavic Albanian Hellenic Armenian Indo-Iranian Semitic Uralic Northeast\ Caucasian Indo-European Notes\ 1 Notes\ 2)
+  ATTRIBUTE_CONSTANTS = %w(Name Gender Prefix/Suffix Part\ of\ Speech Definition Etymology\ 1 Etymology\ 2 Uses Variants Romance Italic Tyrsenian Celtic Germanic Balto-Slavic Albanian Hellenic Armenian Indo-Iranian Semitic Uralic Northeast\ Caucasian Indo-European Notes\ 1 Notes\ 2)
 
   COGNATE_CONSTANTS = ATTRIBUTE_CONSTANTS[8..22]
   
@@ -47,6 +47,54 @@ class Term < ActiveRecord::Base
 
   LOWERCASE_ALPHABET_CONSTANTS = %w(a b c ch d e f g h i j k l ll m n ñ o p q r s t u v w x y z)
   UPPERCASE_ALPHABET_CONSTANTS = %w(A B C CH D E F G H I J K L LL M N Ñ O P Q R S T U V W X Y Z)
+
+  def etym?
+    etymology1 || etymology2
+  end
+
+  def ie_cognates?
+    indo_european_cognates || romance_cognates ||
+    italic_cognates || celtic_cognates ||
+    germanic_cognates || albanian_cognates ||
+    balto_slavic_cognates || hellenic_cognates ||
+    thracian_cognates || phrygian_cognates ||
+    messapian_cognates || armenian_cognates ||
+    indo_iranian_cognates || tocharian_cognates ||
+    anatolian_cognates 
+  end
+
+  def uralic_cognates?
+    uralic_cognates || sami_cognates ||
+    finnic_cognates || mordvinic_cognates ||
+    mari_cognates || mansi_cognates ||
+    khanty_cognates
+  end
+
+  def ne_cognates?
+    northeast_caucasian_cognates || nakh_cognates ||
+    lezgic_cognates || dargwa_cognates ||
+    lak_cognates || lezghian_cognates
+  end
+
+  def aa_cognates?
+    afro_asiatic_cognates || egyptian_cognates || semitic_cognates
+  end
+
+  def ie_c
+    indo_european_cognates
+  end
+
+  def u_c
+    uralic_cognates
+  end
+
+  def nec_c
+    northeast_caucasian_cognates
+  end
+
+  def aa_c
+    afro_asiatic_cognates
+  end
 
   private
     def get_valid_slug
@@ -138,7 +186,7 @@ class Term < ActiveRecord::Base
       indexes :id, index: :no
       indexes :slug, analyzer: :spanish_analyzer, index_options: :offsets, store: true
       indexes :name, analyzer: :spanish_analyzer, index_options: :offsets, store: true
-      indexes :p_s, index: :no
+      indexes :prefix_suffix, index: :no
       indexes :part_of_speech, index: :no
       indexes :definition, analyzer: :definition_analyzer, index_options: :offsets, store: true
       indexes :etymology1, analyzer: :combined_analyzer, index_options: :offsets, store: true
@@ -146,7 +194,7 @@ class Term < ActiveRecord::Base
       indexes :variants, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :romance_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :italic_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
-      indexes :etruscan, analyzer: :combined_analyzer, index_options: :offsets, store: true
+      indexes :tyrsenian_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :celtic_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :germanic_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
       indexes :baltoslavic_cognates, analyzer: :combined_analyzer, index_options: :offsets, store: true
@@ -170,7 +218,7 @@ class Term < ActiveRecord::Base
         query: {
           multi_match: {
             query: query,
-            fields: ['slug^20','name^15', 'definition^8', 'etymology1^7', 'etymology2^6', 'uses^4', 'variants^4', 'romance_cognates^5', 'italic_cognates^3', 'etruscan^3', 'celtic_cognates^3', 'germanic_cognates^3', 'baltoslavic_cognates^3', 'albanian_cognates^3', 'hellenic_cognates^3', 'armenian_cognates^3', 'indoiranian_cognates^3', 'semitic^3', 'uralic^3', 'ne_caucasian^3', 'ie_cognates^3', 'notes1^2', 'notes2^1'],
+            fields: ['slug^20','name^15', 'definition^8', 'etymology1^7', 'etymology2^6', 'uses^4', 'variants^4', 'romance_cognates^5', 'italic_cognates^3', 'tyrsenian_cognates^3', 'celtic_cognates^3', 'germanic_cognates^3', 'baltoslavic_cognates^3', 'albanian_cognates^3', 'hellenic_cognates^3', 'armenian_cognates^3', 'indoiranian_cognates^3', 'semitic^3', 'uralic^3', 'ne_caucasian^3', 'ie_cognates^3', 'notes1^2', 'notes2^1'],
             operator: 'AND'
           }
         },
@@ -187,7 +235,7 @@ class Term < ActiveRecord::Base
             uses: {},
             romance_cognates: {},
             italic_cognates: {},
-            etruscan: {},
+            tyrsenian_cognates: {},
             celtic_cognates: {},
             germanic_cognates: {},
             baltoslavic_cognates: {},
