@@ -49,35 +49,35 @@ class Term < ActiveRecord::Base
   UPPERCASE_ALPHABET_CONSTANTS = %w(A B C CH D E F G H I J K L LL M N Ñ O P Q R S T U V W X Y Z)
 
   def etym?
-    etymology1 || etymology2
+    etymology1.present? || etymology2.present?
   end
 
   def ie_cognates?
-    indo_european_cognates || romance_cognates ||
-    italic_cognates || celtic_cognates ||
-    germanic_cognates || albanian_cognates ||
-    balto_slavic_cognates || hellenic_cognates ||
-    thracian_cognates || phrygian_cognates ||
-    messapian_cognates || armenian_cognates ||
-    indo_iranian_cognates || tocharian_cognates ||
-    anatolian_cognates 
+    indo_european_cognates.present? || romance_cognates.present? ||
+    italic_cognates.present? || celtic_cognates.present? ||
+    germanic_cognates.present? || albanian_cognates.present? ||
+    balto_slavic_cognates.present? || hellenic_cognates.present? ||
+    thracian_cognates.present? || phrygian_cognates.present? ||
+    messapian_cognates.present? || armenian_cognates.present? ||
+    indo_iranian_cognates.present? || tocharian_cognates.present? ||
+    anatolian_cognates.present? 
   end
 
   def uralic_cognates?
-    uralic_cognates || sami_cognates ||
-    finnic_cognates || mordvinic_cognates ||
-    mari_cognates || mansi_cognates ||
-    khanty_cognates
+    uralic_cognates.present? || sami_cognates.present? ||
+    finnic_cognates.present? || mordvinic_cognates.present? ||
+    mari_cognates.present? || mansi_cognates.present? ||
+    khanty_cognates.present?
   end
 
   def ne_cognates?
-    northeast_caucasian_cognates || nakh_cognates ||
-    lezgic_cognates || dargwa_cognates ||
-    lak_cognates || lezghian_cognates
+    northeast_caucasian_cognates.present? || nakh_cognates.present? ||
+    lezgic_cognates.present? || dargwa_cognates.present? ||
+    lak_cognates.present? || lezghian_cognates.present?
   end
 
   def aa_cognates?
-    afro_asiatic_cognates || egyptian_cognates || semitic_cognates
+    afro_asiatic_cognates.present? || egyptian_cognates.present? || semitic_cognates.present?
   end
 
   def ie_c

@@ -123,7 +123,7 @@
       <!-- Notes 1 & 2 -->
       <% @term.attributes.to_a[45..46].each do |label, value| %>
         <% if value.present? %>
-          <div><%= sanitize value %></div>
+          <div><p><%= sanitize value %></p></div>
         <% end %>
       <% end %>
       
