@@ -1,90 +1,49 @@
 <%= form_tag "/term/#{@term.slug}", method: :patch do %>
+  <%= hidden_field_tag :slug, @term.slug %>
   <div class="container-fluid entries-top-margin end-pad">
     <div class="col-lg-offset-1 col-lg-10">
       <div class="row">
-        <%= link_to "Back to entry", "/term/#{@term.slug}" %>
+        <div><%= link_to "Back to entry", "/term/#{@term.slug}" %></div>
         <h2>Edit Entry</h2>
-
         <hr />
-
-          <%= hidden_field_tag :id, @term.id %>
           <p>
             <%= submit_tag "Save Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %>
 
             <span class="pull-right"><%= link_to "Delete Term", "/term/#{@term.slug}", method: :delete, data: { :confirm => "Do you wish to permanently delete this entry?" }, class: "btn btn-danger no-radius" %></span>
           </p>
-
-          <br />
-
-          <div class="form-group col-lg-12">
-            <strong>Slug (url):</strong> <%= @term.slug %>
-          </div>
       </div>
     </div>
 
-    <div class="col-lg-offset-1 col-lg-5">
-      <div class="row">
-
-        <% @term.attributes.to_a[2..5].each do |name, value| %>
+    <div class="row">
+      <div class="col-lg-offset-1 col-lg-10">
+        <% @term.attributes.to_a[3..6].each do |label, value| %>
           <div class="form-group col-lg-6">
-            <%= label_tag name, t(name)  %>
-            <%= text_field_tag name, value, class: 'form-control' %>
-          </div>
-        <% end %>
-
-        <div class="form-group col-lg-12">
-          <%= label_tag :definition, t(:definition) %>
-          <%= text_area_tag :definition, @term.definition, class: 'form-control', rows: "2" %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :etymology1, t(:etymology1) %>
-          <%= text_area_tag :etymology1, @term.etymology1, class: 'form-control', rows: "4" %>
-        </div>
-
-        <% @term.attributes.to_a[8..10].each do |name, value| %>
-          <div class="form-group col-lg-12">
-            <%= label_tag name, t(name) %>
-            <%= text_area_tag name, value, class: 'form-control', rows: "1" %>
-          </div>
-        <% end %>
-
-        <div class="form-group col-lg-12">
-          <%= label_tag :romance_cognates, t(:romance_cognates) %>
-          <%= text_area_tag :romance_cognates, @term.romance_cognates, class: 'form-control', rows: "4" %>
-        </div>
-
-        <% @term.attributes.to_a[12..14].each do |name, value| %>
-          <div class="form-group col-lg-12">
-            <%= label_tag name, t(name) %>
-            <%= text_area_tag name, value, class: 'form-control', rows: "1" %>
+            <%= label_tag label, t(label)  %>
+            <%= text_field_tag label, value, class: 'form-control' %>
           </div>
         <% end %>
       </div>
     </div>
-    <div class="col-lg-5">
-      <div class="row">
-        <% @term.attributes.to_a[15..21].each do |name, value| %>
-          <div class="form-group col-lg-12">
-            <%= label_tag name, t(name) %>
-            <%= text_area_tag name, value, class: 'form-control line-height', rows: "1" %>
-          </div>
-        <% end %>
 
-        <% @term.attributes.to_a[29..30].each do |name, value| %>
-          <div class="form-group col-lg-12">
-            <%= label_tag name, t(name) %>
-            <%= text_area_tag name, value, class: 'form-control', rows: "1" %>
-          </div>
-        <% end %>
-
-        <% @term.attributes.to_a[22..24].each do |name, value| %>
-          <div class="form-group col-lg-12">
-            <%= label_tag name, t(name) %>
-            <%= text_area_tag name, value, class: 'form-control', rows: "1" %>
-          </div>
-        <% end %>
+    <div class="row">
+      <div class="col-lg-offset-1 col-lg-10">
+        <div class="equal-height-flex">
+          <% @term.attributes.to_a[7..46].each do |label, value| %>
+            <!-- <div class="form-group col-lg-6"> -->
+              <div class="two-col">
+                <%= label_tag label, t(label)  %>
+                <% if value.present? %>
+                  <%= text_area_tag label, value, class: 'form-control aa', rows: "4" %>
+                <% else %>
+                  <%= text_area_tag label, value, class: 'form-control aa', rows: "1" %>
+                <% end %>
+              </div>
+            <!-- </div> -->
+          <% end %>
+        </div>
       </div>
     </div>
+
     <div class="col-lg-offset-1 col-lg-10">
       <div class="row">
         <p><%= submit_tag "Save Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %></p>

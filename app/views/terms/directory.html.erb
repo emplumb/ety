@@ -15,7 +15,7 @@
           <tr>
             <td>
               <% if admin_signed_in? %>
-                <div><%= link_to "Edit", "#{term.slug}/edit", 
+                <div><%= link_to "Edit", term_path + "/#{term.slug}/edit", 
                       class: "btn btn-default no-radius" %></div>
               <% end %>
               

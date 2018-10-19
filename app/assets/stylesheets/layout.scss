@@ -13,6 +13,14 @@
 	flex: 3;
 }
 
-.header-indent {
-	padding-left: 85px;
+.equal-height-flex {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.two-col {
+	width: 50%;
+	padding: 0 15px;
+	margin-bottom: 15px;
 }
