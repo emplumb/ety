@@ -10,6 +10,12 @@ class Term < ActiveRecord::Base
   before_save :get_valid_slug, if: ->{ name_updated? }
   before_save :update_prefix, if: ->{ slug_updated? }
 
+  MULTI_PREFIX = ['ch', 'll']
+  ENYE_PREFIX = ['ñ']
+
+  LOWERCASE_ALPHABET_CONSTANTS = %w(a b c ch d e f g h i j k l ll m n ñ o p q r s t u v w x y z)
+  UPPERCASE_ALPHABET_CONSTANTS = %w(A B C CH D E F G H I J K L LL M N Ñ O P Q R S T U V W X Y Z)
+
   def slug_updated?
     self.slug_changed? || self.new_record?
   end
@@ -21,32 +27,6 @@ class Term < ActiveRecord::Base
   def to_param
     slug
   end
-
-  def ordered_attributes
-    [name, gender, prefix_suffix, part_of_speech, definition, etymology1, etymology2, uses, variants, romance_cognates, italic_cognates, tyrsenian_cognates, celtic_cognates, germanic_cognates, balto_slavic_cognates, albanian_cognates, hellenic_cognates, armenian_cognates, indo_iranian_cognates, semitic_cognates, uralic_cognates, northeast_caucasian_cognates, indo_european_cognates, notes1, notes2]
-  end
-
-  def ordered_cognates
-    ordered_attributes.select.with_index { |x, i| i > 7 && i < 23 }
-  end
-
-  def labels_and_attributes
-    ATTRIBUTE_CONSTANTS.zip(ordered_attributes)
-  end
-
-  def labels_and_cognates
-    COGNATE_CONSTANTS.zip(ordered_cognates)
-  end
-
-  ATTRIBUTE_CONSTANTS = %w(Name Gender Prefix/Suffix Part\ of\ Speech Definition Etymology\ 1 Etymology\ 2 Uses Variants Romance Italic Tyrsenian Celtic Germanic Balto-Slavic Albanian Hellenic Armenian Indo-Iranian Semitic Uralic Northeast\ Caucasian Indo-European Notes\ 1 Notes\ 2)
-
-  COGNATE_CONSTANTS = ATTRIBUTE_CONSTANTS[8..22]
-  
-  MULTI_PREFIX = ['ch', 'll']
-  ENYE_PREFIX = ['ñ']
-
-  LOWERCASE_ALPHABET_CONSTANTS = %w(a b c ch d e f g h i j k l ll m n ñ o p q r s t u v w x y z)
-  UPPERCASE_ALPHABET_CONSTANTS = %w(A B C CH D E F G H I J K L LL M N Ñ O P Q R S T U V W X Y Z)
 
   def etym?
     etymology1.present? || etymology2.present?
@@ -213,46 +193,44 @@ class Term < ActiveRecord::Base
   end
 
   def self.search(query)
-    __elasticsearch__.search(
-      {
-        query: {
-          multi_match: {
-            query: query,
-            fields: ['slug^20','name^15', 'definition^8', 'etymology1^7', 'etymology2^6', 'uses^4', 'variants^4', 'romance_cognates^5', 'italic_cognates^3', 'tyrsenian_cognates^3', 'celtic_cognates^3', 'germanic_cognates^3', 'baltoslavic_cognates^3', 'albanian_cognates^3', 'hellenic_cognates^3', 'armenian_cognates^3', 'indoiranian_cognates^3', 'semitic^3', 'uralic^3', 'ne_caucasian^3', 'ie_cognates^3', 'notes1^2', 'notes2^1'],
-            operator: 'AND'
-          }
-        },
-        highlight: {
-          pre_tags: ['<em>'],
-          post_tags: ['</em>'],
-          number_of_fragments: 0,
-          fields: {
-            name: {},
-            definition: {},
-            etymology1: {},
-            etymology2: {},
-            variants: {},
-            uses: {},
-            romance_cognates: {},
-            italic_cognates: {},
-            tyrsenian_cognates: {},
-            celtic_cognates: {},
-            germanic_cognates: {},
-            baltoslavic_cognates: {},
-            albanian_cognates: {},
-            hellenic_cognates: {},
-            armenian_cognates: {},
-            indoiranian_cognates: {},
-            semitic: {},
-            uralic: {},
-            ne_caucasian: {},
-            ie_cognates: {},
-            notes1: {},
-            notes2: {}
-          }
+    __elasticsearch__.search({
+      query: {
+        multi_match: {
+          query: query,
+          fields: ['slug^10','name^20', 'definition^8', 'etymology1^7', 'etymology2^6', 'uses^4', 'variants^3', 'romance_cognates^3', 'italic_cognates^3', 'celtic_cognates^3', 'germanic_cognates^3', 'albanian_cognates^3', 'balto_slavic_cognates^3', 'hellenic_cognates^3', 'thracian_cognates^3', 'phrygian_cognates^3', 'messapian_cognates^3', 'armenian_cognates^3', 'indo_iranian_cognates', 'tocharian_cognates', 'anatolian_cognates', 'semitic^3', 'uralic^3', 'ne_caucasian^3', 'ie_cognates^3', 'tyrsenian_cognates^3', 'notes1^2', 'notes2^1'],
+          operator: 'AND'
+        }
+      },
+      highlight: {
+        pre_tags: ['<em>'],
+        post_tags: ['</em>'],
+        number_of_fragments: 0,
+        fields: {
+          name: {},
+          definition: {},
+          etymology1: {},
+          etymology2: {},
+          variants: {},
+          uses: {},
+          romance_cognates: {},
+          italic_cognates: {},
+          tyrsenian_cognates: {},
+          celtic_cognates: {},
+          germanic_cognates: {},
+          baltoslavic_cognates: {},
+          albanian_cognates: {},
+          hellenic_cognates: {},
+          armenian_cognates: {},
+          indoiranian_cognates: {},
+          semitic: {},
+          uralic: {},
+          ne_caucasian: {},
+          ie_cognates: {},
+          notes1: {},
+          notes2: {}
         }
       }
-    )
+    })
   end
 end
 
