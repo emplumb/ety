@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181012233639) do
+ActiveRecord::Schema.define(version: 20181024033436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,35 +76,53 @@ ActiveRecord::Schema.define(version: 20181012233639) do
 
   create_table "terms", force: :cascade do |t|
     t.string   "prefix"
+    t.string   "slug"
     t.string   "name"
     t.string   "gender"
-    t.string   "p_s"
+    t.string   "prefix_suffix"
     t.string   "part_of_speech"
     t.text     "definition"
     t.text     "etymology1"
     t.text     "etymology2"
     t.text     "uses"
     t.text     "variants"
+    t.text     "indo_european_cognates"
     t.text     "romance_cognates"
     t.text     "italic_cognates"
-    t.text     "etruscan"
     t.text     "celtic_cognates"
     t.text     "germanic_cognates"
-    t.text     "baltoslavic_cognates"
     t.text     "albanian_cognates"
+    t.text     "balto_slavic_cognates"
     t.text     "hellenic_cognates"
+    t.text     "thracian_cognates"
+    t.text     "phrygian_cognates"
+    t.text     "messapian_cognates"
     t.text     "armenian_cognates"
-    t.text     "indoiranian_cognates"
-    t.text     "semitic"
-    t.text     "ie_cognates"
+    t.text     "indo_iranian_cognates"
+    t.text     "tocharian_cognates"
+    t.text     "anatolian_cognates"
+    t.text     "basque_cognates"
+    t.text     "tyrsenian_cognates"
+    t.text     "uralic_cognates"
+    t.text     "sami_cognates"
+    t.text     "finnic_cognates"
+    t.text     "mordvinic_cognates"
+    t.text     "mari_cognates"
+    t.text     "mansi_cognates"
+    t.text     "khanty_cognates"
+    t.text     "northeast_caucasian_cognates"
+    t.text     "nakh_cognates"
+    t.text     "lezgic_cognates"
+    t.text     "dargwa_cognates"
+    t.text     "lak_cognates"
+    t.text     "lezghian_cognates"
+    t.text     "afro_asiatic_cognates"
+    t.text     "egyptian_cognates"
+    t.text     "semitic_cognates"
     t.text     "notes1"
     t.text     "notes2"
-    t.text     "quote"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "slug"
-    t.text     "uralic"
-    t.text     "ne_caucasian"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.index ["slug"], name: "index_terms_on_slug", unique: true, using: :btree
   end
 

@@ -1,95 +1,53 @@
-# ss = Roo::Excelx.new("#{Rails.root}/public/assets/data/oedos.xlsx")
+ss = Roo::Excelx.new("#{Rails.root}/public/assets/data/2018-10-15_updated_columns.xlsx")
 
-# header = ss.row(1)
-# (2..ss.last_row).each do |row|
-#   name = ss.cell(row, 'A')
-#   gender = ss.cell(row, 'B')
-#   p_s = ss.cell(row, 'C')
-#   part_of_speech = ss.cell(row, 'D')
-#   definition = ss.cell(row, 'E')
-#   etymology1 = ss.cell(row, 'F')
-#   etymology2 = ss.cell(row, 'G')
-#   uses = ss.cell(row, 'H')
-#   variants = ss.cell(row, 'I')
-#   romance_cognates = ss.cell(row, 'J')
-#   italic_cognates = ss.cell(row, 'K')
-#   etruscan = ss.cell(row, 'L')
-#   celtic_cognates = ss.cell(row, 'M')
-#   germanic_cognates = ss.cell(row, 'N')
-#   baltoslavic_cognates = ss.cell(row, 'O')
-#   albanian_cognates = ss.cell(row, 'P')
-#   hellenic_cognates = ss.cell(row, 'Q')
-#   armenian_cognates = ss.cell(row, 'R')
-#   indoiranian_cognates = ss.cell(row, 'S')
-#   semitic = ss.cell(row, 'T')
-#   uralic = ss.cell(row, 'U')
-#   ne_caucasian = ss.cell(row, 'V')
-#   ie_cognates = ss.cell(row, 'W')
-#   notes1 = ss.cell(row, 'X')
-#   notes2 = ss.cell(row, 'Y')
-
-#   Term.create!(
-#     :name => name,
-#     :gender => gender,
-#     :p_s => p_s,
-#     :part_of_speech => part_of_speech,
-#     :definition => definition,
-#     :etymology1 => etymology1,
-#     :etymology2 => etymology2,
-#     :uses => uses,
-#     :variants => variants,
-#     :romance_cognates => romance_cognates,
-#     :italic_cognates => italic_cognates,
-#     :etruscan => etruscan,
-#     :celtic_cognates => celtic_cognates,
-#     :germanic_cognates => germanic_cognates,
-#     :baltoslavic_cognates => baltoslavic_cognates,
-#     :albanian_cognates => albanian_cognates,
-#     :hellenic_cognates => hellenic_cognates,
-#     :armenian_cognates => armenian_cognates,
-#     :indoiranian_cognates => indoiranian_cognates,
-#     :semitic => semitic,
-#     :uralic => uralic,
-#     :ne_caucasian => ne_caucasian,
-#     :ie_cognates => ie_cognates,
-#     :notes1 => notes1,
-#     :notes2 => notes2
-#   )
-# end
-
-sources_list = Roo::Excelx.new("#{Rails.root}/public/assets/data/sources.xlsx")
-
-sources_header = sources_list.row(1)
-(2..sources_list.last_row).each do |row|
-  author = sources_list.cell(row, 'A')
-  article = sources_list.cell(row, 'B')
-  other = sources_list.cell(row, 'C')
-  book = sources_list.cell(row, 'D')
-  journal = sources_list.cell(row, 'E')
-  printing = sources_list.cell(row, 'F')
-  year = sources_list.cell(row, 'G')
-  website = sources_list.cell(row, 'H')
-
-  Source.create!(
-  	:author => author,
-  	:article => article,
-	  :other => other,
-	  :book => book,
-	  :journal => journal,
-	  :printing => printing,
-	  :year => year,
-	  :website => website
-	)
-
+(2..ss.last_row).each do |row|
+  Term.create!(
+    name: ss.cell(row, 'A'),
+    slug: ss.cell(row, 'B'),
+    gender: ss.cell(row, 'C'),
+    prefix_suffix: ss.cell(row, 'D'),
+    part_of_speech: ss.cell(row, 'E'),
+    definition: ss.cell(row, 'F'),
+    etymology1: ss.cell(row, 'G'),
+    etymology2: ss.cell(row, 'H'),
+    uses: ss.cell(row, 'I'),
+    variants: ss.cell(row, 'J'),
+    indo_european_cognates: ss.cell(row, 'K'),
+    romance_cognates: ss.cell(row, 'L'),
+    italic_cognates: ss.cell(row, 'M'),
+    celtic_cognates: ss.cell(row, 'N'),
+    germanic_cognates: ss.cell(row, 'O'),
+    albanian_cognates: ss.cell(row, 'P'),
+    balto_slavic_cognates: ss.cell(row, 'Q'),
+    hellenic_cognates: ss.cell(row, 'R'),
+    thracian_cognates: ss.cell(row, 'S'),
+    phrygian_cognates: ss.cell(row, 'T'),
+    messapian_cognates: ss.cell(row, 'U'),
+    armenian_cognates: ss.cell(row, 'V'),
+    indo_iranian_cognates: ss.cell(row, 'W'),
+    tocharian_cognates: ss.cell(row, 'X'),
+    anatolian_cognates: ss.cell(row, 'Y'),
+    basque_cognates: ss.cell(row, 'Z'),
+    tyrsenian_cognates: ss.cell(row, 'AA'),
+    uralic_cognates: ss.cell(row, 'AB'),
+    sami_cognates: ss.cell(row, 'AC'),
+    finnic_cognates: ss.cell(row, 'AD'),
+    mordvinic_cognates: ss.cell(row, 'AE'),
+    mari_cognates: ss.cell(row, 'AF'),
+    mansi_cognates: ss.cell(row, 'AG'),
+    khanty_cognates: ss.cell(row, 'AH'),
+    northeast_caucasian_cognates: ss.cell(row, 'AI'),
+    nakh_cognates: ss.cell(row, 'AJ'),
+    lezgic_cognates: ss.cell(row, 'AK'),
+    dargwa_cognates: ss.cell(row, 'AL'),
+    lak_cognates: ss.cell(row, 'AM'),
+    lezghian_cognates: ss.cell(row, 'AN'),
+    afro_asiatic_cognates: ss.cell(row, 'AO'),
+    egyptian_cognates: ss.cell(row, 'AP'),
+    semitic_cognates: ss.cell(row, 'AQ'),
+    notes1: ss.cell(row, 'AR'),
+    notes2: ss.cell(row, 'AS')
+  )
 end
+  
 
-# home_updates_list = Roo::Excelx.new("#{Rails.root}/public/assets/data/home_updates.xlsx")
-
-# home_updates_header = home_updates_list.row(1)
-# (2..home_updates_list.last_row).each do |row|
-#   title = home_updates_list.cell(row, 'A')
-#   body = home_updates_list.cell(row, 'B')
-
-#   HomeUpdate.create!(:title => title, :body => body)
-
-# end
