@@ -28,7 +28,7 @@
               </section>
 
               <!-- Etymology 1 & 2 -->
-              <% if term.etym? %>
+              <% if etymology?(term) %>
                 <section class="mb-10">
                   <% term.attributes.to_a[8..9].each do |label, value| %>
                     <%= sanitize value %>
@@ -49,7 +49,7 @@
                 </section>
               <% end %>
 
-              <% if term.ie_cognates? %> 
+              <% if ie_family?(term) %> 
                 <section class="ml-40 mb-10">
                   <section class="<%= family?(term.ie_c) %>">
                     <strong class="underline">Indo-European</strong>
@@ -78,7 +78,7 @@
                 <% end %>
               <% end %>
 
-              <% if term.uralic_cognates? %>
+              <% if uralic_family?(term) %>
                 <section class="ml-40 mb-10"">
                   <section class="<%= family?(term.u_c) %>">
                     <strong class="underline">Uralic</strong>
@@ -97,7 +97,7 @@
                 </section>
               <% end %>
 
-              <% if term.ne_cognates? %>
+              <% if ne_caucasian_family?(term) %>
                 <section class="ml-40 mb-10">
                   <section class="<%= family?(term.nec_c) %>">
                     <strong class="underline">Northeast Caucasian</strong>
@@ -115,7 +115,7 @@
                 </section>
               <% end %>
 
-              <% if term.aa_cognates? %>
+              <% if afro_asiatic_family?(term) %>
                 <section class="ml-40 mb-10">
                   <section class="<%= family?(term.aa_c) %>">
                     <strong class="underline">Afro-Asiatic</strong>

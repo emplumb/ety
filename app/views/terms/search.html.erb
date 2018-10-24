@@ -25,10 +25,7 @@
                   <div><%= link_to "Edit", "term/#{result.slug}/edit", 
                         class: "btn btn-default no-radius" %></div>
                 <% end %>
-
-                <% Term.column_names.each_with_index do |a, i| %>
-                  <span><%= i %>: <%= a %>,</span>
-                <% end %>
+                
                 <section class="mb-10">
                   <strong><a href="/term/<%= result.slug %>">                  
                     <%= sanitize search_response(result, 'name') %>
@@ -41,7 +38,7 @@
                 </section>
 
                 <!-- Etymology 1 & 2 -->
-                <% if result.etymology1.present? || result.etymology2.present? %>
+                <% if etymology?(result) %>
                   <section class="mb-10">
                     <% Term.column_names[8..9].each do |col_name| %>
                       <%= sanitize search_response(result, col_name) %>
@@ -62,7 +59,7 @@
                   </section>
                 <% end %>
 
-                <!% if result.ie_cognates? %> 
+                <% if result.ie_family?(result) %> 
                   <section class="ml-40 mb-10">
                     <section class="<%= family?(result.indo_european_cognates) %>">
                       <strong class="underline">Indo-European</strong>
@@ -80,7 +77,7 @@
                     <% end %>
 
                   </section>
-                <!% end %>
+                <% end %>
 
                 <!-- Basque & Tyrsenian -->
                 <% Term.column_names[27..28].each do |col_name| %>
@@ -92,7 +89,7 @@
                   <% end %>
                 <% end %>
 
-                <!% if term.uralic_cognates? %>
+                <% if uralic_family?(result) %>
                   <section class="ml-40 mb-10"">
                     <section class="<%= family?(result.uralic_cognates) %>">
                       <strong class="underline">Uralic</strong>
@@ -110,9 +107,9 @@
                     <% end %>
             
                   </section>
-                <!% end %>
+                <% end %>
 
-                <!% if term.ne_cognates? %>
+                <% if ne_caucasian_family?(result) %>
                   <section class="ml-40 mb-10">
                     <section class="<%= family?(result.northeast_caucasian_cognates) %>">
                       <strong class="underline">Northeast Caucasian</strong>
@@ -130,9 +127,9 @@
                     <% end %>
 
                   </section>
-                <!% end %>
+                <% end %>
 
-                <!% if term.aa_cognates? %>
+                <% if afro_asiatic_family?(result) %>
                   <section class="ml-40 mb-10">
                     <section class="<%= family?(result.afro_asiatic_cognates) %>">
                       <strong class="underline">Afro-Asiatic</strong>
@@ -150,7 +147,7 @@
                     <% end %>
 
                   </section>
-                <!% end %>
+                <% end %>
 
                 <!-- Notes 1 & 2 -->
                 <% if result.notes1.present? || result.notes2.present? %>
