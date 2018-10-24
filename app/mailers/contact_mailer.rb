@@ -10,7 +10,7 @@ class ContactMailer < ApplicationMailer
     message_params = 
     {
       :from => "#{fullname} <#{email}>",
-      :to => "oedosproject@gmail.com",
+      :to => ENV['DOMAIN_EMAIL'],
       :subject => "#{subject}",
       :html => "#{formatted_body}"
     }

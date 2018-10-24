@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   include SessionsHelper
-  before_action :session_expired?
+  before_action :session_expired?, if: ->{ Rails.env.production? }
   rescue_from ActiveRecord::RecordNotUnique, with: :record_not_unique
 
   private

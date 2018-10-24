@@ -1,58 +1,132 @@
 <table class="table table-striped entries-top-margin">
   <tr>
-    <td class="content-margin">
-
+    <td>
       <% if admin_signed_in? %>
-        <div>
-          <a class="btn btn-default no-radius" href="/term/<%= @term.slug %>/edit">Edit</a>
-        </div>
+        <div><%= link_to "Edit", "#{@term.slug}/edit", 
+              class: "btn btn-default no-radius" %></div>
       <% end %>
       
-      <!-- Name, Gender, Prefix/suffix, Part of speech, Definition -->
-      <div>
+      <!-- Name, Gender, Prefix/Suffix, Part of Speech, Definition -->
+      <section class="mb-10">
         <strong><%= yield %></strong>
-
-        <% @term.ordered_attributes[1..3].each do |attr| %>
-          <%= attr %>
+        <% @term.attributes.to_a[4..7].each do |label, value| %>
+          <%= sanitize value %>
         <% end %>
+      </section>
 
-        <%= sanitize(@term.definition, tags: %w(b em a u i sup sub p div br, span), attributes: %w(href)) %>
-      </div>
-
-      <!-- Etymology1 & 2 and Uses -->
-      <% @term.ordered_attributes[5..6].each do |attr| %>
-        <% if attr.present? %>
-          <div>
-            <%= sanitize(attr, tags: %w(b em a u i sup sub p div br span), attributes: %w(href)) %>
-          </div>
-        <% end %>
+      <!-- Etymology 1 & 2 -->
+      <% if etymology?(@term) %>
+        <section class="mb-10">
+          <% @term.attributes.to_a[8..9].each do |label, value| %>
+            <%= sanitize value %>
+          <% end %>
+        </section>
       <% end %>
 
       <% if @term.uses.present? %>
-        <div class="bottom-margin-sm">
-          <%= sanitize @term.uses, tags: %w(b em a u i sup sub p div br span), attributes: %w(href) %>
-        </div>
+        <section class="mb-10">
+          <%= sanitize @term.uses %>
+        </section>
       <% end %>
 
-      <!-- Variants, Romance, Italic, Etruscan, Celtic, Germanic, Balto-Slavic, Albanian, Hellenic, Armenian, Indo-Iranian, Semitic, Uralic, Northeast Caucasian Cognates -->
-      <% @term.labels_and_cognates.each do |label, cognate| %>
-        <% if cognate.present? %>  
-          <div class="p-indent">
-            <strong class="underline"><%= label %>:</strong>
-            <span><%= sanitize(cognate, tags: %w(b em a u i sup sub p div br, span), attributes: %w(href)) %></span>
-          </div>
+      <% if @term.variants.present? %>
+        <section class="ml-40">
+          <strong class="underline">Variants</strong>
+          <div class="mb-10 ml-24"><%= sanitize @term.variants %></div>
+        </section>
+      <% end %>
+
+      <% if ie_family?(@term) %> 
+        <section class="ml-40 mb-10">
+          <section class="<%= family?(@term.ie_c) %>">
+            <strong class="underline">Indo-European</strong>
+            <div class="ml-24"><%= sanitize @term.ie_c %></div>
+          </section>
+
+          <!-- Romance, Italic, Etruscan, Celtic, Germanic, Albanian, Balto-Slavic, Hellenic, Thracian, Phyrgian, Messapian, Armenian, Indo-Iranian, Tocharian, Anatolian -->
+          <% @term.attributes.to_a[13..25].each do |label, value| %>
+            <% if value.present? %>
+              <section class="ml-24">
+                <strong><%= t(label) %></strong>
+                <div class="ml-24"><%= sanitize value %></div>
+              </section>
+            <% end %>
+          <% end %>
+        </section>
+      <% end %>
+
+      <!-- Basque & Tyrsenian -->
+      <% @term.attributes.to_a[27..28].each do |label, value| %> 
+        <% if value.present? %>
+          <section class="ml-40 mb-10">
+            <strong class="underline"><%= t(label) %></strong>
+            <div class="ml-24"><%= sanitize value %></div>
+          </section>
         <% end %>
+      <% end %>
+
+      <% if uralic_family?(@term) %>
+        <section class="ml-40 mb-10"">
+          <section class="<%= family?(@term.u_c) %>">
+            <strong class="underline">Uralic</strong>
+            <div class="ml-24"><%= sanitize @term.u_c %></div>
+          </section>
+
+          <!-- Sami, Finnic, Mordvinic, Mari, Mansi, Khanty -->
+          <% @term.attributes.to_a[30..35].each do |label, value| %>
+            <% if value.present? %>
+              <section class="ml-24">
+                <strong><%= t(label) %></strong>
+                <div class="ml-24"><%= sanitize value %></div>
+              </section>
+            <% end %>
+          <% end %>
+        </section>
+      <% end %>
+
+      <% if ne_caucasian_family?(@term) %>
+        <section class="ml-40 mb-10">
+          <section class="<%= family?(@term.nec_c) %>">
+            <strong class="underline">Northeast Caucasian</strong>
+            <div class="ml-24"><%= sanitize @term.nec_c %></div>
+          </section>
+
+          <% @term.attributes.to_a[37..41].each do |label, value| %>
+            <% if value.present? %>
+              <section class="ml-24">
+                <strong><%= t(label) %></strong>
+                <div class="ml-24"><%= sanitize value %></div>
+              </section>
+            <% end %>
+          <% end %>
+        </section>
+      <% end %>
+
+      <% if afro_asiatic_family?(@term) %>
+        <section class="ml-40 mb-10">
+          <section class="<%= family?(@term.aa_c) %>">
+            <strong class="underline">Afro-Asiatic</strong>
+            <div class="ml-24"><%= sanitize @term.aa_c %></div> 
+          </section>
+
+          <% @term.attributes.to_a[43..44].each do |label, value| %>
+            <% if value.present? %>
+              <section class="ml-24">
+                <strong><%= t(label) %></strong>
+                <div class="ml-24"><%= sanitize value %></div>
+              </section>
+            <% end %>
+          <% end %>
+        </section>
       <% end %>
 
       <!-- Notes 1 & 2 -->
-      <% @term.ordered_attributes[23..24].each do |attr| %>
-        <% if attr.present? %>
-          <div>
-            <%= sanitize(attr, tags: %w(b em a u i sup sub p div br, span), attributes: %w(href)) %>
-          </div>
+      <% @term.attributes.to_a[45..46].each do |label, value| %>
+        <% if value.present? %>
+          <div><p><%= sanitize value %></p></div>
         <% end %>
       <% end %>
-
+      
       <%= render partial: "/shared/citations/single_term_citations" %>
     </td>
   </tr>
