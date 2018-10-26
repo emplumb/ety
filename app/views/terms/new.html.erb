@@ -11,114 +11,31 @@
       </div>
     </div>
 
-    <div class="col-lg-offset-1 col-lg-5">
-      <div class="row">
-        <div class="form-group col-lg-6">
-          <%= label_tag :name, t(:name) %>
-          <%= text_field_tag :name, @term.name, class: 'form-control' %>
-        </div>
-        <div class="form-group col-lg-6">
-          <%= label_tag :gender, t(:gender) %>
-          <%= text_field_tag :gender, @term.gender, class: 'form-control' %>
-        </div>
-        <div class="form-group col-lg-6">
-          <%= label_tag :prefix_suffix, t(:prefix_suffix) %>
-          <%= text_field_tag :prefix_suffix, @term.p_s, class: 'form-control' %>
-        </div>
-        <div class="form-group col-lg-6">
-          <%= label_tag :part_of_speech, t(:part_of_speech) %>
-          <%= text_field_tag :part_of_speech, @term.part_of_speech, class: 'form-control' %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :definition, t(:definition) %>
-          <%= text_area_tag :definition, @term.definition, class: 'form-control', rows: "5" %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :etymology1, t(:etymology1) %>
-          <%= text_area_tag :etymology1, @term.etymology1, class: 'form-control', rows: "5" %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :etymology2, t(:etymology2) %>
-          <%= text_area_tag :etymology2, @term.etymology2, class: 'form-control' %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :uses, t(:uses) %>
-          <%= text_area_tag :uses, @term.uses, class: 'form-control' %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :variants, t(:variants) %>
-          <%= text_area_tag :variants, @term.variants, class: 'form-control' %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :romance_cognates, t(:romance_cognates) %>
-          <%= text_area_tag :romance_cognates, @term ? @term.romance_cognates : "", class: 'form-control', rows: "4" %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :italic_cognates, t(:italic_cognates) %>
-          <%= text_area_tag :italic_cognates, @term ? @term.italic_cognates : "", class: 'form-control', rows: "2" %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :etruscan, t(:etruscan) %>
-          <%= text_area_tag :etruscan, @term ? @term.etruscan : "", class: 'form-control', rows: "2" %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :celtic_cognates, t(:celtic_cognates) %>
-          <%= text_area_tag :celtic_cognates, @term ? @term.celtic_cognates : "", class: 'form-control', rows: "2" %>
+    <div class="row">
+      <div class="col-lg-offset-1 col-lg-10">
+        <!-- Name, Prefix/Suffic, Gender, Part of Speech -->
+        <% @term.attributes.to_a[3..6].each do |label, value| %>
+          <div class="form-group col-lg-6">
+            <%= label_tag label, t(label)  %>
+            <%= text_field_tag label, value, class: 'form-control' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-offset-1 col-lg-10">
+        <div class="equal-height-flex">
+          <% @term.attributes.to_a[7..46].each do |label, value| %>
+              <div class="two-col">
+                <%= label_tag label, t(label)  %>
+                <%= text_area_tag label, value, class: 'form-control', rows: '4' %>
+              </div>
+          <% end %>
         </div>
       </div>
     </div>
-    <div class="col-lg-5">
-      <div class="row">
-        <div class="form-group col-lg-12">
-          <%= label_tag :germanic_cognates, t(:germanic_cognates) %>
-          <%= text_area_tag :germanic_cognates, @term ? @term.germanic_cognates : "", class: 'form-control', rows: "2" %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :baltoslavic_cognates, t(:baltoslavic_cognates) %>
-          <%= text_area_tag :baltoslavic_cognates, @term ? @term.baltoslavic_cognates : "", class: 'form-control', rows: "2" %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :albanian_cognates, t(:albanian_cognates) %>
-          <%= text_area_tag :albanian_cognates, @term ? @term.albanian_cognates : "", class: 'form-control', rows: "2" %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :hellenic_cognates, t(:hellenic_cognates) %>
-          <%= text_area_tag :hellenic_cognates, @term ? @term.hellenic_cognates : "", class: 'form-control', rows: "2" %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :armenian_cognates, t(:armenian_cognates) %>
-          <%= text_area_tag :armenian_cognates, @term ? @term.armenian_cognates : "", class: 'form-control', rows: "2" %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :indoiranian_cognates, t(:indoiranian_cognates) %>
-          <%= text_area_tag :indoiranian_cognates, @term ? @term.indoiranian_cognates : "", class: 'form-control', rows: "2" %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :semitic, t(:semitic) %>
-          <%= text_area_tag :semitic, @term ? @term.semitic : "", class: 'form-control', rows: "2" %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :uralic, t(:uralic) %>
-          <%= text_area_tag :uralic, @term ? @term.uralic : "", class: 'form-control', rows: "2" %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :ne_caucasian, t(:ne_caucasian) %>
-          <%= text_area_tag :ne_caucasian, @term ? @term.ne_caucasian : "", class: 'form-control', rows: "2" %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :ie_cognates, t(:ie_cognates) %>
-          <%= text_area_tag :ie_cognates, @term ? @term.ie_cognates : "", class: 'form-control', rows: "2" %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :notes1, t(:notes1) %>
-          <%= text_area_tag :notes1, @term ? @term.notes1 : "", class: 'form-control', rows: "2" %>
-        </div>
-        <div class="form-group col-lg-12">
-          <%= label_tag :notes2, t(:notes2) %>
-          <%= text_area_tag :notes2, @term ? @term.notes2 : "", class: 'form-control', rows: "2" %>
-        </div>
-      </div>
-    </div>
+
     <div class="col-lg-offset-1 col-lg-10">
       <div class="row">
         <p><%= submit_tag "Create Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %></p>
