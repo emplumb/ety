@@ -17,7 +17,7 @@ class HomeUpdatesController < ApplicationController
   end
 
   def home
-    @posts = HomeUpdate.where.not(title: "Welcome").limit(3).order(created_at: :desc)
+    @posts = HomeUpdate.where.not(title: "Welcome").order(created_at: :desc).limit(3)
     @welcome_post = HomeUpdate.find_by(title: "Welcome")
 
     return word_of_day
