@@ -20,7 +20,9 @@
 
         <p><%= submit_tag "Save Post", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %>
           
-          <span class="pull-right"><%= link_to "Delete Post", "/home/update/#{@post.id}", method: :delete, data: { :confirm => "Do you wish to permanently delete this post?" }, class: "btn btn-danger no-radius" %></span>
+          <% if @post != @welcome_post %>
+            <span class="pull-right"><%= link_to "Delete Post", "/home/update/#{@post.id}", method: :delete, data: { :confirm => "Do you wish to permanently delete this post?" }, class: "btn btn-danger no-radius" %></span>
+          <% end %>
         </p>
         <div><%= link_to "Back to posts", "/" %></div>
 

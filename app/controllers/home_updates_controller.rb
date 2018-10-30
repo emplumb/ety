@@ -47,6 +47,7 @@ class HomeUpdatesController < ApplicationController
 
   def edit
     @post = HomeUpdate.find(params[:id])
+    @welcome_post = HomeUpdate.find_by(title: "Welcome")
   end
 
   def update
