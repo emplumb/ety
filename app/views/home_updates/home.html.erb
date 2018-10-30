@@ -51,8 +51,7 @@
             end %>
           </strong></h4>
         </div>
-        <div class="line-wrap">
-          <%= sanitize(@welcome_post.body, 
+        <div class="line-wrap"><%= sanitize(@welcome_post.body, 
             tags: %w(b em a u i sup sub p b div img span input form), 
             attributes: %w(href src alt class width height type action method target name value border)) %>      
         </div>
