@@ -1,25 +1,24 @@
-<%= form_tag "/term/#{@term.slug}", method: :patch do %>
-  <%= hidden_field_tag :slug, @term.slug %>
+<%= form_for @term do |f| %>
   <div class="container-fluid entries-top-margin end-pad">
+    
     <div class="col-lg-offset-1 col-lg-10">
-      <div class="row">
-        <div><%= link_to "Back to entry", "/term/#{@term.slug}" %></div>
-        <h2>Edit Entry</h2>
-        <hr />
-          <p>
-            <%= submit_tag "Save Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %>
+      <div><%= link_to "Back to entry", "/term/#{@term.slug}" %></div>
+      <h2>Edit Entry</h2>
+      <hr />
+        <p>
+          <%= f.submit "Save Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %>
 
-            <span class="pull-right"><%= link_to "Delete Term", "/term/#{@term.slug}", method: :delete, data: { :confirm => "Do you wish to permanently delete this entry?" }, class: "btn btn-danger no-radius" %></span>
-          </p>
-      </div>
+          <span class="pull-right"><%= link_to "Delete Term", "/term/#{@term.slug}", method: :delete, data: { :confirm => "Do you wish to permanently delete this entry?" }, class: "btn btn-danger no-radius" %></span>
+        </p>
     </div>
 
     <div class="row">
       <div class="col-lg-offset-1 col-lg-10">
-        <% @term.attributes.to_a[3..6].each do |label, value| %>
+        <!-- Name, Prefix/Suffic, Gender, Part of Speech -->
+        <% f.object.attributes.to_a[3..6].each do |field, value| %>
           <div class="form-group col-lg-6">
-            <%= label_tag label, t(label)  %>
-            <%= text_field_tag label, value, class: 'form-control' %>
+            <%= f.label t(field) %>
+            <%= f.text_field field, class: 'form-control' %>
           </div>
         <% end %>
       </div>
@@ -28,22 +27,45 @@
     <div class="row">
       <div class="col-lg-offset-1 col-lg-10">
         <div class="equal-height-flex">
-          <% @term.attributes.to_a[7..46].each do |label, value| %>
-              <div class="two-col">
-                <%= label_tag label, t(label)  %>
-                <%= text_area_tag label, value, class: 'form-control', rows: text_area_height(value) %>
-              </div>
+          <% f.object.attributes.to_a[7..46].each do |field, value| %>
+            <div class="two-col">
+              <%= f.label field, t(field)  %>
+              <%= f.text_area field, class: 'form-control', rows: text_area_height(value) %>
+            </div>
           <% end %>
         </div>
       </div>
     </div>
 
-    <div class="col-lg-offset-1 col-lg-10">
-      <div class="row">
-        <p><%= submit_tag "Save Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %></p>
+    <div class="row">
+      <div class="col-lg-offset-1 col-lg-10 plr-30">
+        <strong>Citations</strong>
+        <p><small>(uncheck box to remove preexisting citation from term)</small></p>
+        
+        <ul class="pl-10">
+          <%= f.fields_for :citations do |ff| %>
+            <li>
+              <%= ff.check_box :_destroy, {:checked => ff.object.persisted?}, '0', '1' %>
+              <%= ff.label :_destroy, build_source(ff.object.source), class: 'normal-weight' %>
+              <%= ff.hidden_field :source_id %>
+            </li>
+          <% end %>
+        </ul>
 
-        <div><%= link_to "Back to entry", "/term/#{@term.slug}"%></div>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-lg-offset-1 col-lg-10 plr-30 mb-15">
+        <%= label_tag "Add Sources" %>
+        <%= select_tag "sources", options_for_select(collect_sources(@sources_list)), multiple: true, class: 'form-control', size: '10' %>
+      </div>
+    </div>
+
+      <div class="col-lg-offset-1 col-lg-10">
+        <p><%= f.submit "Save Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %></p>
+      </div>
   </div>
 <% end %>
+
+
