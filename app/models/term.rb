@@ -5,6 +5,8 @@ class Term < ActiveRecord::Base
   has_many :citations
   has_many :sources, through: :citations
 
+  accepts_nested_attributes_for :citations, allow_destroy: true
+
   validates :name, presence: true
 
   before_save :get_valid_slug, if: ->{ name_updated? }
