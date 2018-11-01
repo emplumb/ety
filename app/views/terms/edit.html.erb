@@ -8,7 +8,7 @@
         <p>
           <%= f.submit "Save Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %>
 
-          <span class="pull-right"><%= link_to "Delete Term", "/term/#{@term.slug}", method: :delete, data: { :confirm => "Do you wish to permanently delete this entry?" }, class: "btn btn-danger no-radius" %></span>
+          <span class="pull-right"><%= link_to "Delete Term", term_path(@term), method: :delete, data: { :confirm => "Do you wish to permanently delete this entry?" }, class: "btn btn-danger no-radius" %></span>
         </p>
     </div>
 

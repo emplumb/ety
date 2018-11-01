@@ -9,18 +9,13 @@ Rails.application.routes.draw do
   delete "/home/update/:id", to: "home_updates#destroy"
 
   #Terms routes
+  resources :terms, param: :slug
+  
   get "/appendix", to: "terms#appendix"
   get "/directory", to: "terms#directory"
-  get "/term", to: "terms#directory"
+  get "/terms", to: "terms#directory"
   get "/directory/:letter", to: "terms#directory"
   get "/search", to: "terms#search"
-
-  get "/term/new", to: "terms#new"
-  post "/term", to: "terms#create"
-  get "/term/:id", to: "terms#show"
-  get "/term/:id/edit", to: "terms#edit"
-  patch "/term/:id", to: "terms#update"
-  delete "/term/:id", to: "terms#destroy"
 
   #Sources routes
   get "/sources", to: "sources#index"

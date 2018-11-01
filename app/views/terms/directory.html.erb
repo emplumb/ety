@@ -15,13 +15,13 @@
           <tr>
             <td>
               <% if admin_signed_in? %>
-                <div><%= link_to "Edit", term_path + "/#{term.slug}/edit", 
+                <div><%= link_to "Edit", edit_term_path(term), 
                       class: "btn btn-default no-radius" %></div>
               <% end %>
               
               <!-- Name, Gender, Prefix/Suffix, Part of Speech, Definition -->
               <section class="mb-10">
-                <strong><%= link_to term.name, term_path + "/#{term.slug}" %></strong>
+                <strong><%= link_to term.name, term_path(term) %></strong>
                 <% term.attributes.to_a[4..7].each do |label, value| %>
                   <%= sanitize value %>
                 <% end %>
