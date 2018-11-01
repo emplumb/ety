@@ -1,1 +1,1 @@
-<a href="/term/<%= @term.slug %>"><%= @term.name %></a>
+<%= link_to @term.name, term_path(@term) %>
