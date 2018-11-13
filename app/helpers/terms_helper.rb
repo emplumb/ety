@@ -49,13 +49,4 @@ module TermsHelper
     entry.afro_asiatic_cognates.present? || entry.egyptian_cognates.present? || entry.semitic_cognates.present?
   end
 
-  def build_source(source)
-  	sanitize(source.author + " " + source.article + " " + source.other + " " + source.book + " " + source.journal + " " + source.printing + " " + source.year + " " + source.website + " - " + source.id.to_s)
-  	# hidden_field(:term, :id, :value => source.id)
-  end
-
-  def collect_sources(sources_list)
-  	sources_list.collect {|source| build_source(source) }
-  end
-
 end
