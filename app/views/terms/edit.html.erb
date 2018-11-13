@@ -36,22 +36,24 @@
       </div>
     </section>
 
-    <section class="row">
-      <div class="col-lg-offset-1 col-lg-10 plr-30">
-        <p><strong>Citations</strong> <small>(uncheck box and press save to remove citation from term)</small></p>
-        
-        <ul class="pl-10">
-          <%= f.fields_for :citations do |ff| %>
-            <li>
-              <%= ff.check_box :_destroy, {:checked => ff.object.persisted?}, '0', '1' %>
-              <%= ff.label :_destroy, ff.object.source.build_source, class: 'normal-weight' %>
-              <%= ff.hidden_field :source_id %>
-            </li>
-          <% end %>
-        </ul>
+    <% if f.object.sources.present? %>
+      <section class="row">
+        <div class="col-lg-offset-1 col-lg-10 plr-30">
+          <p><strong>Citations</strong> <small>(uncheck box and press save to remove citation from term)</small></p>
+          
+          <ul class="pl-10">
+            <%= f.fields_for :citations do |ff| %>
+              <li>
+                <%= ff.check_box :_destroy, {:checked => ff.object.persisted?}, '0', '1' %>
+                <%= ff.label :_destroy, ff.object.source.build_source, class: 'normal-weight' %>
+                <%= ff.hidden_field :source_id %>
+              </li>
+            <% end %>
+          </ul>
 
-      </div>
-    </section>
+        </div>
+      </section>
+    <% end %>  
 
     <section class="row">
       <div class="col-lg-offset-1 col-lg-10 plr-30 mb-15">
