@@ -33,7 +33,7 @@ class TermsController < ApplicationController
                 .references(:citations)
                 .find_by_slug(params[:slug])
     
-    @remaining_sources = Source.where("id NOT IN (SELECT source_id FROM citations WHERE term_id = 53)").order(sorted_sources_sql)
+    @remaining_sources = Source.where("id NOT IN (SELECT source_id FROM citations WHERE term_id = '#{@term.id}')").order(sorted_sources_sql)
   end
 
   def update
