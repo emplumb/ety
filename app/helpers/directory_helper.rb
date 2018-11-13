@@ -1,6 +1,6 @@
 module DirectoryHelper
 
-	def page_title(letter_param)
+	def dir_page_title(letter_param)
 		if !letter_param.present?
 			return
 		end
