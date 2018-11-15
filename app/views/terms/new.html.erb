@@ -1,47 +1,50 @@
-<%= form_tag "/term", method: :post do %>
-  <div class="container-fluid entries-top-margin end-pad">
+<%= form_for @term do |f| %>
+  <section class="container-fluid entries-top-margin end-pad">
     <div class="col-lg-offset-1 col-lg-10">
-      <div class="row">
-        <div><%= link_to "Cancel", root_path %></div>
-        <h2>New Entry</h2>
+      <div><%= link_to "Cancel", root_path %></div>
+      <h2>New Entry</h2>
 
-        <hr />
+      <hr/>
 
-        <p><%= submit_tag "Create Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %></p>
-      </div>
+      <p><%= submit_tag "Create Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %></p>
     </div>
 
-    <div class="row">
+    <section class="row">
       <div class="col-lg-offset-1 col-lg-10">
         <!-- Name, Prefix/Suffic, Gender, Part of Speech -->
-        <% @term.attributes.to_a[3..6].each do |label, value| %>
+        <% f.object.attributes.to_a[3..6].each do |field, value| %>
           <div class="form-group col-lg-6">
-            <%= label_tag label, t(label)  %>
-            <%= text_field_tag label, value, class: 'form-control' %>
+            <%= f.label t(field) %>
+            <%= f.text_field field, class: 'form-control' %>
           </div>
         <% end %>
       </div>
-    </div>
+    </section>
 
-    <div class="row">
+    <section class="row">
       <div class="col-lg-offset-1 col-lg-10">
         <div class="equal-height-flex">
-          <% @term.attributes.to_a[7..46].each do |label, value| %>
-              <div class="two-col">
-                <%= label_tag label, t(label)  %>
-                <%= text_area_tag label, value, class: 'form-control', rows: '4' %>
-              </div>
+          <% f.object.attributes.to_a[7..46].each do |field, value| %>
+            <div class="two-col">
+              <%= f.label field, t(field)  %>
+              <%= f.text_area field, class: 'form-control', rows: "4" %>
+            </div>
           <% end %>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section class="row">
+      <div class="col-lg-offset-1 col-lg-10 plr-30 mb-15">
+        <%= f.label :add_sources, t(:add_sources) %>
+        <%= f.collection_select(:source_ids, @sources, :id, :build_source, {selected: nil}, {:multiple => true, class: 'form-control', size: '10'}) %>
+      </div>
+    </section>
 
     <div class="col-lg-offset-1 col-lg-10">
-      <div class="row">
-        <p><%= submit_tag "Create Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %></p>
+      <p><%= submit_tag "Create Term", data: { :confirm => "Do you wish to continue?" }, class: "btn btn-success no-radius" %></p>
         
-        <div><%= link_to "Cancel", root_path %></div>
-      </div>
-    </div>
-  </div>
+      <div><%= link_to "Cancel", root_path %></div>
+    </div> 
+  </section>
 <% end %>

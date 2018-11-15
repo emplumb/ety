@@ -86,3 +86,5 @@ en:
   email: "Email *"
   subject: "Subject *"
   body: "Body *"
+
+  add_sources: "Add Sources"

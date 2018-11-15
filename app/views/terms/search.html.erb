@@ -26,12 +26,12 @@
             <tr>
               <td>
                 <% if admin_signed_in? %>
-                  <div><%= link_to "Edit", "term/#{result.slug}/edit", 
+                  <div><%= link_to "Edit", "terms/#{result.slug}/edit", 
                         class: "btn btn-default no-radius" %></div>
                 <% end %>
                 
                 <section class="mb-10">
-                  <strong><a href="/term/<%= result.slug %>">                  
+                  <strong><a href="/terms/<%= result.slug %>">                  
                     <%= sanitize search_response(result, 'name') %>
                   </a></strong>
       

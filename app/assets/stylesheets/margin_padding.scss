@@ -13,3 +13,24 @@
 .mb-10 {
 	margin-bottom: 10px;
 }
+
+.mb-15 {
+	margin-bottom: 15px;
+}
+
+.pl-10 {
+	padding-left: 10px;
+}
+
+.pl-30 {
+	padding-left: 30px;
+}
+
+.pr-30 {
+	padding-right: 30px;
+}
+
+.plr-30 {
+	@extend .pl-30;
+	@extend .pr-30;
+}

@@ -2,10 +2,13 @@ require 'elasticsearch/model'
 
 class Term < ActiveRecord::Base
   belongs_to :user
-  has_many :citations
+  has_many :citations, dependent: :destroy
   has_many :sources, through: :citations
 
+  accepts_nested_attributes_for :citations, allow_destroy: true
+
   validates :name, presence: true
+  validates :slug, uniqueness: true
 
   before_save :get_valid_slug, if: ->{ name_updated? }
   before_save :update_prefix, if: ->{ slug_updated? }

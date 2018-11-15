@@ -4,7 +4,11 @@
 <div class="container-fluid" id="show">
   <div class="row end-pad">
     <div class="col-md-6 col-md-offset-3">
-      <%= render partial: "/shared/terms/unlinked_term", layout: "shared/terms/single_term_entry" %>
+			<div>
+        <%= link_to_if(admin_signed_in?, "New Term", new_term_path, class: "btn btn-success no-radius entries-top-margin") do end %>   
+      </div>
+
+      <%= render partial: "/shared/terms/non_linked_name", layout: "shared/terms/single_entry" %>
     </div>
   </div>
 </div>
