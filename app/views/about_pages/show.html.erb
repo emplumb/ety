@@ -1,6 +1,5 @@
-<head>
-  <title>About | OEDoS</title>
-</head>
+<% content_for :meta_title, "About | OEDoS" %>
+<% content_for :meta_description, "Several centuries of work on Indo-European studies, Italic languages, and the Romance family have drawn a picture of Spanish’s long evolution..." %>
 
 <div class="container">
   <div class="row end-pad">
@@ -16,7 +15,6 @@
 				<div class="line-wrap"><%= sanitize(@about_page.quote, tags: %w(b em a u i sup sub p div br, span), attributes: %w(href)) %></div>
 			</div>
 	  <% end %>
-
 
     <div class="font col-md-7 col-md-offset-2">
       <hr />

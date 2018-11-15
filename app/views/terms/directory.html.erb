@@ -1,6 +1,5 @@
-<head>
-    <title><%= dir_page_title(params[:letter]) %> Directory | OEDoS</title>
-</head>
+<% content_for :meta_title, "#{uppercase_letter(params[:letter])} Directory | OEDoS" %>
+<% content_for :meta_description, dir_page_description(params[:letter]) %>
 
 <div class="container-fluid regular-margin-top">
   
