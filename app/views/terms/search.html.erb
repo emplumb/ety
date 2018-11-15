@@ -1,9 +1,7 @@
-<head>
-  <title><%= search_page_title(params[:query]) %></title>
-</head>
+<% content_for :meta_title, search_page_title(params[:query]) %>
+<% content_for :meta_robots, "noindex, follow" %>
 
 <div class="container-fluid">
-
   <%= render "/shared/general/mobile_alphabet" %>
 
   <% if @hit %>

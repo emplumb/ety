@@ -12,6 +12,10 @@ module MetaTagsHelper
     content_for?(:meta_description) ? format_description(content_for(:meta_description)) : DEFAULT_PAGE_DESCRIPTION
   end
 
+  def meta_robots
+    content_for?(:meta_robots) ? content_for(:meta_robots) : nil
+  end
+
   def format_description(description)
     without_tags = strip_tags(description)
     without_tags.truncate(160, separator: ' ')
@@ -33,6 +37,14 @@ module MetaTagsHelper
     end
 
     return DEFAULT_DIR_DESCRIPTION
+  end
+
+  def search_page_title(query_param)
+    if query_param.blank?
+      return "No query found"
+    end
+
+    return query_param + " - search results"
   end
 
 end
