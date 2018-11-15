@@ -12,6 +12,10 @@ class Source < ApplicationRecord
 	  end
 	end
 
+	def build_source
+		(author + ' ' + article + ' ' + other + ' ' + book + ' ' + journal + ' ' + printing + ' ' + year + ' ' + website).html_safe
+	end
+
 	private
 		def self.sort_all
 			query = <<-SQL
