@@ -8,6 +8,10 @@
       
       <%= render "/shared/general/mobile_alphabet" %>
 
+      <div>
+        <%= link_to_if(admin_signed_in?, "New Term", new_term_path, class: "btn btn-success no-radius entries-top-margin") do end %>   
+      </div>
+
       <div class="page-header">
         <h3 class="text-center">Word of the Day</h3>
       </div>

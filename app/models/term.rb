@@ -2,7 +2,7 @@ require 'elasticsearch/model'
 
 class Term < ActiveRecord::Base
   belongs_to :user
-  has_many :citations
+  has_many :citations, dependent: :destroy
   has_many :sources, through: :citations
 
   accepts_nested_attributes_for :citations, allow_destroy: true
