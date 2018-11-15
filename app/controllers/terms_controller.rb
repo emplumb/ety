@@ -11,10 +11,12 @@ class TermsController < ApplicationController
 
   def new
     @term = Term.new
+    @sources = Source.all.order(sorted_sources_sql)
   end
 
   def create
-    @term = Term.new(old_term_params)
+    @term = Term.new(term_params)
+    @sources = Source.all.order(sorted_sources_sql)
 
     if @term.save
       flash[:success] = "New entry successfully created!"
@@ -41,6 +43,7 @@ class TermsController < ApplicationController
 
   def update
     @term = Term.find_by_slug(params[:slug])
+    @remaining_sources = Source.all
 
     if @term.update_attributes(term_params)
       flash[:success] = "Entry successfully updated"
@@ -86,13 +89,9 @@ class TermsController < ApplicationController
     def term_params
       params
         .require(:term)
-        .permit(:slug, :name, :gender, :prefix_suffix, :part_of_speech, :definition, :etymology1, :etymology2, :uses, :variants, :indo_european_cognates, :romance_cognates, :italic_cognates, :celtic_cognates, :germanic_cognates, :albanian_cognates, :balto_slavic_cognates, :hellenic_cognates, :thracian_cognates, :phrygian_cognates, :messapian_cognates, :armenian_cognates, :indo_iranian_cognates, :tocharian_cognates, :anatolian_cognates, :basque_cognates, :tyrsenian_cognates, :uralic_cognates, :sami_cognates, :finnic_cognates, :mordvinic_cognates, :mari_cognates, :mansi_cognates, :khanty_cognates, :northeast_caucasian_cognates, :nakh_cognates, :lezgic_cognates, :dargwa_cognates, :lak_cognates, :lezghian_cognates, :afro_asiatic_cognates, :egyptian_cognates, :semitic_cognates, :notes1, :notes2,
+        .permit(:id, :slug, :name, :gender, :prefix_suffix, :part_of_speech, :definition, :etymology1, :etymology2, :uses, :variants, :indo_european_cognates, :romance_cognates, :italic_cognates, :celtic_cognates, :germanic_cognates, :albanian_cognates, :balto_slavic_cognates, :hellenic_cognates, :thracian_cognates, :phrygian_cognates, :messapian_cognates, :armenian_cognates, :indo_iranian_cognates, :tocharian_cognates, :anatolian_cognates, :basque_cognates, :tyrsenian_cognates, :uralic_cognates, :sami_cognates, :finnic_cognates, :mordvinic_cognates, :mari_cognates, :mansi_cognates, :khanty_cognates, :northeast_caucasian_cognates, :nakh_cognates, :lezgic_cognates, :dargwa_cognates, :lak_cognates, :lezghian_cognates, :afro_asiatic_cognates, :egyptian_cognates, :semitic_cognates, :notes1, :notes2,
           :source_ids => [],
           citations_attributes: [:term_id, :source_id, :_destroy])
-    end
-
-    def old_term_params
-      params.permit(:slug, :name, :gender, :prefix_suffix, :part_of_speech, :definition, :etymology1, :etymology2, :uses, :variants, :indo_european_cognates, :romance_cognates, :italic_cognates, :celtic_cognates, :germanic_cognates, :albanian_cognates, :balto_slavic_cognates, :hellenic_cognates, :thracian_cognates, :phrygian_cognates, :messapian_cognates, :armenian_cognates, :indo_iranian_cognates, :tocharian_cognates, :anatolian_cognates, :basque_cognates, :tyrsenian_cognates, :uralic_cognates, :sami_cognates, :finnic_cognates, :mordvinic_cognates, :mari_cognates, :mansi_cognates, :khanty_cognates, :northeast_caucasian_cognates, :nakh_cognates, :lezgic_cognates, :dargwa_cognates, :lak_cognates, :lezghian_cognates, :afro_asiatic_cognates, :egyptian_cognates, :semitic_cognates, :notes1, :notes2)
     end
 
 end
