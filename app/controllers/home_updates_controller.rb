@@ -1,4 +1,5 @@
 class HomeUpdatesController < ApplicationController
+  include SourcesHelper
   before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
 
   def daystamp
@@ -13,7 +14,10 @@ class HomeUpdatesController < ApplicationController
     #Will always be the same until daystamp changes or if a new Term is added or removed from the database
     random_term_id = number_generator.rand(min_term_id..max_term_id)
 
-    @term = Term.find(random_term_id)
+    @term = Term.includes(:sources)
+                .order(sorted_sources_sql)
+                .references(:citations)
+                .find(random_term_id)
   end
 
   def home
