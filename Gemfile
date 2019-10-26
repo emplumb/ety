@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.1'
 
-gem 'rails', '5.0.0.1'
+gem 'rails', '5.0.7.2'
 
 gem 'roo'
 
@@ -27,8 +27,6 @@ gem 'simplecov', require: false, group: :test
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
