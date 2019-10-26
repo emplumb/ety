@@ -58,7 +58,6 @@ GEM
     dotenv (2.7.5)
     dotenv-rails (2.7.5)
       dotenv (= 2.7.5)
-      railties (>= 3.2, < 6.1)
       multi_json
     elasticsearch-model (0.1.9)
       activesupport (> 3)
