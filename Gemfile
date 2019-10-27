@@ -8,8 +8,8 @@ gem 'roo'
 
 gem 'kaminari'
 
-gem 'elasticsearch-model'
-gem 'elasticsearch-rails'
+gem 'elasticsearch-model', '~>2.0.1'
+gem 'elasticsearch-rails', '~>2.0.1'
 
 gem 'mailgun-ruby', '~>1.1'
 
