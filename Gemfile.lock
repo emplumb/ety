@@ -60,6 +60,7 @@ GEM
       elasticsearch-api (= 5.0.0)
       elasticsearch-transport (= 5.0.0)
     elasticsearch-api (5.0.0)
+      multi_json
     elasticsearch-model (0.1.9)
       activesupport (> 3)
       elasticsearch (> 0.4)
@@ -257,7 +258,7 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 RUBY VERSION
-   ruby 2.3.1p112
+   ruby 2.6.5p114
 
 BUNDLED WITH
-   1.17.0.pre.1
+   1.17.2
