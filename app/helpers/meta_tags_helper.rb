@@ -1,6 +1,6 @@
 module MetaTagsHelper
 
-  DEFAULT_PAGE_TITLE = "Etymological Dictionary of Spanish (OEDoS)"
+  DEFAULT_PAGE_TITLE = "Etymological Dictionary of Spanish (EDoS)"
   DEFAULT_PAGE_DESCRIPTION = "Etymology is not a defintion but a history of a word over time. Search our comprehensive Spanish etymological dictionary to learn about your favorite words!"
   DEFAULT_DIR_DESCRIPTION = "Browse through all the Spanish words in our dictionary"
   
