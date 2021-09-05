@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.6.5'
+ruby '2.6.8'
 
 gem 'rails', '5.0.7.2'
 
@@ -53,7 +53,6 @@ end
 group :production do
   gem 'pg', '0.20.0'
   gem 'rails_12factor'
-  gem 'unicorn'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
