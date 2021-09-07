@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy"
 
 
-
+  #Static pages routes
+  get "/privacy-policy", to: "static_pages#privacy_policy"
 
 end

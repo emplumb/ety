@@ -15,15 +15,13 @@
 
   <script src="https://code.jquery.com/jquery-latest.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80641405-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-80641405-2');
-  </script>
-
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K96R2TH');</script>
+  <!-- End Google Tag Manager -->
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -31,6 +29,10 @@
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K96R2TH"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -59,9 +61,6 @@
                 <li><a href="/logout">Logout</a></li>
               </ul>
             </li>
-
-          <% else %>
-            <li><%= link_to "Login", login_path %></li>
           <% end %>
 
           <li><%= link_to "Phonology", phonology_path %></li>
@@ -86,11 +85,11 @@
   <div class="jumbotron">
     <div class="container-fluid">
       <div class="header-box">
-        <div id="banner-title">
-          ETYMOLOGICAL DICTIONARY <span class="italic">of</span> SPANISH
+        <div class="banner-logo">
+          <img src="/assets/images/logo.png" alt="La Dama de Elche">
         </div>
-        <div id="slogan">
-          The only free and comprehensive online etymological dictionary of the Spanish language
+        <div id="banner-title">
+          ETYMOLOGICAL DICTIONARY of SPANISH
         </div>
       </div>
       <div id="alphabet">
@@ -125,6 +124,7 @@
           <li><%= link_to "Sources", sources_path %></li>
           <li><%= link_to "Contact", contact_path %></li>
           <li><%= link_to "Facebook", "https://www.facebook.com/SpanishEtym-OEDoS-1721537891443952/", :target => "_blank" %></li>
+          <li><%= link_to "Privacy Policy", privacy_policy_path %></li>
         </ul>
       </div>
       <div>

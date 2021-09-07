@@ -33,7 +33,6 @@ en:
           zero: "<div class='col-md-offset-3 col-md-6 entries-bottom-margin'>
                   <div class='well'>
                     <h3>Sorry, no results found. Please try a new search.</h3>
-                    <p class='italic'>Remember not to add articles before words. Searches are not case-sensitive</p>
                   </div>
                 </div>"
   name: "Name"

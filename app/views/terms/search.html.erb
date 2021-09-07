@@ -5,14 +5,6 @@
   <%= render "/shared/general/mobile_alphabet" %>
 
   <% if @hit %>
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <div class="well entries-top-margin">
-          Note: results are returned based on order of importance. The top two are <span class="italic">name</span> and <span class="italic">definition</span>.
-        </div>
-      </div>
-    </div>
-
     <div class="text-center">
       <%= paginate @results %>
     </div>

@@ -1,9 +1,6 @@
 class StaticPagesController < ApplicationController
 
-  def about
-  end
-
-  def phonology
+  def privacy_policy
   end
 
 end
