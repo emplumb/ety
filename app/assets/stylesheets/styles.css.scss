@@ -95,7 +95,7 @@ em {
 #banner-title {
   font-family: 'Averia Serif Libre';
   color: white;
-  font-size: 275%;
+  font-size: 150%;
   margin: 0 10px 8px;
   font-weight: 100;
   padding-bottom: 15px;
@@ -103,14 +103,12 @@ em {
 
 .banner-logo {
   padding: 10px 0;
+  height: 100px;
 }
 
 @media (min-width: 300px) and (max-width: 600px) {
   #banner-title {
-    font-size: 125%;
-  }
-  #slogan {
-    font-size: 90%;
+    display: none;
   }
 }
 
@@ -149,10 +147,6 @@ em {
 }
 
 @media (max-width: 450px) {
-  #slogan {
-    padding: 10px 0;
-  }
-  
   #alphabet {
     display: none;
   }
